@@ -18,7 +18,7 @@ Development
 Buster.JS is developed in the open. The source code is hosted at
 `github.com/busterjs <https://github.com/busterjs>`_ and
 `gitorious.org/buster <http://gitorious.org/buster>`_. Development discussion
-happens in the `issue tracker <https://github.com/busterjs/buster/issues>` and
+happens in the `issue tracker <https://github.com/busterjs/buster/issues>`_ and
 the `development mailing list <http://groups.google.com/group/busterjs-dev>`_.
 
 
