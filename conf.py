@@ -42,8 +42,6 @@ master_doc = 'index'
 # General information about the project.
 project = u'Buster.JS'
 copyright = u"""2010-2012, Christian Johansen and August Lilleaas.
-Buster.JS uses semantic versioning.
-Code released under the BSD license.
 Documentation released under CC Attribution-Share Alike"""
 
 # The version info for the project you're documenting, acts as replacement for
