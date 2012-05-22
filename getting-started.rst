@@ -7,7 +7,7 @@ Getting Started
 
 This guide walks you through installation and very basic setup of tests in a
 project. If you're only interested in simple browser tests embedded in a web page,
-see :doc:`the browser testing <browser-testing>` page.
+see :ref:`the browser testing <browser-testing>` page.
 
 Installing
 ==========
@@ -59,10 +59,8 @@ also be recognized.
 
     // Add more configuration groups as needed
 
-For browser tests, list all your source files in <code>"sources"</code> and
-test files in ``"tests"``. For Node tests, you don't need to
-specify ``"sources"`` as you typically ``require` your
-source files directly in the test files.
+
+For browser tests, list all your source files in ``"sources"`` and test files in ``'tests'``. For Node tests, you don't need to specify ``"sources"`` as you typically ``require` your source files directly in the test files.
 
 Read the full :ref:`buster-configuration <configuration>` documentation for details.
 
@@ -70,7 +68,8 @@ Note that you may not "dot out" in ``sources``, ``tests`` etc. Paths are resolve
 
 Write tests
 ===========
-Given the config file above, all files named <em>something</em>-test.js in the same folder as the config file itself will be loaded. You can of course change the glob pattern to better suit your needs. ``"**/*-test.js"`` would for example recursively load all `something-test.js in the same folder the config file is in, and all its sub folders.
+
+Given the config file above, all files named `something-test.js in the same folder as the config file itself will be loaded. You can of course change the glob pattern to better suit your needs. ``"**/*-test.js"`` would for example recursively load all `something`-test.js in the same folder the config file is in, and all its sub folders.
 
 A test case looks like this:
 
@@ -84,6 +83,7 @@ A test case looks like this:
         }
     });
 
+
 The BDD inclined might prefer this alternate syntax:
 
 ::
@@ -95,6 +95,7 @@ The BDD inclined might prefer this alternate syntax:
             expect(true).toEqual(true);
         });
     });
+
 
 If your test is a Node test, you also need to require Buster.JS.
 
@@ -110,12 +111,14 @@ If your test is a Node test, you also need to require Buster.JS.
         }
     });
 
+
 See the full :doc:`buster.testCase <test/test-case>` docs and 
-:doc:`buster-assertions <assertions>` docs for details. There are also mocks 
-and stubs and more, via the :doc:`sinon-buster <sinon>` module.
+:ref:`buster-assertions <assertions>` docs for details. There are also mocks 
+and stubs and more, via the :ref:`sinon-buster <sinon>` module.
 
 Run tests
 =========
+
 Node tests
 ----------
 
@@ -124,13 +127,13 @@ Doing this requires nothing more than a file with tests (i.e. you don't need
 the above configuration).
 
 While ``node test/my-test.js`` is nice and convenient, you want to use the ``buster-test`` binary to get at the full power of Buster. Open a terminal, ``cd`` to your project, and type in ``buster test``.
-Here's the output from the test run of :doc:`buster-args <args>:
+Here's the output from the test run of :ref:`buster-args <args>:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633
     :height: 382
 
-See the :doc:`Node testing <node-testing>` documentation for more.
+See the :ref:`Node testing <node-testing>` documentation for more.
 
 Browser tests
 -------------
@@ -152,7 +155,7 @@ Then you're ready to run the tests with ``buster test``.
     :width: 633
     :height: 382
 
-See the :doc:`browser testing <browser-testing>` documentation for more.
+See the :ref:`browser testing <browser-testing>` documentation for more.
 
 Hybrid tests
 ------------
@@ -181,4 +184,4 @@ run in both browsers and Node. Here's an example:
         }
     });
 
-See the :doc:`hybrid testing <hybrid-testing>` documentation for more.
+See the :ref:`hybrid testing <hybrid-testing>` documentation for more.
