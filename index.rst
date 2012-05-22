@@ -62,4 +62,5 @@ Contents
    :maxdepth: 2
 
    overview
+   getting-started
    community
