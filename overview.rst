@@ -226,14 +226,27 @@ previously, and BDD style specs/examples::
 
     buster.spec.expose(); // Make spec functions global
 
-    describe("Bowling kata", function () {
+    var spec = describe("Bowling kata", function () {
         before(function () {
             this.game = new BowlingGame();
 
             this.rollMany = function (rolls, pins) {
-                for (var i = 0; i ...
+                for (var i = 0; i &lt; rolls; ++i) {
+                    this.game.roll(pins);
+                }
+            };
+        });
 
-**FIXME: Rest of the above example has gone missing**
+        it("yield 0 in score for gutter game", function () {
+            this.rollMany(20, 0);
+            buster.assert.equals(0, this.game.score());
+        });
+
+        it("yield score of 20 for 1 pin on each roll", function () {
+            this.rollMany(20, 1);
+            buster.assert.equals(20, this.game.score());
+        });
+    });
 
 
 Reporters
