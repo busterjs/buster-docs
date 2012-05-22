@@ -7,7 +7,7 @@ Getting Started
 
 This guide walks you through installation and very basic setup of tests in a
 project. If you're only interested in simple browser tests embedded in a web page,
-see :ref:`the browser testing <browser-testing>` page.
+see :doc:`the browser testing <browser-testing>` page.
 
 Installing
 ==========
@@ -62,7 +62,7 @@ also be recognized.
 
 For browser tests, list all your source files in ``"sources"`` and test files in ``'tests'``. For Node tests, you don't need to specify ``"sources"`` as you typically ``require` your source files directly in the test files.
 
-Read the full :ref:`buster-configuration <configuration>` documentation for details.
+Read the full :doc:`buster-configuration <configuration>` documentation for details.
 
 Note that you may not "dot out" in ``sources``, ``tests`` etc. Paths are resolved relative to the directory where the configuration file lives. If your sources live outside this directory, adjust the root directory using the ``rootPath`` property (which is also resolved against the config file location, unless absolute).
 
@@ -113,8 +113,8 @@ If your test is a Node test, you also need to require Buster.JS.
 
 
 See the full :doc:`buster.testCase <test/test-case>` docs and 
-:ref:`buster-assertions <assertions>` docs for details. There are also mocks 
-and stubs and more, via the :ref:`sinon-buster <sinon>` module.
+:doc:`buster-assertions <assertions>` docs for details. There are also mocks 
+and stubs and more, via the :doc:`sinon-buster <sinon>` module.
 
 Run tests
 =========
@@ -129,13 +129,13 @@ the above configuration).
 While ``node test/my-test.js`` is nice and convenient, you want to use the 
 ``buster-test`` binary to get at the full power of Buster. Open a terminal, 
 ``cd`` to your project, and type in ``buster test``.
-Here's the output from the test run of :ref:`buster-args <args>`:
+Here's the output from the test run of :doc:`buster-args <args>`:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633
     :height: 382
 
-See the :ref:`Node testing <node-testing>` documentation for more.
+See the :doc:`Node testing <node-testing>` documentation for more.
 
 Browser tests
 -------------
@@ -157,7 +157,7 @@ Then you're ready to run the tests with ``buster test``.
     :width: 633
     :height: 382
 
-See the :ref:`browser testing <browser-testing>` documentation for more.
+See the :doc:`browser testing <browser-testing>` documentation for more.
 
 Hybrid tests
 ------------
@@ -186,4 +186,4 @@ run in both browsers and Node. Here's an example:
         }
     });
 
-See the :ref:`hybrid testing <hybrid-testing>` documentation for more.
+See the :doc:`hybrid testing <hybrid-testing>` documentation for more.
