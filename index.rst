@@ -61,6 +61,5 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   overview
    community
-
-* :ref:`genindex`

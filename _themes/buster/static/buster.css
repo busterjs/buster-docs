@@ -125,3 +125,9 @@ h2:hover .headerlink,
 h3:hover .headerlink {
     display: inline;
 }
+
+/* Code examples */
+.highlight {
+    font-size: 14px;
+    padding: 5px 15px;
+}
