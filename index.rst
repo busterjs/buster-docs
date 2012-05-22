@@ -8,7 +8,7 @@ stable 1.0 by end of June 2012.
 **A browser JavaScript testing toolkit.** It does browser
 testing with browser automation (think JsTestDriver), qunit style static html
 page testing, testing in headless browsers (phantomjs, jsdom, ...), and more.
-Take a look at :ref:`the overview <overview>`!
+Take a look at :doc:`the overview <overview>`!
 
 **A Node.js testing toolkit.** You get the same test case library, assertion
 library, etc. This is also great for hybrid browser and Node.js code. Write
@@ -19,7 +19,7 @@ can write reporters for customizing the output of ``buster test`` (we
 already have xUnit XML, traditional dots, specification, tap, TeamCity and
 more), write extensions that wrap other testing frameworks (we already have
 buster-jstestdriver), add your own testing syntax (we ship with xUnit and BDD),
-and much more. Again, :ref:`the overview <overview>` lists many of these
+and much more. Again, :doc:`the overview <overview>` lists many of these
 things.
 
 **Written by you.** We believe in open development, and already
@@ -43,7 +43,7 @@ Other plans we have is to have a stateful test runner that only runs the
 previously failed tests, test breakpoints that drops you into a live REPL in
 all the captured browsers when a test fails, and much much more.
 
-:ref:`Take Buster.JS for a spin <getting-started>` and **judge for yourself!**
+:doc:`Take Buster.JS for a spin <getting-started>` and **judge for yourself!**
 Be warned, it's still in beta, so it has some rough edges.
 
 
