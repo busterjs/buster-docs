@@ -52,7 +52,7 @@ Here's a talk about Buster.JS by Christian Johansen.
 .. raw:: html
 
     <iframe src="http://www.ustream.tv/embed/recorded/17159711"
-    width="864" height="486" scrolling="no" frameborder="0"></iframe>
+    width="700" height="394" scrolling="no" frameborder="0"></iframe>
 
 
 Contents
