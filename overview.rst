@@ -32,7 +32,7 @@ your project::
         tests: [
             "test/*-test.js"
         ]
-    }
+    };
 
     // Add more configuration groups as needed
 
@@ -669,7 +669,7 @@ TextMate
 --------
 
 Magnar Sveen maintains `TextMate bundle
-<https://github.com/magnars/buster.tmbundle>`. It includes snippets, running
+<https://github.com/magnars/buster.tmbundle>`_. It includes snippets, running
 tests with ``command + R``, and more.
 
 
@@ -679,7 +679,7 @@ Emacs
 Christian Johansen maintains `buster-mode.el <https://gitorious.org/buster/buster-mode>`_.
 
 Magnar Sveen has written a set of `yasnippet snippets for Buster.JS
-<https://github.com/magnars/buster-snippets.el>`_.</p>
+<https://github.com/magnars/buster-snippets.el>`_.
 
 
 Buster.JS Academy
