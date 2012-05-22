@@ -126,8 +126,10 @@ Node tests can be run by simply typing ``node test/some-test.js``.
 Doing this requires nothing more than a file with tests (i.e. you don't need
 the above configuration).
 
-While ``node test/my-test.js`` is nice and convenient, you want to use the ``buster-test`` binary to get at the full power of Buster. Open a terminal, ``cd`` to your project, and type in ``buster test``.
-Here's the output from the test run of :ref:`buster-args <args>:
+While ``node test/my-test.js`` is nice and convenient, you want to use the 
+``buster-test`` binary to get at the full power of Buster. Open a terminal, 
+``cd`` to your project, and type in ``buster test``.
+Here's the output from the test run of :ref:`buster-args <args>`:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633
