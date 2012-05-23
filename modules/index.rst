@@ -14,6 +14,7 @@ Module reference
     buster-format
     buster-resources
     buster-server-cli
+    buster-static
     buster-test
     buster-user-agent-parser
     preferences

@@ -7,6 +7,33 @@ Changelog
 Here you find details about what have changed with each release of Buster.JS.
 
 
+v0.5.2
+======
+
+Released 2012-05-02.
+
+Breaking changes
+----------------
+
+No breaking changes in this release.
+
+Additions
+---------
+
+- Allow ``--config/-c`` for ``buster test`` to accept a comma separated list of
+  configuration files. (:issue:`171`)
+
+- Capture browser page displays how many browsers in total are captured.
+
+Bugs
+----
+
+- buster-glob requires a newer glob, which solves a problem with same glob
+  patterns in different working directories.
+
+- Use ``path.join`` for cross-platform paths (only partially solved)
+
+
 v0.5.1
 ======
 
@@ -247,9 +274,9 @@ Changes
 - :ref:`Capture server <buster-capture-server>`: significant refactor.
   "Clients" are now "slaves" and several URLs have changed.
 
-- Configuration file can now load :doc:`extensions`.  A few are already
-  availble, and others, like buster-amd (:issue:`15`) and coverage is right
-  around the corner.
+- Configuration file can now load :doc:`extensions <extensions/index>`.  A few
+  are already availble, and others, like buster-amd (:issue:`15`) and coverage
+  is right around the corner.
 
 - buster-promise is now deprecated and will not receive further updates. We
   recommend the wonderful `when.js <https://github.com/cujojs/when>`_
