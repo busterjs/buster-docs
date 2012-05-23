@@ -35,6 +35,9 @@ Experimental features
 There are also a couple of other ways you can run your browser tests with 
 Buster.JS. These features are experimental, but should work fine:
 
-* :doc:`Buster Static <experimental/buster-static>`
-* :doc:`HTML Scaffolding <experimental/html-scaffold>`
-* :doc:`Running headless with PhantomJS <experimental/phantom>` (**Not landed in Beta**)
+.. toctree::
+    :maxdepth: 1
+
+    experimental/buster-static
+    experimental/html-scaffold
+    experimental/phantom
