@@ -477,7 +477,7 @@ If you don't quote the operand, it will be treated as a series of OR'd filters.
 
 To run a single file, do this::
 
-    buster test --file test/mytest.js
+    buster test --tests test/mytest.js
 
 This assumes the presence of a config file, and just like plain ``buster
 test`` it tries to find a config file automatically, if you don't specify
