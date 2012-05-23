@@ -1,3 +1,5 @@
+.. _buster-resources:
+
 ================
 buster-resources
 ================

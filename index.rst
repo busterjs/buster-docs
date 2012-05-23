@@ -68,21 +68,27 @@ These are articles, howtos, and guides to help get started with Buster.JS.
     browser-testing
 
 
-Module reference
-================
+API reference
+=============
 
-These are guides and API documentation for the individual Buster.JS modules.
+These are guides and API documentation for the individual Buster.JS core
+modules and extensions.
 
 .. toctree::
     :maxdepth: 2
 
     modules/index
+    extensions/index
 
 
 Project resources
 =================
 
+Here you can find out more about the Buster.JS project, changelogs, how to
+contribute, etc.
+
 .. toctree::
     :maxdepth: 2
 
     community
+    changelog
