@@ -136,11 +136,11 @@ Run tests
 =========
 
 Node.js tests
-----------
+-------------
 
-Node.js tests can be run by simply typing ``node test/some-test.js``.  Doing this
-requires nothing more than a file with tests (i.e. you don't need the above
-configuration).
+Node.js tests can be run by simply typing ``node test/some-test.js``.  Doing
+this requires nothing more than a file with tests (i.e. you don't need the
+above configuration).
 
 While ``node test/my-test.js`` is nice and convenient, you want to use the
 ``buster-test`` binary to get at the full power of Buster.JS. Open a terminal,
