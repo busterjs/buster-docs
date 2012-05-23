@@ -59,8 +59,9 @@ Contents
 ========
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   overview
-   getting-started
-   community
+    overview
+    getting-started
+    browser-testing
+    community
