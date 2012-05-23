@@ -68,8 +68,8 @@ These are articles, howtos, and guides to help get started with Buster.JS.
     browser-testing
 
 
-API reference
-=============
+Reference documentation
+=======================
 
 These are guides and API documentation for the individual Buster.JS core
 modules and extensions.
