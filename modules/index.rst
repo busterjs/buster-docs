@@ -1,6 +1,6 @@
-================
-Module reference
-================
+============
+Core modules
+============
 
 .. toctree::
     :maxdepth: 2
