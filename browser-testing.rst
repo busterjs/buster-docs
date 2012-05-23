@@ -37,10 +37,4 @@ Buster.JS. These features are experimental, but should work fine:
 
 * :doc:`Buster Static <experimental/buster-static>`
 * :doc:`HTML Scaffolding <experimental/html-scaffold>`
-
-Running headless with PhantomJS
-===============================
-
-.. warning::
-
-    This feature has not yet landed in the beta.
+* :doc:`Running headless with PhantomJS <experimental/phantom>` (**Not landed in Beta**)
