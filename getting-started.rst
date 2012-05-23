@@ -1,7 +1,7 @@
 .. highlight:: javascript
 
 ===============
-Getting Started
+Getting started
 ===============
 
 This guide walks you through installation and very basic setup of tests in a
@@ -75,7 +75,7 @@ For browser tests, list all your source files in ``sources`` and test files in
 ``tests``. For Node.js tests, you don't need to specify ``sources`` as you
 typically ``require`` your source files directly in the test files.
 
-Read the full :doc:`configuration <buster-configuration>` documentation for
+Read the full :ref:`configuration <buster-configuration>` documentation for
 details.
 
 Note that you may not "dot out" in ``sources``, ``tests``, etc. Paths are
@@ -128,8 +128,8 @@ If your test is a Node.js test, you also need to require Buster.JS::
     });
 
 See the full :doc:`buster.testCase <test/test-case>` docs and
-:ref:`buster-assertions <assertions>` docs for details. There are also mocks
-and stubs and more, via the :ref:`sinon-buster <sinon>` module.
+:ref:`buster-assertions` docs for details. There are also mocks and stubs and
+more, via the :ref:`sinon-buster` module.
 
 
 Run tests
@@ -145,7 +145,7 @@ above configuration).
 While ``node test/my-test.js`` is nice and convenient, you want to use the
 ``buster-test`` binary to get at the full power of Buster.JS. Open a terminal,
 ``cd`` to your project, and type in ``buster test``.  Here's the output from
-the test run of :doc:`buster-args <args>`:
+the test run of :ref:`buster-args`:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633

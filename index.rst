@@ -64,4 +64,5 @@ Contents
     overview
     getting-started
     browser-testing
+    modules/index
     community

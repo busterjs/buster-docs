@@ -155,8 +155,8 @@ test output for :ref:`buster-args`:
 Assertions
 ==========
 
-Buster.JS comes :ref:`packed with assertions <assertions>`, and a simple DSL to
-add app-specific custom assertions::
+Buster.JS comes :ref:`packed with assertions <buster-assertions>`, and a simple
+DSL to add app-specific custom assertions::
 
     assert(true);
     assert.same(two, objects);
