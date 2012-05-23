@@ -189,3 +189,9 @@ div.warning p.admonition-title {
     background-color: #B04040;
     border-bottom: 1px solid #900000;
 }
+
+/* Images */
+.body img {
+    border: 2px solid #bbb;
+    margin-bottom: 10px;
+}
