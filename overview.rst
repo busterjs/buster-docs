@@ -166,8 +166,8 @@ DSL to add app-specific custom assertions::
     assert.isNull();
     // .. and many more
 
-Note the lack of <code>assert.notEquals</code>, <code>assert.notDefined</code>
-etc. Instead, Buster.JS provides a more symmetric API::
+Note the lack of ``assert.notEquals``, ``assert.notDefined`` etc. Instead,
+Buster.JS provides a more symmetric API::
 
     // This assertion does not exist!
     assert.notEquals(foo, bar);
