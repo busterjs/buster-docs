@@ -12,7 +12,7 @@ page, see :doc:`the browser testing <browser-testing>` page.
 Installing
 ==========
 
-Buster.JS on the command-line requires Node.js 0.6.3 or newer and npm. Node
+Buster.JS on the command-line requires Node.js 0.6.3 or newer and npm. Node.js
 0.6.3 and newer comes with npm bundled on most platforms.
 
 
@@ -48,7 +48,7 @@ Create config file
 ==================
 
 Add a config file to your project. Call it ``test/buster.js``
-or ``spec/buster.js``. This way you don't have to tell Buster about it
+or ``spec/buster.js``. This way you don't have to tell Buster.JS about it
 with ``--config`` every time you run tests. ``./buster.js`` will
 also be recognized.
 
@@ -72,7 +72,7 @@ also be recognized.
 
 
 For browser tests, list all your source files in ``sources`` and test files in
-``tests``. For Node tests, you don't need to specify ``sources`` as you
+``tests``. For Node.js tests, you don't need to specify ``sources`` as you
 typically ``require`` your source files directly in the test files.
 
 Read the full :doc:`configuration <buster-configuration>` documentation for
@@ -115,9 +115,9 @@ The BDD inclined might prefer this alternate syntax::
         });
     });
 
-If your test is a Node test, you also need to require Buster.JS::
+If your test is a Node.js test, you also need to require Buster.JS::
 
-    // Node tests
+    // Node.js tests
     var buster = require("buster");
     var myLib = require("../lib/my-lib");
 
@@ -135,15 +135,15 @@ and stubs and more, via the :ref:`sinon-buster <sinon>` module.
 Run tests
 =========
 
-Node tests
+Node.js tests
 ----------
 
-Node tests can be run by simply typing ``node test/some-test.js``.  Doing this
+Node.js tests can be run by simply typing ``node test/some-test.js``.  Doing this
 requires nothing more than a file with tests (i.e. you don't need the above
 configuration).
 
 While ``node test/my-test.js`` is nice and convenient, you want to use the
-``buster-test`` binary to get at the full power of Buster. Open a terminal,
+``buster-test`` binary to get at the full power of Buster.JS. Open a terminal,
 ``cd`` to your project, and type in ``buster test``.  Here's the output from
 the test run of :doc:`buster-args <args>`:
 
@@ -151,7 +151,7 @@ the test run of :doc:`buster-args <args>`:
     :width: 633
     :height: 382
 
-See the :doc:`Node testing <node-testing>` documentation for more.
+See the :doc:`Node.js testing <node-testing>` documentation for more.
 
 
 Browser tests
@@ -182,16 +182,16 @@ See the :doc:`browser testing <browser-testing>` documentation for more.
 Hybrid tests
 ------------
 
-If your project has both Node and browser tests, and your config file specifies
+If your project has both Node.js and browser tests, and your config file specifies
 multiple groups for the different environments, running ``buster test`` will
-automatically run all the groups, both Node and browser. This requires that you
+automatically run all the groups, both Node.js and browser. This requires that you
 already have a ``buster server`` up and running.
 
 If you only want to run tests for one environment, use
 ``buster test --environment browser`` or ``buster test -e node``.
 
 You have to manually make sure your test cases and source files are able to run
-in both browsers and Node. Here's an example::
+in both browsers and Node.js. Here's an example::
 
     if (typeof require != "undefined") {
         var buster = require("buster");

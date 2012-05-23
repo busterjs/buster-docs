@@ -10,7 +10,7 @@ Buster.JS is a JavaScript test framework for node and browsers.
 Installation
 ============
 
-See :ref:`getting started <getting-started>`.
+See :doc:`getting started <getting-started>`.
 
 
 The config file
@@ -113,7 +113,7 @@ Buster.JS automatically runs the tests in all the captured browsers.
 Static HTML based browser testing
 =================================
 
-Buster also has a static browser runner that runs tests by opening a web page
+Buster.JS also has a static browser runner that runs tests by opening a web page
 in a browser. This is similar to QUnit, Mocha, etc.
 
 .. image:: _static/overview/buster-static-start.png

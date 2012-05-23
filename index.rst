@@ -23,7 +23,7 @@ and much more. Again, :doc:`the overview <overview>` lists many of these
 things.
 
 **Written by you.** We believe in open development, and already
-have a dozen or so contributors beyond the core authors of Buster, August
+have a dozen or so contributors beyond the core authors of Buster.JS, August
 Lilleaas and Christian Johansen. All development happens in public in the
 `issue tracker <https://github.com/busterjs/buster/issues>`_ and the
 `busterjs-dev mailing list <http://groups.google.com/group/busterjs-dev>`_. We
@@ -32,7 +32,7 @@ welcome your opinion.
 **A set of reusable libraries.** For example, buster-capture-server is our
 generic browser automation library that lets you successively load webpages
 into browsers and send data to and from them. It is completely reusable and has
-no knowledge of Buster tests, or tests at all for that matter.
+no knowledge of Buster.JS tests, or tests at all for that matter.
 
 **The future.** We have big plans for buster in the months and years to come. For
 example, we'll add the ability to run your browser tests directly on
