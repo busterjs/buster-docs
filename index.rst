@@ -55,8 +55,10 @@ Here's a talk about Buster.JS by Christian Johansen.
     width="700" height="394" scrolling="no" frameborder="0"></iframe>
 
 
-Contents
-========
+User's guide
+============
+
+These are articles, howtos, and guides to help get started with Buster.JS.
 
 .. toctree::
     :maxdepth: 2
@@ -64,5 +66,23 @@ Contents
     overview
     getting-started
     browser-testing
+
+
+Module reference
+================
+
+These are guides and API documentation for the individual Buster.JS modules.
+
+.. toctree::
+    :maxdepth: 2
+
     modules/index
+
+
+Project resources
+=================
+
+.. toctree::
+    :maxdepth: 2
+
     community
