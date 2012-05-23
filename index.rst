@@ -66,6 +66,10 @@ These are articles, howtos, and guides to help get started with Buster.JS.
     overview
     getting-started
     browser-testing
+    node-testing
+    hybrid-testing
+    testcase
+    academy
 
 
 Reference documentation

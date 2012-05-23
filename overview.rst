@@ -656,7 +656,7 @@ Buster.JS when to start running tests.
 Add ``{ autoRun: false }`` to your config file and call ``buster.run()`` to
 start the test run. That gives you full control over when the test run starts.
 
-See the :ref:`full documentation here <starting-testrun-manually>`.
+See the :ref:`full documentation here <buster-amd>`.
 
 
 Global variables
@@ -699,4 +699,4 @@ Buster.JS Academy
 =================
 
 Short, to-the-point screencasts about Buster.JS and unit testing in JavaScript.
-:ref:`Watch <academy>`.
+:doc:`Watch <academy>`.
