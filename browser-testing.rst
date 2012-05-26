@@ -29,15 +29,69 @@ browsers easy and painless. Hell, it even makes it fun.
     :height: 382
 
 
-Experimental features
-=====================
+Running with ``buster static``
+==============================
 
-There are also a couple of other ways you can run your browser tests with
-Buster.JS. These features are experimental, but should work fine:
+.. warning::
 
-.. toctree::
-    :maxdepth: 1
+    This is still an experimental feature, but should work fine.
 
-    experimental/buster-static
-    experimental/html-scaffold
-    experimental/phantom
+In the cases where you need a simpler method for running tests, but don't care
+for the manual HTML scaffold (see next section), Buster.JS can serve the
+scaffold for your based on your configuration.
+
+.. image:: /_static/overview/buster-static-start.png
+    :width: 529
+    :height: 348
+
+.. image:: /_static/overview/buster-static-success.png
+    :width: 514
+    :height: 470
+
+
+Using an HTML scaffold
+======================
+
+.. warning::
+
+    This is still an experimental feature, but should work fine.
+
+The simplest way to try Buster is to copy the following code, save it to a
+file and run it in a browser:
+
+.. code-block:: html
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+               "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+      <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>strftime</title>
+      </head>
+      <body>
+        <script type="text/javascript" src="http://busterjs.org/releases/latest/buster-test.js"></script>
+        <script type="text/javascript" src="http://busterjs.org/examples/strftime/strftime.js"></script>
+        <script type="text/javascript" src="http://busterjs.org/examples/strftime/strftime-test.js"></script>
+      </body>
+    </html>
+
+Go ahead, `try it <examples/strftime/>`_.
+
+If you use Git, you can clone `this example <https://gist.github.com/1904218>`_
+to your machine::
+
+    git clone git://gist.github.com/1904218.git gist-1904218
+
+.. note::
+
+    If you opt for :doc:`downloading <download>` the script locally, remember
+    to get the CSS filetoo. When using the pre-built library, there's no
+    installation, but you also miss out on much of the automation sweetness.
+
+
+Running headless with PhantomJS
+===============================
+
+.. warning::
+
+    This feature has not yet landed in the beta.
