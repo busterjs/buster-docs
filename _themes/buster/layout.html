@@ -15,6 +15,15 @@
 
 {%- block footer %}
 <div class="footerwrapper">
-  {{ super() }}
+  <div class="footer">
+    &copy; Copyright {{ copyright }}.
+    Buster.JS uses <a href="http://semver.org/">semantic versioning</a>.
+    Code released under the
+    <a href="http://www.opensource.org/licenses/bsd-license.php">
+    BSD license</a>.
+    Documentation released under
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+    CC Attribution-Share Alike</a>.
+  </div>
 </div>
 {% endblock %}
