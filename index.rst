@@ -55,7 +55,7 @@ These are articles, howtos, and guides to help get started with Buster.JS.
 .. toctree::
     :maxdepth: 2
 
-    videos
+    talks
     overview
     getting-started
     browser-testing
