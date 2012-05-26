@@ -160,8 +160,8 @@ h3:hover .headerlink {
 .highlight {
     background: #eee !important;
     border: 1px solid #ddd;
-    border-radius: 3px;
-    font-size: 14px;
+    border-left: 8px solid #ddd;
+    font-size: 12px;
     padding: 0 15px;
 }
 .literal {
