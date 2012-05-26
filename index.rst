@@ -47,14 +47,6 @@ all the captured browsers when a test fails, and much much more.
 Be warned, it's still in beta, so it has some rough edges.
 
 
-Here's a talk about Buster.JS by Christian Johansen.
-
-.. raw:: html
-
-    <iframe src="http://www.ustream.tv/embed/recorded/17159711"
-    width="700" height="394" scrolling="no" frameborder="0"></iframe>
-
-
 User's guide
 ============
 
@@ -63,13 +55,13 @@ These are articles, howtos, and guides to help get started with Buster.JS.
 .. toctree::
     :maxdepth: 2
 
+    videos
     overview
     getting-started
     browser-testing
     node-testing
     hybrid-testing
     testcase
-    academy
 
 
 Reference documentation
