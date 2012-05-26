@@ -699,4 +699,4 @@ Buster.JS Academy
 =================
 
 Short, to-the-point screencasts about Buster.JS and unit testing in JavaScript.
-:doc:`Watch <academy>`.
+:doc:`Watch <talks>`.
