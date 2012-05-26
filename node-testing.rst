@@ -4,7 +4,7 @@
 Node.JS testing
 ===============
 
-.. note::
+.. warning::
 
     This document is work in progress.
 
