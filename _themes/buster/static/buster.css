@@ -70,7 +70,7 @@ a.headerlink:hover {
     padding: 10px;
     width: 960px;
 }
-.beta-banner {
+.header .beta-banner {
     background: url('beta-banner.png');
 
     position: absolute;
@@ -78,6 +78,27 @@ a.headerlink:hover {
     top: 0;
     height: 68px;
     width: 68px;
+}
+.header .menu {
+    float: right;
+    list-style: none;
+    margin: 0;
+    margin-top: 45px;
+    padding: 0;
+}
+.header .menu li {
+    float: left;
+    margin-left: 30px;
+}
+.header .menu a {
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.header .menu a:hover {
+    color: #e6e6e6;
 }
 
 /* Breadcrumbs bar */
