@@ -17,29 +17,43 @@ For :doc:`simple browser tests <browser-testing>`, you can use the pre-built
 script (and CSS):
 
 - **Latest** (URL always points to most recent release):
-  `buster-test.js <http://busterjs.org/releases/latest/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/latest/buster-test.css>`_
+  `buster-test.js (latest)
+  <http://busterjs.org/releases/latest/buster-test.js>`_,
+  `buster-test.css (latest)
+  <http://busterjs.org/releases/latest/buster-test.css>`_
 
 - **0.5.3** (2012-05-04):
-  `buster-test.js <http://busterjs.org/releases/0.5.3/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.5.3/buster-test.css>`_
+  `buster-test.js (0.5.3)
+  <http://busterjs.org/releases/0.5.3/buster-test.js>`_,
+  `buster-test.css (0.5.3)
+  <http://busterjs.org/releases/0.5.3/buster-test.css>`_
 
 - **0.5.2** (2012-05-02):
-  `buster-test.js <http://busterjs.org/releases/0.5.2/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.5.2/buster-test.css>`_
+  `buster-test.js (0.5.2)
+  <http://busterjs.org/releases/0.5.2/buster-test.js>`_,
+  `buster-test.css (0.5.2)
+  <http://busterjs.org/releases/0.5.2/buster-test.css>`_
 
 - **0.5.1** (2012-04-25):
-  `buster-test.js <http://busterjs.org/releases/0.5.1/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.5.1/buster-test.css>`_
+  `buster-test.js (0.5.1)
+  <http://busterjs.org/releases/0.5.1/buster-test.js>`_,
+  `buster-test.css (0.5.1)
+  <http://busterjs.org/releases/0.5.1/buster-test.css>`_
 
 - **0.5.0** (2012-04-17):
-  `buster-test.js <http://busterjs.org/releases/0.5.0/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.5.0/buster-test.css>`_
+  `buster-test.js (0.5.0)
+  <http://busterjs.org/releases/0.5.0/buster-test.js>`_,
+  `buster-test.css (0.5.0)
+  <http://busterjs.org/releases/0.5.0/buster-test.css>`_
 
 - **0.4.6**:
-  `buster-test.js <http://busterjs.org/releases/0.4.6/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.4.6/buster-test.css>`_
+  `buster-test.js (0.4.6)
+  <http://busterjs.org/releases/0.4.6/buster-test.js>`_,
+  `buster-test.css (0.4.6)
+  <http://busterjs.org/releases/0.4.6/buster-test.css>`_
 
 - **0.4.5**:
-  `buster-test.js <http://busterjs.org/releases/0.4.5/buster-test.js>`_,
-  `buster-test.css <http://busterjs.org/releases/0.4.5/buster-test.css>`_
+  `buster-test.js (0.4.5)
+  <http://busterjs.org/releases/0.4.5/buster-test.js>`_,
+  `buster-test.css (0.4.5)
+  <http://busterjs.org/releases/0.4.5/buster-test.css>`_
