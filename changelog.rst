@@ -7,6 +7,27 @@ Changelog
 Here you find details about what have changed with each release of Buster.JS.
 
 
+v0.5.3
+======
+
+Released 2012-05-04.
+
+Breaking changes
+----------------
+
+- *TODO Fill out*
+
+Additions
+---------
+
+- *TODO Fill out*
+
+Bugs
+----
+
+- *TODO Fill out*
+
+
 v0.5.2
 ======
 
