@@ -87,4 +87,5 @@ contribute, etc.
     :maxdepth: 2
 
     community
+    download
     changelog
