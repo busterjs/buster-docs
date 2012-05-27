@@ -216,3 +216,6 @@ div.warning p.admonition-title {
     border: 2px solid #bbb;
     margin-bottom: 10px;
 }
+.travis img {
+    border: 0;
+}
