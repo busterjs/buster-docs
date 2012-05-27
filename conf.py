@@ -242,4 +242,7 @@ texinfo_documents = [
 #texinfo_show_urls = 'footnote'
 
 
-extlinks = {'issue': ('https://github.com/busterjs/buster/issues/%s', '#')}
+extlinks = {
+    'issue': ('https://github.com/busterjs/buster/issues/%s', '#'),
+    'repo': ('https://github.com/busterjs/%s', ''),
+}
