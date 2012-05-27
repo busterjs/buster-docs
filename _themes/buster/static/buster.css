@@ -70,7 +70,7 @@ a.headerlink:hover {
     padding: 10px;
     width: 960px;
 }
-.header .beta-banner {
+.beta-banner {
     background: url('beta-banner.png');
 
     position: absolute;
