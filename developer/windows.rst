@@ -35,7 +35,7 @@ redis, which needs to be compiled) and jsdom, which depends on Contextify.
 Contextify is possible to set up for Windows with pre-built binaries, but not
 with npm.
 
-The Faye issue is being solved in August's `rewrite of buster-captureps-server
+The Faye issue is being solved in August's `rewrite of buster-capture-server
 <https://github.com/busterjs/buster-capture-server/tree/0.5.0>`_, which depends
 on Faye 0.8, which does not have the redis dependency.
 

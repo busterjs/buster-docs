@@ -1,3 +1,5 @@
+.. highlight:: text
+
 ====================================
 Setting up a development environment
 ====================================
