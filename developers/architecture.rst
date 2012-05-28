@@ -300,7 +300,13 @@ we can get rid of this one day.
 
 buster-evented-logger
 ---------------------
- 
+
+Status:
+    Stable
+
+Source code:
+    :repo:`buster-evented-logger`
+
 Build status:
     .. raw:: html
 
@@ -312,9 +318,6 @@ A logger-like utility that simply emits events. This is useful in any number of
 cases, most importantly when running tests in browsers via
 buster-capture-server. In this case, we pass the events over the wire instead
 of printing them to the console.
-
-- Status: Stable
-- Source code: :repo:`buster-evented-logger`
 
 
 buster-format
