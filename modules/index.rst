@@ -13,9 +13,9 @@ Core modules
     buster-evented-logger
     buster-format
     buster-resources
+    buster-sinon
     buster-server-cli
     buster-static
     buster-test
     buster-user-agent-parser
     preferences
-    sinon-buster
