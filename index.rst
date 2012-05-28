@@ -88,5 +88,5 @@ contribute, etc.
 
     download
     community
-    developer/index
+    developers/index
     changelog
