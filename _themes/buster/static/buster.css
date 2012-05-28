@@ -1,6 +1,9 @@
 @import url("basic.css");
 
 /* Layout */
+html {
+    overflow-y: scroll;
+}
 html,
 body {
     margin: 0;
@@ -70,7 +73,7 @@ a.headerlink:hover {
     padding: 10px;
     width: 960px;
 }
-.header .beta-banner {
+.beta-banner {
     background: url('beta-banner.png');
 
     position: absolute;
@@ -215,4 +218,7 @@ div.warning p.admonition-title {
 .body img {
     border: 2px solid #bbb;
     margin-bottom: 10px;
+}
+.travis img {
+    border: 0;
 }

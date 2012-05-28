@@ -86,6 +86,7 @@ contribute, etc.
 .. toctree::
     :maxdepth: 2
 
-    community
     download
+    community
+    developers/index
     changelog

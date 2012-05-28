@@ -1,7 +1,7 @@
-.. _sinon-buster:
+.. _buster-sinon:
 
 ============
-sinon-buster
+buster-sinon
 ============
 
 **TODO Port from old site**
