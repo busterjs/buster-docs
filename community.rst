@@ -36,7 +36,7 @@ people prefer Twitter, we're listening in on your tweets too though.
 IRC
 ===
 
-Come visit us at `#buster on freenode <irc://irc.freenode.net/buster>`_.
+Come visit us at `#buster.js on freenode <irc://irc.freenode.net/buster.js>`_.
 Activity is spiky so stay around for a few hours if you ask us a question.
 
 
