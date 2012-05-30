@@ -191,7 +191,7 @@ buster-capture-server
 ---------------------
 
 Status:
-    Unstable, currently undergoing API changes</li>
+    Unstable, currently undergoing API changes.
 
 Source code:
     :repo:`buster-capture-server`
@@ -482,7 +482,7 @@ buster-terminal
 ---------------
 
 Status:
-    Stable, mostly complete</li>
+    Stable, mostly complete.
 
 Source code:
     :repo:`buster-terminal`
