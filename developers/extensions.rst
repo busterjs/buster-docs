@@ -5,7 +5,7 @@
 Building Extensions
 ===================
 
-.. warning::
+.. note::
 
     Extension hooks are still in their infancy. If you find it impossible to
     add some desired behavior through an extension,
