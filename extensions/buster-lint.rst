@@ -1,17 +1,74 @@
 .. _buster-lint:
+.. highlight:: javascript
 
 ===========
 buster-lint
 ===========
 
-``buster-lint`` is an extension that enables the integration of
-`JSLint <http://www.jslint.com/>`_ and `JSHint <http://www.jshint.com/>`_ by
-way of `autolint <https://github.com/magnars/autolint>`_. Using the
-``buster-analyzer`` module, the lint extension is able to flag lint errors as
-"error" in buster. This allows the end-user to choose if lint errors should
-only be printed as warnings, or actually fail the build (which can be achieved
-with ``buster test -F error``). Currently developed by
-`Magnar Sveen <https://github.com/magnars/buster-lint>`_.
+Incorporate linting (JsLint or JsHint) in your test runs. Optionally fail test
+runs if lint is found.
 
-* Status: Stable, but relies on buster-analyzer
-* `Source code <https://github.com/magnars/buster-lint>`_.
+Install
+-------
+
+Installation is done using npm: ``npm install buster-lint``.
+
+Usage
+
+Load in your configuration file::
+
+    var config = module.exports;
+
+    config["Browser tests"] = {
+        rootPath: "../",
+        sources: ["src/**/*.js"],
+        tests: ["test/**/*.js"],
+        extensions: [require("buster-lint")]
+    };
+
+Configure
+---------
+
+Configuration options are those supported by the wonderful 
+`autolint <https://github.com/magnars/autolint>`_ tool by Magnar Sveen.
+In fact, if you're already using autolint, you can integrate it with
+Buster.JS by simply requiring your existing configuration (assuming you're not
+still using pre-1.0 json config files)::
+
+    var config = module.exports;
+
+    config["Browser tests"] = {
+        rootPath: "../",
+        sources: ["src/**/*.js"],
+        tests: ["test/**/*.js"],
+        extensions: [require("buster-lint")],
+        "buster-lint": require("./autolint")
+    };
+
+If you don't already have an autolint configuration, here's to get you
+started. All options are documented `in the GitHub repository <https://github.com/magnars/buster-lint>`_.::
+
+    var config = module.exports;
+
+    config["Browser tests"] = {
+        rootPath: "../",
+        sources: ["src/**/*.js"],
+        tests: ["test/**/*.js"],
+        extensions: [require("buster-lint")],
+        "buster-lint": {
+            linterOptions: {
+                node: true
+            },
+
+            excludes: [
+                "jquery",
+                "underscore",
+                "raphael"
+           ]
+        }
+    };
+
+Source
+^^^^^^
+
+`buster-lint on GitHub <https://github.com/magnars/buster-lint>`_

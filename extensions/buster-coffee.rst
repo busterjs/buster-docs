@@ -1,15 +1,33 @@
 .. _buster-coffee:
+.. highlight:: javascript
 
 =============
 buster-coffee
 =============
 
+Automatically compile CoffeeScript files before running tests. In its current
+state, this extension does not work for files that are to be included using
+``require()``, and is thus not very useful for Node.js projects.
 
-``buster-coffee`` is an extension that automatically compile CoffeeScript
-files before running tests. In its current state, this extension does not work
-for files that are to be included using ``require()``, and is thus not very
-useful for Node.js projects. Currently developed by 
-`Stein Magnus Jodal <https://github.com/jodal/buster-coffee>`_.
+Install
+-------
+Installation is done using npm: ``npm install buster-coffee``
 
-* Status: Stable, but future changes may be required to support Node.js and ``require()``
-* `Source code <https://github.com/jodal/buster-coffee>`_
+Usage
+-----
+
+Load in your configuration file::
+
+    var config = module.exports;
+
+    config["Browser tests"] = {
+        rootPath: "../",
+        sources: ["src/**/*.coffee"],
+        tests: ["test/**/*.coffee"],
+        extensions: [require("buster-coffee")]
+    };
+
+Source
+^^^^^^
+
+`buster-coffee on GitHub <https://github.com/jodal/buster-coffee>`_

@@ -4,12 +4,12 @@
 buster-syntax
 =============
 
-``buster-syntax`` is a small extension that provides server-side syntax
-checking of scripts sent for testing with buster-capture-server. When
-Buster.JS loads scripts in browsers, the browser in question will be the one
-responsible for the level of detail when errors arise, Syntax checking on the
-server allows us to catch these errors in one place, and produce a pretty nice
-report, regardless of browser intended to run the tests.
+This extension is unique in that it is bundled by default when you run tests
+in browsers. It verifies that all files are syntactically correct before
+sending them to the server for execution. This ensures good error messages and
+reduces browser hangs (especially in older less stable browsers).
 
-* Status: Stable, but integrates with ``buster-analyzer``
-* `Source code <https://github.com/busterjs/buster-analyzer>`_
+Source
+^^^^^^
+
+`buster-syntax on GitHub <https://github.com/busterjs/buster-syntax>`_
