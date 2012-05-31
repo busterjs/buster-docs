@@ -1,3 +1,4 @@
+.. _browser-testing:
 .. highlight:: html
 
 ===============
@@ -56,7 +57,7 @@ Using an HTML scaffold
 
     This is still an experimental feature, but should work fine.
 
-The simplest way to try Buster is to copy the following code, save it to a
+The simplest way to try Buster.JS is to copy the following code, save it to a
 file and run it in a browser:
 
 .. code-block:: html

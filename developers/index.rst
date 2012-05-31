@@ -10,4 +10,5 @@ This page contains useful information for Buster.JS developers/contributors.
     environment
     guidelines
     architecture
+    extensions
     windows

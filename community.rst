@@ -64,6 +64,7 @@ following people have commits in one or several Buster.JS repositories:
 - Fabian Vogler
 - Fábio M. Costa
 - Felix Geisendörfer
+- Jesper Haug Karsrud
 - Joakim Ohlrogge
 - Magnar Sveen
 - Malcolm Locke
