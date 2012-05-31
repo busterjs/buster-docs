@@ -9,12 +9,14 @@ Use an AMD loader to test asynchronous modules. You must provide your own
 loader. By default, a loader that provides ``require(deps, callback)``
 is assumed. This will eventually be pluggable.
 
+
 Install
 =======
 
-Installation is done using npm:: 
+Installation is done using npm::
 
     npm install buster-amd
+
 
 Usage
 =====
@@ -38,6 +40,7 @@ Your tests will drive the show. To run tests with the AMD extension, your
 tests should be wrapped in a call to ``define``, which pulls in
 dependencies (i.e. your modules) and in the callback defines specs/test cases
 as usual.
+
 
 Configure
 =========
@@ -64,7 +67,8 @@ slash and file suffix. Use this option to e.g. use AMD loader plugins.
         }
     };
 
-Source
-------
+
+Source code
+===========
 
 `buster-amd on GitHub <https://github.com/johlrogge/buster-amd>`_
