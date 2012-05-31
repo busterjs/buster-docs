@@ -83,7 +83,7 @@ Highlights
 * **New documentation site**.
   Work is being put into a new documentation site based on Sphinx. There are
   plans for API docs to be extracted from module Readme's and source code.
-  The site is proposed to launch with Buster 0.7.
+  The site is proposed to launch with Buster.JS 0.7.
 * **buster-assertions 1.0**. 
   There's currently a pending change
   for ``assert.exception``. Additionally, buster-assertions' equals
@@ -115,6 +115,6 @@ not be included with 1.0, but installable as an add-on.
 Buster.JS 1.1
 =============
 
-A revamped ``buster-static`` that can do both Node and Browser tests
+A revamped ``buster-static`` that can do both Node.js and browser tests
 from within the browser is included in the default installation. Installers
-for OSX and Windows.
+for OS X and Windows.
