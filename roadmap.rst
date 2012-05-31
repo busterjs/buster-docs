@@ -116,5 +116,11 @@ Buster.JS 1.1
 =============
 
 A revamped ``buster-static`` that can do both Node.js and browser tests
-from within the browser is included in the default installation. Installers
-for OS X and Windows.
+from within the browser is included in the default installation. 
+
+Installers for OS X and Windows.
+
+``buster-ci`` a new binary that can automate everything - start
+server, capture browsers, run tests, wind down. Headless testing.
+See `this thread <http://groups.google.com/group/busterjs-dev/browse_thread/thread/db3e456278b85590>`_
+for the current draft, and pitch in your own ideas/requirements.
