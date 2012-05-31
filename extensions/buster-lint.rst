@@ -9,11 +9,14 @@ Incorporate linting (JsLint or JsHint) in your test runs. Optionally fail test
 runs if lint is found.
 
 Install
--------
+=======
 
-Installation is done using npm: ``npm install buster-lint``.
+Installation is done using npm::
+
+    npm install buster-lint
 
 Usage
+=====
 
 Load in your configuration file::
 
@@ -27,7 +30,7 @@ Load in your configuration file::
     };
 
 Configure
----------
+=========
 
 Configuration options are those supported by the wonderful 
 `autolint <https://github.com/magnars/autolint>`_ tool by Magnar Sveen.
@@ -69,6 +72,6 @@ started. All options are documented `in the GitHub repository <https://github.co
     };
 
 Source
-^^^^^^
+------
 
 `buster-lint on GitHub <https://github.com/magnars/buster-lint>`_

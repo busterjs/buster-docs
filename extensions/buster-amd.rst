@@ -10,12 +10,14 @@ loader. By default, a loader that provides ``require(deps, callback)``
 is assumed. This will eventually be pluggable.
 
 Install
--------
+=======
 
-Installation is done using npm: ``npm install buster-amd``.
+Installation is done using npm:: 
+
+    npm install buster-amd
 
 Usage
------
+=====
 
 Load in your configuration file::
 
@@ -38,13 +40,15 @@ dependencies (i.e. your modules) and in the callback defines specs/test cases
 as usual.
 
 Configure
----------
+=========
 
 The AMD extension has one configuration option: a path mapper. The path mapper
 is an optional function that translate Buster.JS paths (which are absolute,
 e.g. ``/test/my-test.js``) to AMD friendly module IDs. The default
 mapper converts ``/test/my-test.js`` to ``test/my-test``, i.e. strips leading
-slash and file suffix. Use this option to e.g. use AMD loader plugins.::
+slash and file suffix. Use this option to e.g. use AMD loader plugins.
+
+::
 
     var config = module.exports;
 
@@ -61,6 +65,6 @@ slash and file suffix. Use this option to e.g. use AMD loader plugins.::
     };
 
 Source
-^^^^^^
+------
 
 `buster-amd on GitHub <https://github.com/johlrogge/buster-amd>`_

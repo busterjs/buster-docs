@@ -10,6 +10,6 @@ sending them to the server for execution. This ensures good error messages and
 reduces browser hangs (especially in older less stable browsers).
 
 Source
-^^^^^^
+------
 
 `buster-syntax on GitHub <https://github.com/busterjs/buster-syntax>`_

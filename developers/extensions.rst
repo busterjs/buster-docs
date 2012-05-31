@@ -1,4 +1,4 @@
-.. extensions:
+.. _extensions:
 .. highlight:: javascript
 
 ===================
@@ -22,7 +22,7 @@ or more methods that implement an extension hook. The number of hooks is
 expected to increase in the near future.
 
 Create: ``var instance = ext.create([options]);``
------------------------------------------
+=================================================
 
 If provided, the ``create`` method is called with any custom
 configuration for the extension. Custom configuration is any value assigned to
@@ -42,7 +42,7 @@ The ``create`` method is not required. If it's not provided, the
 extension will not receive its custom configuration.
 
 Hook: ``configure``
--------------------
+===================
 
 The ``configure`` hook allows extensions to manipulate :ref:`resource-sets`
 assigned to a test run. Resource sets contain all files and other resources
@@ -73,7 +73,7 @@ group::
     };
 
 Hook: ``beforeRun``
--------------------
+===================
 
 The ``beforeRun`` hook is run, after the test run configuration is
 fully loaded, but before the test runner has been initialized. The arguments
@@ -88,13 +88,13 @@ Proper documentation for the analyzer is pending. For now, refer to
 example.
 
 Hook: ``testRun``
------------------
+=================
 
 The ``testRun`` hook is executed right before tests are run. It
 receives one or two arguments, depending on the environment.
 
 Browser environment: ``testRunner``, ``messagingClient``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------
 
 Both arguments are event emitters. The ``testRunn`` is a
 "remoteRunner" (not yet documented). It behaves like a
@@ -115,7 +115,7 @@ information about the browser that sent it::
     }
 
 Node environment: ``testRunner``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 Node tests only receives a single runner argument. It is a plain
 :doc:`test runner </modules/buster-test>`.

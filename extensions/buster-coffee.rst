@@ -10,11 +10,14 @@ state, this extension does not work for files that are to be included using
 ``require()``, and is thus not very useful for Node.js projects.
 
 Install
--------
-Installation is done using npm: ``npm install buster-coffee``
+=======
+
+Installation is done using npm::
+
+    npm install buster-coffee
 
 Usage
------
+=====
 
 Load in your configuration file::
 
@@ -28,6 +31,6 @@ Load in your configuration file::
     };
 
 Source
-^^^^^^
+------
 
 `buster-coffee on GitHub <https://github.com/jodal/buster-coffee>`_

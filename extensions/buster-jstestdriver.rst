@@ -1,4 +1,5 @@
 .. _buster-jstestdriver:
+.. highlight:: javascript
 
 ===================
 buster-jstestdriver
@@ -9,12 +10,15 @@ does not currently support ``:DOC`` style comments or async test
 cases.
 
 Install
--------
+=======
 
-Installation is done using npm: ``npm install buster-jstestdriver``.
+Installation is done using npm::
+
+    npm install buster-jstestdriver
 
 Usage
------
+=====
+
 Load in your configuration file::
 
     var config = module.exports;
@@ -27,6 +31,6 @@ Load in your configuration file::
     };
 
 Source
-^^^^^^
+------
 
 `busrer-jstestdriver on GitHub <https://github.com/busterjs/buster-jstestdriver>`_
