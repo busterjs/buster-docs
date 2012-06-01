@@ -10,7 +10,7 @@ Contact
 
 If you have any questions, you can e-mail August Lilleaas
 (`august@augustl.com <mailto:augustl@augustl.com>`_) and Christian Johansen
-(`christian@cjohansen.no <mailto:christian@cjohansen.com>`_).  We're the hard
+(`christian@cjohansen.no <mailto:christian@cjohansen.com>`_). We're the hard
 working programmers running the Buster.JS project.
 
 
@@ -37,7 +37,9 @@ IRC
 ===
 
 Come visit us at `#buster.js on freenode <irc://irc.freenode.net/buster.js>`_.
-Activity is spiky so stay around for a few hours if you ask us a question.
+Activity is spiky so stay around for a few hours if you ask us a question. The
+channel logs are available at `irclogger.com
+<http://irclogger.com/.buster.js>`_.
 
 
 Mailing list
