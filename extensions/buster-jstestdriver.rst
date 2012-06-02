@@ -1,5 +1,5 @@
-.. _buster-jstestdriver:
 .. highlight:: javascript
+.. _buster-jstestdriver:
 
 ===================
 buster-jstestdriver

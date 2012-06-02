@@ -1,5 +1,5 @@
-.. _buster-lint:
 .. highlight:: javascript
+.. _buster-lint:
 
 ===========
 buster-lint
