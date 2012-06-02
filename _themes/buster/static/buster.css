@@ -144,7 +144,8 @@ div.sphinxsidebar ul ul {
 }
 
 /* Header links */
-.headerlink {
+.headerlink,
+.headerlink:visited {
     color: #ddd;
     display: none;
     padding: 0 4px;
