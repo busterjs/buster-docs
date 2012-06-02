@@ -129,7 +129,7 @@ If your test is a Node.js test, you also need to require Buster.JS::
 
 See the full :doc:`buster.testCase <testcase>` docs and
 :ref:`buster-assertions` docs for details. There are also mocks and stubs and
-more, via the :ref:`sinon-buster` module.
+more, via the :ref:`buster-sinon` module.
 
 
 Run tests

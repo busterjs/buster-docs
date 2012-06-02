@@ -332,7 +332,7 @@ with lots of Sinon.JS-aware assertions.
         }
     });
 
-See full docs at :ref:`sinon-buster`.
+See full docs at :ref:`buster-sinon`.
 
 
 Asynchronous tests
