@@ -88,6 +88,7 @@ contribute, etc.
 
     download
     community
+    contributors
     developers/index
     changelog
     roadmap
