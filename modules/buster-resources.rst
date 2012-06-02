@@ -558,7 +558,7 @@ a call to::
 
     resourceSet.getResource("/foo/test", cb);
 
-will perform a request to *http://example.com/test**.
+will perform a request to ``http://example.com/test``.
 
 
 Combine
