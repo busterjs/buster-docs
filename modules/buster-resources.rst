@@ -561,14 +561,6 @@ a call to::
 
 will perform a request to *http://example.com/test**.
 
-When :func:`resourceSet.get` is used, a plain HTTP request with no special
-request headers are performed.
-
-When :func:`resourceSet.getResourceViaHttp` is used, a mini proxy server will
-perform a HTTP request matching the incoming request.
-
-**TODO: This needs an update. getResourceViaHttp no longer exists.**
-
 
 Combine
 -------
