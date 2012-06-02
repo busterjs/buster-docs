@@ -90,5 +90,6 @@ contribute, etc.
     community
     contributors
     developers/index
-    changelog
     roadmap
+    changelog
+    licenses
