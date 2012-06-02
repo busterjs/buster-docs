@@ -164,11 +164,14 @@ h3:hover .headerlink {
     background: #eee !important;
     border: 1px solid #ddd;
     border-left: 8px solid #ddd;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 15px;
+    margin-bottom: 17px;
 }
 .literal {
     background: #eee;
+    font-size: 14px;
+    padding: 2px 4px;
 }
 
 /* Notes, warnings, etc. */
