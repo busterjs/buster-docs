@@ -250,11 +250,11 @@ JavaScript), and more.
 
         var promise = resourceSet.addResource(resource);
 
-      Adds a resource. The argument can be either a proper
-      :func:`resource` instance, a string (either
-      a file path or a glob, see :func:`resourceSet.addGlobResource`)
-      or an object with properties describing a resource. The method returns a
-      promise that resolves with a single resource.
+    Adds a resource. The argument can be either a proper :func:`resource`
+    instance, a string (either a file path or a glob, see
+    :func:`resourceSet.addGlobResource`) or an object with properties
+    describing a resource. The method returns a promise that resolves with a
+    single resource.
 
 .. function:: resourceSet.addGlobResource(path)
 
