@@ -204,9 +204,8 @@ JavaScript), and more.
         var promise = resourceSet.deserialize(data);
 
     Deserialize a resource set. The ``data`` should be a JavaScript object, the
-    kind that <a href="#resource-set-serialize">``serialize``</a> produces. The
-    method returns a promise that resolves with the fully inflated resource
-    set.
+    kind that :func:`resourceSet.serialize` produces. The method returns a
+    promise that resolves with the fully inflated resource set.
 
     Typically, when receiving resource sets over HTTP, they will be JSON
     encoded, bring it back to life like so::
