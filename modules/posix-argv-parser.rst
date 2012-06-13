@@ -1,7 +1,6 @@
 .. default-domain:: js
 .. highlight:: javascript
 .. _posix-argv-parser:
-.. _puas: http://pubs.opengroup.org/onlinepubs/9699919799/
 
 =================
 posix-argv-parser
@@ -15,10 +14,10 @@ Module:
 
 An command line interface (CLI) argument parser that is:
 
-* `POSIX "Utility Argument Syntax"`__puas compliant
+* `POSIX "Utility Argument Syntax" <http://pubs.opengroup.org/onlinepubs/9699919799/>`_ compliant
 * **Unobtrusive** - Does not mandate flow control, does not print to STDOUT on
   your behalf, and does not magically manage ``--help``
-* ** Ambiguity aware ** - lets you specify how to handle ambiguities such as
+* **Ambiguity aware** - lets you specify how to handle ambiguities such as
   ``-bar``, which can mean both ``-b -a -r`` and ``-b=ar``.
 
 ::
@@ -476,7 +475,7 @@ have a ``description`` property that posix-argv-parser does not care about::
     args.createOption(["--help", "-h"], { description: "Show this text" });
     help.helpText = "Show this text";
 
-    args.handle(process.argv.slice(2), function (errors, options) {
+    args.parse(process.argv.slice(2), function (errors, options) {
         if (errors) { return console.log(errors[0]); }
 
         if (options["-h"].isSet) {
