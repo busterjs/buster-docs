@@ -2,8 +2,8 @@
 Welcome! Buster.JS is...
 ========================
 
-**In beta.** Many things are unstable at this point in time. We aim to release a
-stable 1.0 by end of June 2012.
+**In beta.** Many things are unstable at this point in time. Check out
+:doc:`the roadmap <roadmap>`.
 
 **A browser JavaScript testing toolkit.** It does browser
 testing with browser automation (think JsTestDriver), qunit style static html
