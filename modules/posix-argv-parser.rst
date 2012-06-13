@@ -1,137 +1,156 @@
 .. default-domain:: js
 .. highlight:: javascript
 .. _posix-argv-parser:
+.. _puas: http://pubs.opengroup.org/onlinepubs/9699919799/
 
 =================
 posix-argv-parser
 =================
 
 Version:
-    0.1.0 (2011-05-27)
+    0.1.0 (2011-06-13)
 
 Module:
     ``require("posix-argv-parser");``
 
-An unobtrusive ambiguity aware parser for command line interfaces (CLIs). It's
-**unobtrusive** because it doesn't mandate a specific way of printing error
-messages, help messages and other output, and because it has no control flow
-wrapper DSL. It's **ambiguity aware** because it lets you specify how to handle
-ambiguities such as ``-bar``, which can mean both ``-b -a -r`` and ``-b=ar``.
+An command line interface (CLI) argument parser that is:
+
+* `POSIX "Utility Argument Syntax"`__puas compliant
+* **Unobtrusive** - Does not mandate flow control, does not print to STDOUT on
+  your behalf, and does not magically manage ``--help``
+* ** Ambiguity aware ** - lets you specify how to handle ambiguities such as
+  ``-bar``, which can mean both ``-b -a -r`` and ``-b=ar``.
 
 ::
 
-    var posixArgvParser = Object.create(require("posix-argv-parser"));
+    var pap = require("posix-argv-parser");
+    var args = pap.create();
+    var v = pap.validators;
 
-    var port = posixArgvParser.createOption("-p", "--port");
-    port.hasValue = true; // So that the parser can read -p2345 as -p=2345
-    port.defaultValue = 8282;
-    port.addValidator(posixArgvParser.validators.integer(
-        "Custom message. ${1} has to be a number."));
+    args.createOption(["-p", "--port"], {
+        // All options are optional
 
-    var verbose = posixArgvParser.createOption("-v");
-    verbose.addValidator(function () {
-        if (this.timesSet > 3) {
+        // Implies hasValue: true, which allows parser to read -p2345 as -p=2345
+        defaultValue: 8282,
+
+        // Both built-in and custom validations supported,
+        // synchronous as well as asynchronous (promise based)
+        validators: [v.integer("Custom message. ${1} must be a number.")],
+
+        // Transforms allow you to get more intelligent values
+        // than raw strings back
+        transform: function (value) { return parseInt(value, 10); }
+    });
+
+    args.createOption(["-v"], {
+        validators: [function (opt) {
             // See also asynchronous validators
-            return "-v can only be 3 levels.";
-        }
+            if (opt.timesSet < 1) {
+                throw new Error("Set " + opt.signature + " at least once!");
+            }
+        }]
     });
 
     // Operands are statements without options.
-    // I.e. mything --port=1234 path/to/stuff
-    var rootPath = posixArgvParser.createOperand();
-    rootPath.signature = "Presentation root directory"; // Used in error msgs
-    rootPath.addValidator(posixArgvParser.validators.file()); // Will use default error msg
-    rootPath.addValidator(posixArgvParser.validators.required());
+    // Example: the path in `mything --port=1234 path/to/stuff`
+    args.createOperand("rootPath", {
+        // Used in error msgs
+        signature: "Presentation root directory",
+        // Both will use default error messages
+        validators: [v.file(), v.required()]
+    });
 
-    posixArgvParser.handle(process.argv.slice(2), function (errors) {
-        if (errors) {
-            console.log(errors[0]);
-            return;
-        }
+    posixArgvParser.parse(process.argv.slice(2), function (errors, options) {
+        if (errors) { return console.log(errors[0]); }
 
         // Various useful ways to get the values from the options.
-        verbose.timesSet; // Will be between 0 and 3.
-        port.isSet;
-        port.value;
-        rootPath.value;
+        options["-v"].timesSet;
+        options["--port"].isSet;
+        // Will be a true number thanks to the transform
+        options["--port"].value;
+        options.rootPath.value;
     });
 
 
 Methods
 =======
 
-.. function:: Object.create(module)
+.. function:: posixArgvParser.create()
 
     ::
 
-        var posixArgvParser = Object.create(require("posix-argv-parser"));
+        var args = require("posix-argv-parser").create();
 
-    Creates a new instance of posix-argv-parser.
+    Creates a new instance of posix-argv-parser that holds a collection of
+    options and operands.
 
-.. function:: posixArgvParser.createOption(opt1, [opt2, ...])
+.. function:: args.createOption(flags[, options])
 
     ::
 
-        var opt = posixArgvParser.createOption("opt1", "opt2", "opt3");
+        args.createOption(["-h", "--help"]);
 
     Creates a new ``option``. An option has all the properties of an
     ``argument``, as well as :attr:`option.hasValue` and
-    :attr:`option.timesSet`.
+    :attr:`option.timesSet`. The ``options`` object is optional.
 
-.. function:: posixArgvParser.addShorthand(opt, [argv1, ...])
+.. function:: args.addShorthand(opt, [argv1, ...])
 
     A shorthand is a convenience method for adding options to your CLI that
-    actually sets other options.
+    simply set other options.
 
     ::
 
-        var opt = posixArgvParser.createOption("--environment");
-        opt.hasValue = true;
+        args.createOption("--env", { hasValue: true });
+        args.addShorthand("--dev", ["--env", "dev"]);
+        args.addShorthand("--prod", ["--env", "prod"]);
 
-        posixArgvParser.addShorthand("--development",
-            ["--environment", "development"]);
-        posixArgvParser.addShorthand("--production",
-            ["--environment", "production"]);
+    This makes passing ``--dev`` an equlvalent to passing
+    ``--env dev``.
 
-    This makes passing ``--development`` an equlvalent to passing
-    ``--environment development``.
-
-.. function:: posixArgvParser.createOperand()
+.. function:: args.createOperand([name][, options])
 
     ::
 
-        var opd = posixArgvParser.createOperand();
+        args.createOperand();
 
-    Creates a new operand. An operand has all the properties of an ``argument``.
+    Creates a new operand. An operand has all the properties of an ``argument``,
+    as well as ``greedy: true|false`` - i.e. whether or not it will eat many
+    arguments or just one (defaults to `false`, just one).
+    The name is optional, and should be a string. The name is used to access
+    the value through the ``options`` object passed to the ``parse`` callback.
+    If not provided, it defaults to "OPD" (beware when using more than one
+    operand).
 
-.. function:: posixArgvParser.handle(args, callback)
+.. function:: args.parse(args, callback)
 
     Performs parsing and validation of argv. In Node.JS, make sure to discard
     the first two items of `process.argv
     <http://nodejs.org/api/process.html#process_process_argv>`_, as they
     contain unrelated arguments ("node" and the file name).
 
-    The callback is called with one argument, ``errors``, which is either
-    undefined, or an array of errors and/or validation messages.
+    The callback is called with two arguments, ``errors``, which is either
+    undefined, or an array of errors and/or validation messages, and an
+    ``options`` object, which is used to retrieve data from configured options.
 
     ::
 
-        var posixArgvParser = Object.create(require("posix-argv-parser"));
-        posixArgvParser.handle(process.argv.slice(2), function (errors) {
+        var args = require("posix-argv-parser").create();
+        args.handle(process.argv.slice(2), function (errors, options) {
             if (errors) {
                 // Print an error msg, i.e. console.log(errors[0])
                 return;
             }
-            // Continue with normal operation. I.e. myOpt.hasValue,
-            // myOpt.timesSet, otherOpt.value, etc.
+            // Continue with normal operation. I.e. options["-v"].hasValue,
+            // options["-v"].timesSet, options["-p"].value, etc.
         });
 
 
 Arguments (options and operands)
 ================================
 
-:func:`Options <posixArgvParser.createOption>` and :func:`operands
-<posixArgvParser.createOperand>` are the two types of arguments handled by
+:func:`Options <args.createOption>` and :func:`operands
+<args.createOperand>` are the two types of arguments handled by
 posix-argv-parser, and they share common functionality, listed below this
 introduction.
 
@@ -149,7 +168,7 @@ encountered that didn't exist).
 
 An **operand** is an option-less value, i.e. ``foo`` (with no ``-b`` or
 ``--myopt`` prefixing it). It's commonly used for arguments that always have to
-be passed. Examples of this are ``nano path/to/file.txt``, ``git checkout
+be passed. Examples are ``nano path/to/file.txt``, ``git checkout
 master``, ``rmdir my_dir``, etc. The validators :func:`validators.file`,
 :func:`validators.directory`, and :func:`validators.fileOrDirectory` are very
 useful for operands.
@@ -160,75 +179,54 @@ order, i.e. ``mycommand --port 1234 my/directory`` and ``mycommand my/directory
 
 Multiple operands will be applied in order of creation. I.e. ``mycommand
 something`` with two operands will assign ``"something"`` to the first and
-``undefined`` to the second.
+``undefined`` to the second, unless the first is greedy, in which case it
+will receive all the operand values.
 
 See example usage at the beginning of this document for more information.
 
-.. function:: arg.addValidator(validator)
+When creating options and operands, the following properties can be passed in
+with the "options" object.
 
-    Adds a validator to an argument (option or operand).
+.. attribute:: validators
 
-.. attribute:: arg.isSet
+    An array of validators. A validator is a function that accepts the argument
+    result object as input. See below for a description of argument result objects.
+    To fail validation, the validator can either throw an error, or return a
+    rejecting promise.
 
-    True or false depending on whether or not the argument was present in argv.
+.. attribute:: transform
 
-.. attribute:: arg.value
+    A function that transforms the raw string value provided before assigning it
+    to the ``value`` property of an argument result object. The function receives
+    the string value as input, and should return any value back.
 
-    The value of the argument. Is normally a string, but may be any object
-    since validators can change argument values as they see fit. See
-    :attr:`arg.actualValue`.
+.. attribute:: hasValue
 
-.. attribute:: arg.actualValue
+    If the argument takes a value, set to ``true``. Defaults to ``false`` for
+    options, is always ``true`` for operands (thus it can be omitted).
 
-    Override the value an argument gets from argv. This is probably only useful
-    in validations. The :func:`validator.integer` built in validator uses this
-    to set the value to a number object instead of a string object, for
-    example.
+.. attribute:: defaultValue
 
-.. attribute:: arg.operation
+    The default value to use if the argument was not provided. When ``defaultValue``
+    is provided, ``hasValue`` is implied and can be omitted. The default value
+    should be a string, and will be validated and transformed like actual values.
 
-    ::
-
-        myOpt.operation = function(promise) {
-            // ...
-        };
-
-    Arguments can have an optional operation associated with it. When the
-    argument is present in ``argv``, the handler will be executed before
-    :func:`posixArgvParser.handle` resolves. The operation is handed a promise.
-    Resolving the promise will set the :attr:`value of the argument
-    <arg.value>`.  Rejecting it will make :func:`posixArgvParser.handle` return
-    an error. This is useful because it guarantees that at the time you handle,
-    you know you either have the correct operation value or an error.
-
-    An example where operations are useful is to parse and read a config file
-    on the file system::
-
-        myOpt.operation = function (promise) {
-            fs.readFile(myOpt.value, function (err, data) {
-                if (err) {
-                    promise.reject(err.message);
-                } else {
-                    promise.resolve(JSON.parse(data));
-                }
-            });
-        };
-
-.. attribute:: arg.signature
+.. attribute:: signature
 
     The signature is used to identify options and operands in validation errors.
     Options automatically gets a signature consisting of the option flags assigned
     to it::
 
-        var opt = posixArgvParser.createOption("-v", "--version");
+        var opt = args.createOption(["-v", "--version"]);
         opt.signature; // "-v/--version"
         opt.signature = "-v"; // custom signature
 
     Specifying a signature is more useful for operands, since an operand doesn't
-    have any data that it can use to auto generate a signature::
+    have any data that it can use to auto generate a signature (their default signature
+    is "OPD")::
 
-        var rootDir = posixArgvParser.createOperand();
-        rootDir.signature; // undefined, operands has no default signature
+        var rootDir = args.createOperand();
+        rootDir.signature; // "OPD", as the default name
         rootDir.signature = "Root directory";
 
 
@@ -237,9 +235,35 @@ Options
 
 Options has additional properties that operands doesn't have.
 
-.. attribute:: option.timesSet
+.. attribute:: requiresValue
 
-    The number of times an option has been set. Useful for options like ``-v``
+    Only makes sense if ``hasValue`` is ``true``. When this property is ``false``,
+    an option can both be provided as a flag with no value or as an option with a
+    value.
+
+    A common example of options that work with and without values are help options,
+    that may be provided alone to get general help, e.g. `mything --help`, and with
+    values to get help for specific topics, e.g. `mything --help bisect`.
+
+Argument result
+===============
+
+Argument result objects are produced when calling ``parse`` to parse argv into
+the predefined options and operands. There is one result object per original
+option/operand. These objects have the following properties:
+
+.. attribute:: isSet
+
+    True or false depending on whether or not the argument was present in argv.
+
+.. attribute:: value
+
+    The value of the argument. Is normally a string, but may be any object
+    if the argument had a transform function.
+
+.. attribute:: timesSet
+
+    The number of times an argument was set. Useful for options like ``-v``
     (verbose) which you might want to allow setting multiple times, giving the
     user more and more verbose output from your program::
 
@@ -248,40 +272,14 @@ Options has additional properties that operands doesn't have.
         -v -v -v -v // 4
         -v -vv -vv -vvv // 8
 
-.. attribute:: option.hasValue
-
-    If ``true``, it tells the parser that it should look for a value for this
-    option. An error will be generated if the option is passed without a value.
-    See :attr:`option.acceptsValueAbsence` to change this behaviour.
-
-    The default value is ``false``.
-
-    If ``false``, you'll get ``"unrecognized option 1234"`` for ``--port
-    1234``, since the parser didn't know how to handle "1234".
-
-.. attribute:: option.acceptsValueAbsence
-
-    Allows for passing the option both with and without a value, when
-    :attr:`option.hasValue` is true.
-
-    Useful for cases where you have options that work with and without a value
-    passed to it, such as ``--help`` and ``--help sometopic``.
-
-    Defaults to ``false``.
-
-
 Validators
 ==========
 
-Validators lets you add requirements with associated error messages to options
-and operands. Validators can also mutate the values of options. The
-:func:`validator.integer` validator will for example set the value to a `Number
-<http://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number>`_
-object upon successful validation.
+Validators let you add requirements with associated error messages to options
+and operands.
 
-posix-argv-parser has a number of built-in validators, and an API for adding
-custom validators.
-
+posix-argv-parser has a number of built-in validators, and creating custom ones
+is dead simple, as a validator is just a function.
 
 Built-in validators
 -------------------
@@ -289,6 +287,10 @@ Built-in validators
 The built in validators provides a selection of generic validators. You can
 customize the error messages by passing strings with tokens like ``"${1}"`` in
 them. The number and value maps are documented for each validator.
+
+Validators are functions, yet the built-in validators are used by calling them
+directly with custom error messages. This works because the built-in validators
+all return the actual validation function.
 
 ::
 
@@ -310,8 +312,7 @@ them. The number and value maps are documented for each validator.
 .. function:: validators.integer(errorMessage)
 
     Will fail validation if the option was not an integer, i.e. ``"foo"`` and
-    ``42.5``. Upon successful validation, the value of the option will be
-    overwritten with the Number object for the passed value.
+    ``42.5``.
 
     Custom error message:
 
@@ -324,8 +325,7 @@ them. The number and value maps are documented for each validator.
 .. function:: validators.number(errorMessage)
 
     Will fail validation if the option was not a number, i.e. ``"foo"`` and
-    ``?``. Upon successful validation, the value of the option will be
-    overwritten with the Number object for the passed value.
+    ``?``.
 
     Custom error message:
 
@@ -379,86 +379,111 @@ them. The number and value maps are documented for each validator.
 Custom validators
 -----------------
 
-A validator is a function that returns a string, undefined, or a promise. The
-``this`` scope in the function is the option for which the validator is being
-performed.
+A validator is a function that throws an error or returns a promise. If it does
+not do any of those things, it is immediately considered passed. The function is
+passed an argument result object.
 
 ::
 
-    var opt = posixArgvParser.createOption("-v");
-    opt.addValidator(function () {
-        if (this.value == "can not be this value") {
-            return "This is the error message.";
-        }
+    args.createOption("-v", {
+        validators: [function (opt) {
+            if (opt.value == "can not be this value") {
+                throw new Error("This is the error message.");
+            }
+        }]
     });
 
 Promises are used to facilitate asynchronous validators. Here's an example of a
 validator that checks if a file is larger than 1MB::
 
     var when = require("when");
-    opt.addValidator(function () {
-        var self = this;
-        var deferred = when.defer();
-        fs.stat(this.value, function (err, stat) {
-            if (err) {
-                deferred.resolver.reject("Unknown error: " + err);
-            }
+    args.createOption(["-f"], {
+        validators: [function (opt) {
+            var deferred = when.defer();
+            fs.stat(opt.value, function (err, stat) {
+                if (err) { deferred.reject("Unknown error: " + err); }
 
-            if (stat.size > 1024) {
-                deferred.resolver.reject(self.value + " (" +
-                    self.signature + ") was larger than 1MB");
-            } else {
-                deferred.resolver.resolve();
-            }
-        });
-        return deferred.promise;
+                if (stat.size > 1024) {
+                    deferred.reject(opt.value +
+                        " (" + opt.signature + ") was larger than 1MB");
+                } else {
+                    deferred.resolve();
+                }
+            });
+            return deferred.promise;
+        }]
     });
 
 Given ``--myopt /path/to/file`` and the file is larger than 1MB, you'll get the
 error message ``"/path/to/file (--myopt) was larger than 1MB"``.
 
 Rejecting the promise counts as an error. The first argument should be a
-string, and is the error message.
+string, and is the error message. (TODO: This will likely change to an
+error object with a ``message`` property).
 
+Tranforms
+=========
+
+Transforms can mutate the values of options. A transform is a simple function
+that receives the raw string value as input, and can return whatever it likes.::
+
+    args.createOption(["-p"], {
+        transform: function (value) { return parseInt(value, 10); }
+    });
+
+Types
+=====
+
+Types are predefined "options" objects that you can pass when creating options
+and/or operands. For instance, the "number" type includes the number validator,
+sets ``hasValue`` to ``true``, and includes a transform that converts the raw
+string to an actual number (by way of ``parseFloat``)::
+
+    args.createOption(["-n"], args.types.number());
+
+Note that the type is a function call - it returns the options object. You can
+pass in additional options. The following example piggy-backs the number type
+to create an option that only takes positive numbers::
+
+    args.createOption(["-n"], args.types.number({
+        validators: [function (opt) {
+            if (parseFloat(opt.value) < 0) {
+                throw new Error("Oh noes, negative number!");
+            }
+        }]
+    }));
 
 Providing ``--help``
 ====================
 
 It's not in the nature of posix-argv-parser to automatically handle ``--help``
-for you. It is however very easy to add such an option to your program::
+for you. It is however very easy to add such an option to your program. To help
+you keep all CLI option data in one place, options and operands are allowed to
+have a ``description`` property that posix-argv-parser does not care about::
 
-    var posixArgvParser = Object.create(require("posix-argv-parser"));
-    var options = [];
+    var args = require("posix-argv-parser").create();
 
-    var port = posix-argv-parser.createOption("--port");
-    port.hasValue = true;
-    port.defaultValue = 1234;
-    port.helpText = "The port to start the server on.";
-    options.push(port);
+    args.createOption(["--port"], {
+        defaultValue: 1234
+        description: "The port to start the server on."
+    });
 
-    var verbose = posixArgvParser.createOption("-v");
-    verbose.helpText = "Level of detail in output. " +
-        "Pass multiple times (i.e. -vvv) for more output.";
-    options.push(verbose);
+    args.createOption(["-v"], {
+        description: "Level of detail in output. " +
+            "Pass multiple times (i.e. -vvv) for more output."
+    });
 
-    var help = posixArgvParser.createOption("--help", "-h");
+    args.createOption(["--help", "-h"], { description: "Show this text" });
     help.helpText = "Show this text";
-    options.push(help);
 
-    posixArgvParser.handle(process.argv.slice(2), function (errors) {
-        if (errors) {
-            console.log(errors[0]); return;
-        }
+    args.handle(process.argv.slice(2), function (errors, options) {
+        if (errors) { return console.log(errors[0]); }
 
-        if (help.isSet) {
-            for (var i = 0; i < options.length; i++) {
-                console.log(options[i].signature + ": " + options[i].helpText);
-            }
+        if (options["-h"].isSet) {
+            args.options.forEach(function (opt) {
+                console.log(opt.signature + ": " + opt.description);
+            });
         } else {
             // Proceed with normal program operation
         }
     });
-
-Note that the ``helpText`` property is not built-in posix-argv-parser
-functionality. It's just an arbitrary property on the option object that you
-can use for the purpose of associating a help text with an option.
