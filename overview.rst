@@ -145,7 +145,7 @@ can create a configuration file with ``environment: "node"`` that will run all
 tests in your project.
 
 Use ``buster test`` in a terminal to initiate the test run. Here's the
-test output for :ref:`buster-args`:
+test output for :ref:`posix-argv-parser`:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633

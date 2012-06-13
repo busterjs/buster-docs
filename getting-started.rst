@@ -145,7 +145,7 @@ above configuration).
 While ``node test/my-test.js`` is nice and convenient, you want to use the
 ``buster-test`` binary to get at the full power of Buster.JS. Open a terminal,
 ``cd`` to your project, and type in ``buster test``.  Here's the output from
-the test run of :ref:`buster-args`:
+the test run of :ref:`posix-argv-parser`:
 
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633

@@ -102,28 +102,6 @@ extensions to provide various insight about your code. Examples of practical
 usage includes linting and syntax checking (for browser tests).
 
 
-buster-args
------------
-
-Status:
-    Stable, has a few known (API design) issues waiting to be fixed
-
-Source code:
-    :repo:`buster-args`
-
-Build status:
-    .. raw:: html
-
-        <a href="http://travis-ci.org/busterjs/buster-args" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-args.png">
-        </a>
-
-General purpose command line argument parser. Only parses command line options,
-no printing to the console, no ``--help`` generation, no flow control. Also
-tries as best it can to adhere to UNIX conventions. Fails early (typically when
-using non-existent options ++).
-
-
 buster-assertions
 -----------------
 
@@ -598,6 +576,28 @@ Build status:
 *TODO Write description*
 
 
+posix-argv-parser
+-----------------
+
+Status:
+    Stable, has a few known (API design) issues waiting to be fixed
+
+Source code:
+    :repo:`posix-argv-parser`
+
+Build status:
+    .. raw:: html
+
+        <a href="http://travis-ci.org/busterjs/posix-argv-parser" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/posix-argv-parser.png">
+        </a>
+
+General purpose command line argument parser. Only parses command line options,
+no printing to the console, no ``--help`` generation, no flow control. Also
+tries as best it can to adhere to UNIX conventions. Fails early (typically when
+using non-existent options ++).
+
+
 Auxilliary modules
 ==================
 
@@ -804,7 +804,7 @@ Command line options
 The ``buster-test`` "binary" simply delegates to
 `buster-test-cli/lib/buster-test-cli/cli/test.js`_ which defines the CLI
 interface for running tests. Command line options are handled by
-``buster-args``, and to some extend, ``buster-cli``.
+``posix-argv-parser``, and to some extend, ``buster-cli``.
 
 .. _buster-test-cli/lib/buster-test-cli/cli/test.js: https://github.com/busterjs/buster-test-cli/blob/master/lib/buster-test-cli/cli/test.js
 
@@ -815,7 +815,7 @@ configuration file and coordinates loading it with running.
 
 .. _buster-cli/lib/buster-cli.js: https://github.com/busterjs/buster-cli/blob/master/lib/buster-cli.js
 
-The ``--browser`` option is a buster-args shorthand that expands to
+The ``--browser`` option is a ``posix-argv-parser`` shorthand that expands to
 ``--environment browser``, which is the long form for specifying environment.
 
 

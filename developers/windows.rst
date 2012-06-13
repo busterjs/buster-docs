@@ -13,7 +13,7 @@ Running tests on Windows
 To fix most of these problems, you will need to run buster's tests. Because of
 some these problems, you cannot use the ``buster test`` CLI tool at this point.
 Instead, simply run individual test files with the ``node`` binary, i.e.,
-``node test/buster-args-test.js``.
+``node test/posix-argv-parser-test.js``.
 
 
 Known issues
@@ -54,7 +54,6 @@ these projects, and fix the failing ones.
 In many cases, tests fail because of inappropriate string concatenation when
 dealing with paths (see the next section).
 
-- :repo:`buster-args`: 1 failing test, also fails on Linux...
 - :repo:`buster-bayeux-emitter`: Tests depend on Faye, so will not run.
 - :repo:`buster-capture-server`: August is on the case
 - :repo:`buster-cli`: 3 errors, hangs
@@ -69,6 +68,7 @@ dealing with paths (see the next section).
 - :repo:`buster-syntax`: A few failing tests, due to missing jsdom dependency.
   Actually OK
 - :repo:`buster-test-cli`: Some failing tests, possibly path related
+- :repo:`posix-argv-parser`: 1 failing test, also fails on Linux...
 
 
 Inappropriate path concatenation
