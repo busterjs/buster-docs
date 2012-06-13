@@ -185,6 +185,8 @@ their missing contents replenished from the cache.
         });
 
 
+.. _resource-sets:
+
 Resource sets
 =============
 
