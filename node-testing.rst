@@ -52,7 +52,7 @@ To run the tests, simply type::
 
 Here's the test output for the :ref:`posix-argv-parser` module:
 
-.. image:: _static/node-testing/posix-argv-parser.png
+.. image:: _static/node-testing/buster-test-node.png
     :width: 633
     :height: 382
 
