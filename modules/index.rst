@@ -18,4 +18,4 @@ Core modules
     buster-static
     buster-test
     buster-user-agent-parser
-    preferences
+    prefsink
