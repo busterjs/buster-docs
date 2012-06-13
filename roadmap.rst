@@ -80,9 +80,9 @@ The final "big" changes will land. Bug fixes. New documentation site.
 Highlights
 ----------
 
-- Naming changes. See `this thread
+- Naming changes. See `thread #1
   <http://groups.google.com/group/busterjs-dev/browse_thread/thread/454146b98e69eef9>`_,
-  and `this thread
+  and `thread #2
   <http://groups.google.com/group/busterjs-dev/browse_thread/thread/8d1a1c15b9c559f4>`_
   Most importantly, some generally useful modules gain fully stand-alone names
   (i.e. they'll drop the buster- prefix and/or change names altogether).
