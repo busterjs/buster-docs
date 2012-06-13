@@ -83,7 +83,7 @@ Here's the other bundled way of doing it::
         });
 
         it("states the obvious", function () {
-            expect(true).toBeSameAs(true);;
+            expect(true).toBe(true);;
         });
     });
 
