@@ -7,17 +7,18 @@ posix-argv-parser
 =================
 
 Version:
-    0.1.0 (2011-06-13)
+    0.1.0 (2012-06-13)
 
 Module:
     ``require("posix-argv-parser");``
 
 An command line interface (CLI) argument parser that is:
 
-* `POSIX "Utility Argument Syntax" <http://pubs.opengroup.org/onlinepubs/9699919799/>`_ compliant
-* **Unobtrusive** - Does not mandate flow control, does not print to STDOUT on
+- `POSIX "Utility Argument Syntax"
+  <http://pubs.opengroup.org/onlinepubs/9699919799/>`_ compliant
+- **Unobtrusive** - Does not mandate flow control, does not print to STDOUT on
   your behalf, and does not magically manage ``--help``
-* **Ambiguity aware** - lets you specify how to handle ambiguities such as
+- **Ambiguity aware** - lets you specify how to handle ambiguities such as
   ``-bar``, which can mean both ``-b -a -r`` and ``-b=ar``.
 
 ::
@@ -158,8 +159,8 @@ An **option** is a flag, with or without a value. ``-p``, ``-p abc``,
 posix-argv-parser.
 
 ``-pabc`` can mean  both ``-p -a -b -c`` and ``-p=abc``. posix-argv-parser uses
-:attr:`hasValue` to separate the two. With :attr:`hasValue` set to true,
-``-pabc`` will be handled as ``-p=abc``. When false (default), it will be
+:attr:`opt.hasValue` to separate the two. With :attr:`opt.hasValue` set to
+true, ``-pabc`` will be handled as ``-p=abc``. When false (default), it will be
 handled as ``-p -a -b -c``. In that case you also need to have option handlers
 for ``-a``, ``-b`` and ``-c``, or you'll get a validation error such as
 ``"unknown option -a"`` (depending on which option posix-argv-parser first
@@ -186,31 +187,33 @@ See example usage at the beginning of this document for more information.
 When creating options and operands, the following properties can be passed in
 with the "options" object.
 
-.. attribute:: validators
+.. attribute:: opt.validators
 
     An array of validators. A validator is a function that accepts the argument
     result object as input. See below for a description of argument result objects.
     To fail validation, the validator can either throw an error, or return a
     rejecting promise.
 
-.. attribute:: transform
+.. attribute:: opt.transform
 
     A function that transforms the raw string value provided before assigning it
-    to the ``value`` property of an argument result object. The function receives
-    the string value as input, and should return any value back.
+    to the :attr:`opt.value` property of an argument result object. The
+    function receives the string value as input, and should return any value
+    back.
 
-.. attribute:: hasValue
+.. attribute:: opt.hasValue
 
     If the argument takes a value, set to ``true``. Defaults to ``false`` for
     options, is always ``true`` for operands (thus it can be omitted).
 
-.. attribute:: defaultValue
+.. attribute:: opt.defaultValue
 
-    The default value to use if the argument was not provided. When ``defaultValue``
-    is provided, ``hasValue`` is implied and can be omitted. The default value
-    should be a string, and will be validated and transformed like actual values.
+    The default value to use if the argument was not provided. When
+    :attr:`opt.defaultValue` is provided, :attr:`opt.hasValue` is implied and
+    can be omitted. The default value should be a string, and will be validated
+    and transformed like actual values.
 
-.. attribute:: signature
+.. attribute:: opt.signature
 
     The signature is used to identify options and operands in validation errors.
     Options automatically gets a signature consisting of the option flags assigned
@@ -234,33 +237,35 @@ Options
 
 Options has additional properties that operands doesn't have.
 
-.. attribute:: requiresValue
+.. attribute:: opt.requiresValue
 
-    Only makes sense if ``hasValue`` is ``true``. When this property is ``false``,
-    an option can both be provided as a flag with no value or as an option with a
-    value.
+    Only makes sense if :attr:`opt.hasValue` is ``true``. When this property is
+    ``false``, an option can both be provided as a flag with no value or as an
+    option with a value.
 
     A common example of options that work with and without values are help options,
     that may be provided alone to get general help, e.g. `mything --help`, and with
     values to get help for specific topics, e.g. `mything --help bisect`.
 
+
 Argument result
 ===============
 
-Argument result objects are produced when calling ``parse`` to parse argv into
-the predefined options and operands. There is one result object per original
-option/operand. These objects have the following properties:
+Argument result objects are produced when calling :func:`args.parse` to parse
+``argv`` into the predefined options and operands. There is one result object
+per original option/operand. These objects have the following properties:
 
-.. attribute:: isSet
+.. attribute:: argumentResult.isSet
 
-    True or false depending on whether or not the argument was present in argv.
+    ``true`` or ``false`` depending on whether or not the argument was present
+    in ``argv``.
 
-.. attribute:: value
+.. attribute:: argumentResult.value
 
     The value of the argument. Is normally a string, but may be any object
     if the argument had a transform function.
 
-.. attribute:: timesSet
+.. attribute:: argumentResult.timesSet
 
     The number of times an argument was set. Useful for options like ``-v``
     (verbose) which you might want to allow setting multiple times, giving the
@@ -271,6 +276,7 @@ option/operand. These objects have the following properties:
         -v -v -v -v // 4
         -v -vv -vv -vvv // 8
 
+
 Validators
 ==========
 
@@ -279,6 +285,7 @@ and operands.
 
 posix-argv-parser has a number of built-in validators, and creating custom ones
 is dead simple, as a validator is just a function.
+
 
 Built-in validators
 -------------------
@@ -306,7 +313,7 @@ all return the actual validation function.
     Custom error message:
 
     ``${1}``:
-        The option :attr:`arg.signature`
+        The option :attr:`opt.signature`
 
 .. function:: validators.integer(errorMessage)
 
@@ -319,7 +326,7 @@ all return the actual validation function.
         The specified number
 
     ``${2}``:
-       The option :attr:`arg.signature`
+       The option :attr:`opt.signature`
 
 .. function:: validators.number(errorMessage)
 
@@ -332,7 +339,7 @@ all return the actual validation function.
         The specified number
 
     ``${2}``:
-        The option :attr:`arg.signature`
+        The option :attr:`opt.signature`
 
 .. function:: validators.file(errorMessage)
 
@@ -345,7 +352,7 @@ all return the actual validation function.
         The specified file
 
     ``${2}``:
-        The option :attr:`arg.signature`
+        The option :attr:`opt.signature`
 
 .. function:: validators.directory(errorMessage)
 
@@ -358,7 +365,7 @@ all return the actual validation function.
         The specified directory
 
     ``${2}``:
-        The option :attr:`arg.signature`
+        The option :attr:`opt.signature`
 
 .. function:: validators.fileOrDirectory(errorMessage)
 
@@ -372,7 +379,7 @@ all return the actual validation function.
         The specified file or directory
 
     ``${2}``:
-        The option :attr:`arg.signature`
+        The option :attr:`opt.signature`
 
 
 Custom validators
@@ -420,8 +427,9 @@ Rejecting the promise counts as an error. The first argument should be a
 string, and is the error message. (TODO: This will likely change to an
 error object with a ``message`` property).
 
-Tranforms
-=========
+
+Transforms
+==========
 
 Transforms can mutate the values of options. A transform is a simple function
 that receives the raw string value as input, and can return whatever it likes.::
@@ -430,13 +438,14 @@ that receives the raw string value as input, and can return whatever it likes.::
         transform: function (value) { return parseInt(value, 10); }
     });
 
+
 Types
 =====
 
 Types are predefined "options" objects that you can pass when creating options
 and/or operands. For instance, the "number" type includes the number validator,
-sets ``hasValue`` to ``true``, and includes a transform that converts the raw
-string to an actual number (by way of ``parseFloat``)::
+sets :attr:`opt.hasValue` to ``true``, and includes a transform that converts
+the raw string to an actual number (by way of ``parseFloat``)::
 
     args.createOption(["-n"], args.types.number());
 
@@ -452,13 +461,15 @@ to create an option that only takes positive numbers::
         }]
     }));
 
+
 Providing ``--help``
 ====================
 
 It's not in the nature of posix-argv-parser to automatically handle ``--help``
 for you. It is however very easy to add such an option to your program. To help
 you keep all CLI option data in one place, options and operands are allowed to
-have a ``description`` property that posix-argv-parser does not care about::
+have a :attr:`opt.description` property that posix-argv-parser does not care
+about::
 
     var args = require("posix-argv-parser").create();
 
