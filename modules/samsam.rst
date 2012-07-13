@@ -49,25 +49,27 @@ value equals the return value from the object's ``valueOf``.
 Comparison functions
 ====================
 
-``egal(x, y)``
---------------
+``identical(x, y)``
+-------------------
 
-Strict equality check according to `EcmaScript Harmony's ``egal``
-<http://wiki.ecmascript.org/doku.php?id=harmony:egal>`_
+Strict equality check according to `EcmaScript Harmony's ``egal``.
 
-*From the Harmony wiki:*
-An egal function simply makes available the internal ``SameValue`` function from
-section 9.12 of the ES5 spec. If two values are egal, then they are not
-observably distinguishable. egal returns ``true`` when ``===`` is ``true``,
-except for ``-0`` and ``+0``, where egal returns ``false``. Additionally, egal
-returns ``true`` when ``NaN`` is compared to itself.
+**From the Harmony wiki:**
+
+    An egal function simply makes available the internal ``SameValue`` function
+    from section 9.12 of the ES5 spec. If two values are egal, then they are not
+    observably distinguishable.
+
+``identical`` returns ``true`` when ``===`` is ``true``, except for ``-0`` and
+``+0``, where it returns ``false``. Additionally, it returns ``true`` when
+``NaN`` is compared to itself.
 
 ``deepEqual(obj1, obj2)``
 -------------------------
 
 Deep equal comparison. Two values are "deep equal" if:
 
-  - They are egal
+  - They are identical
   - They are both date objects representing the same time
   - They are both primitives and ``a == b``
   - They are both arrays containing elements that are all deepEqual
