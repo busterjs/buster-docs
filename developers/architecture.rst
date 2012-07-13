@@ -410,20 +410,20 @@ directly in a browser (i.e. without buster-server). Builds scaffolding markup
 and serves tests on a simple server.
 
 
-buster-stdio-logger
+stream-logger
 -------------------
 
 Status:
     Stable
 
 Source code:
-    :repo:`buster-stdio-logger`
+    :repo:`stream-logger`
 
 Build status:
     .. raw:: html
 
-        <a href="http://travis-ci.org/busterjs/buster-stdio-logger" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-stdio-logger.png">
+        <a href="http://travis-ci.org/busterjs/stream-logger" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/stream-logger.png">
         </a>
 
 Accepts a standard and error output stream, and returns a

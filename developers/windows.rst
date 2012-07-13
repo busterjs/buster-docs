@@ -64,7 +64,7 @@ dealing with paths (see the next section).
 - :repo:`buster-jstestdriver`: 1 failing test
 - :repo:`buster-resources`: Multiple failures and timeouts, possibly path related
 - :repo:`buster-static`: Multiple failures and timeouts, unknown why
-- :repo:`buster-stdio-logger`: 1 failing test
+- :repo:`stream-logger`: 1 failing test
 - :repo:`buster-syntax`: A few failing tests, due to missing jsdom dependency.
   Actually OK
 - :repo:`buster-test-cli`: Some failing tests, possibly path related
