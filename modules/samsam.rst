@@ -46,6 +46,18 @@ Returns true if the object is a ``Date``, or *date-like*. Duck typing of date
 objects work by checking that the object has a ``getTime`` function whose return
 value equals the return value from the object's ``valueOf``.
 
+``isNaN(value)``
+----------------
+
+Returns ``true`` if passed in value is ``NaN``. Unlike the globally available
+``isNaN``, this method does not attempt to coerce its argument to a number,
+instead it checks that the number is equal to itself.
+
+``isNegZero(value)``
+--------------------
+
+Returns ``true`` if ``value`` is ``-0``.
+
 Comparison functions
 ====================
 
