@@ -19,3 +19,4 @@ Core modules
     buster-user-agent-parser
     posix-argv-parser
     prefsink
+    samsam
