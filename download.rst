@@ -22,6 +22,12 @@ script (and CSS):
   `buster-test.css (latest)
   <http://busterjs.org/releases/latest/buster-test.css>`_
 
+- **0.6.2** (2012-07-10):
+  `buster-test.js (0.6.2)
+  <http://busterjs.org/releases/0.6.2/buster-test.js>`_,
+  `buster-test.css (0.6.2)
+  <http://busterjs.org/releases/0.6.2/buster-test.css>`_
+
 - **0.6.1** (2012-07-09):
   `buster-test.js (0.6.1)
   <http://busterjs.org/releases/0.6.1/buster-test.js>`_,
