@@ -7,6 +7,27 @@ Changelog
 Here you find details about what have changed with each release of Buster.JS.
 
 
+v0.6.2
+======
+
+Minor fix.
+
+Breaking changes
+----------------
+
+No breaking changes in this release.
+
+Additions
+---------
+
+No additions in this release.
+
+Bug fixes
+---------
+
+- Exit code was always 1 (:issue:`221`)
+
+
 v0.6.1
 ======
 
