@@ -7,6 +7,56 @@ Changelog
 Here you find details about what have changed with each release of Buster.JS.
 
 
+v0.6.1
+======
+
+Buster.JS 0.6.1 is a fairly small maintenance release, mostly correcting a
+bunch of bugs of minor/medium significance.
+
+Breaking changes
+----------------
+
+No breaking changes in this release.
+
+Additions
+---------
+
+Buster.JS 0.6.1 ships with Sinon.JS 1.4.0, a significant update with lots of
+interesting new features, see `Sinon.JS changelog
+<http://sinonjs.org/Changelog.txt>`_.
+
+Bug fixes
+---------
+
+- Cyclic objects in buster-format (:issue:`215`)
+
+- Exit code 1 for wrong arguments (:issue:`210`)
+
+- ``assert.equals`` and Prototype.js arrays (:issue:`206`)
+
+- Focus rocket on test case name (:issue:`200`)
+
+- Configure ``this.timeout`` in ``setUp`` and ``prepare`` (:issue:`199`)
+
+- Red status line when there are timeouts (:issue:`196`)
+
+- Exit code 1 when no tests are run (:issue:`195`)
+
+- ``assert.match`` with empty strings now passes (:issue:`178`)
+
+- Autotest and symlinks (:issue:`168`)
+
+- "Too much recursion" when combining stubs and cyclical data structures
+  (:issue:`124` and :issue:`201`)
+
+- Clean up dangling proxy requests when test run completes (:issue:`117`)
+
+- Acknowledge Sinon mock expectations as assertions (:issue:`62`)
+
+- posix-argv-parser: Unknown short options "with extras" (i.e. ``-node``) fails
+  with a humanized error message.
+
+
 v0.6.0 -- Buster.JS Beta 4
 ==========================
 
