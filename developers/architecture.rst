@@ -411,7 +411,7 @@ and serves tests on a simple server.
 
 
 stream-logger
--------------------
+-------------
 
 Status:
     Stable
