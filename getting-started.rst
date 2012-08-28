@@ -1,5 +1,7 @@
 .. highlight:: javascript
 
+.. _getting-started:
+
 ===============
 Getting started
 ===============

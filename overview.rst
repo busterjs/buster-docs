@@ -1,5 +1,7 @@
 .. highlight:: javascript
 
+.. _overview:
+
 ==================
 Buster.JS overview
 ==================
