@@ -1,6 +1,8 @@
 .. default-domain:: js
 .. highlight:: javascript
 
+.. _buster-format:
+
 =============
 buster-format
 =============
