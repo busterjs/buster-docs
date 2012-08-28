@@ -620,3 +620,43 @@ Changes
   issuing warnings, or even preventing tests from running at all. The first
   external tool included in this system is :ref:`buster-lint`. Expect more
   thorough documentation of this system as it evolves.
+
+
+v0.3.0 -- Buster.JS Beta 1
+==========================
+
+The beta is upon us!
+
+See :ref:`getting started <getting-started>` and :ref:`the overview <overview>`
+for usage, installation, features, etc.
+
+So far we have QUnit style static html page testing, JsTestDriver style browser
+automation, and node testing. We have stubbing and mocking, setUp and tearDown,
+asynchronous tests, hybrid browser/Node tests, and much more.
+
+We *don't* have a super stable 1.0 that you can connect to a zillion old
+browsers to and have it run in a stable fashion in your CI environment. Getting
+there requires field testing, and that's where you come in.
+
+You will run into issues, and when you do, we want to know about them. Please
+don't hesitate `posting issues in the issue tracker
+<https://github.com/busterjs/buster/issues>`_.
+
+See also `mailing list <http://groups.google.com/group/busterjs>`_,
+`irc.freenode.net #buster.js <irc://irc.freenode.net/buster.js>`_ and `Twitter
+@buster_js <http://twitter.com/buster_js>`_.
+
+
+Known issues
+------------
+
+IE7 and lower, and Safari, doesn't work with ``buster server``. You can still
+use ``buster static`` to run your tests in these browsers.
+
+
+Roadmap
+-------
+
+- Running browser tests without a browser and a server via PhantomJS
+- Stability for CI environments etc.
+- ...and more. This list is incomplete.
