@@ -160,7 +160,7 @@ Methods
 
     ::
 
-        loadSync(namespace)``
+        prefsink.loadSync(namespace);
 
     Blocking version of ``load``.
 
