@@ -57,6 +57,7 @@ These are articles, howtos, and guides to help get started with Buster.JS.
 
     talks
     overview
+    quick-and-dirty-getting-started
     getting-started
     browser-testing
     node-testing
