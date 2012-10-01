@@ -2,9 +2,9 @@
 .. highlight:: javascript
 .. _evented-logger:
 
-=============
-buster-logger
-=============
+==============
+evented-logger
+==============
 
 Version:
     0.2.0 (2011-03-14)
