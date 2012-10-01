@@ -49,7 +49,7 @@ Prefsink will use the first available of the following files (``~/`` denotes
 #. ``~/.myproject.d/index.js`` (lets the user organize all related files in one
    directory)
 
-#. `~/.myproject.js`` (the suffix may be useful for editor syntax highlighting
+#. ``~/.myproject.js`` (the suffix may be useful for editor syntax highlighting
    etc)
 
 #. ``~/.myproject`` (iconic Unix style preference file)
