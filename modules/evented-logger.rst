@@ -278,7 +278,7 @@ An object representing a logged message. Contains two properties:
 
     The log level as a lower case string, e.g. ``"debug"``.
 
-.. attribute:: loggerEnvelope.message:
+.. attribute:: loggerEnvelope.message
 
     A formatted log message, containing all arguments passed to the log method
     joined by a single blank space.
