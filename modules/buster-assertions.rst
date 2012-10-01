@@ -1502,7 +1502,7 @@ on the resulting object.
     See :func:`assert.className`
 
 
-.. function:: expect.toHaveBennCalled
+.. function:: expect.toHaveBeenCalled
 
     ::
 
