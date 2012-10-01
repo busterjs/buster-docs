@@ -16,8 +16,8 @@ Core modules
     buster-sinon
     buster-static
     buster-test
-    buster-user-agent-parser
     evented-logger
     posix-argv-parser
     prefsink
     samsam
+    user-agent-parser
