@@ -1,3 +1,5 @@
+.. _buster-test:
+
 ===========
 buster-test
 ===========
