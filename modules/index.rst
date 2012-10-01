@@ -6,6 +6,7 @@ Core modules
     :maxdepth: 2
 
     buster-assertions
+    expectations
     buster-capture-server
     buster-configuration
     buster-core

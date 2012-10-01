@@ -16,8 +16,8 @@ In browsers:
 A collection of assertions to be used with a unit testing framework.
 **buster-assertions** works well with any CommonJS compliant testing framework
 out of the box, and can easily be configured to work with most any testing
-framework.  See also `expectations </docs/expectations/>`_ if you like the
-alternative API (``expect(thing).toBe*``).
+framework. See also :ref:`expectations` if you like the alternative API
+(``expect(thing).toBe*``).
 
 **buster-assertions** contains lots of assertions. We
 strongly believe that high-level assertions are essential in the
