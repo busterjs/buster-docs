@@ -188,7 +188,7 @@ from the slaves.
 
 .. function:: sessionClient.emit
 
-    :;
+    ::
 
         sessionClient.emit(event[, data]);
 
