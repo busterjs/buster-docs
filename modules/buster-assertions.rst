@@ -1392,6 +1392,8 @@ refutations.
         String representation of all calls.
 
 
+.. _expectations:
+
 Expectations
 ============
 
