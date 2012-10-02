@@ -1,3 +1,5 @@
+.. default-domain:: js
+.. highlight:: javascript
 .. _quick-and-dirty-getting-started:
 
 ===============================
