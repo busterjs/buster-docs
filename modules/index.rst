@@ -14,7 +14,7 @@ Core modules
     buster-server-cli
     buster-sinon
     buster-static
-    buster-test
+    buster-test/index
     evented-logger
     posix-argv-parser
     prefsink
