@@ -251,7 +251,7 @@ Example::
 
 .. attribute:: config.groups
 
-    An array consisting of all the :ref:`config-groups`.
+    An array consisting of all the :ref:`config-group`.
 
 
 .. function:: config.resolveGroups
@@ -292,7 +292,7 @@ Example::
     through the ``RegExp`` constructor.
 
 
-.. _config-groups:
+.. _config-group:
 
 Configuration group
 -------------------

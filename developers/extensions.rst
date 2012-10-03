@@ -77,11 +77,10 @@ Hook: ``beforeRun``
 
 The ``beforeRun`` hook is run, after the test run configuration is
 fully loaded, but before the test runner has been initialized. The arguments
-passed to this hook is ``config``
-(a :doc:`buster-configuration group </modules/buster-configuration>`)
-and ``analyzer``. The analyzer can be used to flag issues about the
-code base, and is what ``buster-lint`` and ``buster-syntax``
-uses to warn about lint and syntax errors, respectively.
+passed to this hook is ``config`` (a :ref:`config-group`) and ``analyzer``.
+The analyzer can be used to flag issues about the code base, and is what
+``buster-lint`` and ``buster-syntax`` uses to warn about lint and syntax
+errors, respectively.
 
 Proper documentation for the analyzer is pending. For now, refer to
 `buster-lint <https://github.com/magnars/buster-lint>`_ for a usage
