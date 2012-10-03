@@ -62,7 +62,6 @@ These are articles, howtos, and guides to help get started with Buster.JS.
     browser-testing
     node-testing
     hybrid-testing
-    testcase
     starting-testrun-manually
 
 
