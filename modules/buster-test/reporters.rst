@@ -417,7 +417,7 @@ Options when creating console reporters. All properties are optional.
     Default is ``true``.
 
 ``cwd``:
-    The current working directory. Passed to :ref:``buster.stackFilter``
+    The current working directory. Passed to :ref:`buster.stackFilter
     <stack-filter>`.
 
 ``io``:
