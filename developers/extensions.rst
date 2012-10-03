@@ -96,12 +96,11 @@ receives one or two arguments, depending on the environment.
 Browser environment: ``testRunner``, ``messagingClient``
 --------------------------------------------------------
 
-Both arguments are event emitters. The ``testRunn`` is a
-"remoteRunner" (not yet documented). It behaves like a
-:doc:`test runner </modules/buster-test>`, i.e. it emits all the same
-events. However, because the run potentially includes more than one browser,
-the remote runner wraps all test cases in an additional top-level context
-which is named after the browser that ran it.
+Both arguments are event emitters. The ``testRunn`` is a "remoteRunner" (not
+yet documented). It behaves like a :ref:`buster-test-runner`, i.e. it emits all
+the same events. However, because the run potentially includes more than one
+browser, the remote runner wraps all test cases in an additional top-level
+context which is named after the browser that ran it.
 
 The ``messagingClient`` contains all raw messages emitted in the
 browsers. The messages are wrapped in an envelop that also contains
@@ -118,4 +117,4 @@ Node environment: ``testRunner``
 --------------------------------
 
 Node tests only receives a single runner argument. It is a plain
-:doc:`test runner </modules/buster-test>`.
+:ref:`buster-test-runner`.

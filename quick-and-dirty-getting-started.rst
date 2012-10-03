@@ -11,12 +11,12 @@ It's so quick. And dirty!
 Install
 =======
 
-::
+.. code-block:: sh
 
     npm install -g buster
 
-Then need to either have ``NODE_PATH`` set up or also ``npm link buster``
-(without ``-g``) in the project where you want use buster.
+Then you need to either have ``NODE_PATH`` set up or also ``npm link buster``
+(without ``-g``) in the project where you want use Buster.
 
 
 Config file
