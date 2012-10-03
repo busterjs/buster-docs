@@ -76,7 +76,7 @@ file and run it in a browser:
       </body>
     </html>
 
-Go ahead, `try it <examples/strftime/>`_.
+Go ahead, `try it <http://busterjs.org/examples/strftime/>`_.
 
 If you use Git, you can clone `this example <https://gist.github.com/1904218>`_
 to your machine::
