@@ -198,7 +198,7 @@ from the slaves.
     ``"testcase:state:timeout"``.
 
     The data is optional, and will be JSON serialized in the form of ``{data:
-    /* &lt;your data here&gt; */}``, so it can be an array, and object, a
+    /* <your data here> */}``, so it can be an array, and object, a
     string, or a number.
 
     ::

@@ -42,7 +42,7 @@ method::
             this.game = new BowlingGame();
 
             this.rollMany = function (rolls, pins) {
-                for (var i = 0; i &lt; rolls; ++i) {
+                for (var i = 0; i < rolls; ++i) {
                     this.game.roll(pins);
                 }
             };
@@ -76,9 +76,9 @@ first, then the inner) for each test in the "adding items" test case).
     var testCase = buster.testCase("Form controller", {
         setUp: function () {
             this.form = document.createElement("form");
-            this.form.innerHTML = "&lt;fieldset&gt;" +
-                "&lt;input type='text' name='item' id='item'&gt;" +
-                "&lt;/fieldset&gt;";
+            this.form.innerHTML = "<fieldset>" +
+                "<input type='text' name='item' id='item'>" +
+                "</fieldset>";
 
             this.input = this.form.getElementsByTagName("input")[0];
             this.backend = { add: sinon.spy() };
@@ -195,7 +195,7 @@ considers any object with a ``then`` method a promise::
             buster.assert(true);
             var callbacks = promise.callbacks || [];
 
-            for (var i = 0, l = callbacks.length; i &lt; l; ++i) {
+            for (var i = 0, l = callbacks.length; i < l; ++i) {
                 callbacks[i]();
             }
         }, 100);
@@ -365,7 +365,7 @@ pair of ``//``::
             this.game = new BowlingGame();
 
             this.rollMany = function (rolls, pins) {
-                for (var i = 0; i &lt; rolls; ++i) {
+                for (var i = 0; i < rolls; ++i) {
                     this.game.roll(pins);
                 }
             };

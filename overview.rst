@@ -233,7 +233,7 @@ previously, and BDD style specs/examples::
             this.game = new BowlingGame();
 
             this.rollMany = function (rolls, pins) {
-                for (var i = 0; i &lt; rolls; ++i) {
+                for (var i = 0; i < rolls; ++i) {
                     this.game.roll(pins);
                 }
             };

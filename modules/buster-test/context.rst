@@ -159,7 +159,7 @@ runner considers any object with a ``then`` method a promise::
             buster.assert(true);
             var callbacks = promise.callbacks || [];
 
-            for (var i = 0, l = callbacks.length; i &lt; l; ++i) {
+            for (var i = 0, l = callbacks.length; i < l; ++i) {
                 callbacks[i]();
             }
         }, 100);
