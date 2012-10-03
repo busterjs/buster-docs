@@ -129,6 +129,9 @@ div.sphinxsidebar ul ul {
     margin-left: 0;
     padding-left: 20px;
 }
+div.sphinxsidebar > div > ul {
+    padding-left: 0;
+}
 
 /* Footer */
 .footer {
