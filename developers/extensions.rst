@@ -95,7 +95,7 @@ receives one or two arguments, depending on the environment.
 Browser environment: ``testRunner``, ``messagingClient``
 --------------------------------------------------------
 
-Both arguments are event emitters. The ``testRunn`` is a "remoteRunner" (not
+Both arguments are event emitters. The ``testRunner`` is a "remoteRunner" (not
 yet documented). It behaves like a :ref:`buster-test-runner`, i.e. it emits all
 the same events. However, because the run potentially includes more than one
 browser, the remote runner wraps all test cases in an additional top-level
@@ -109,7 +109,7 @@ information about the browser that sent it::
         data: { name: 'My context' },
         topic: 'context:start',
         clientId: 'eaebee40-ff08-4fcd-bc97-2da569e837c3',
-        client: { emit: [Function] } 
+        client: { emit: [Function] }
     }
 
 Node environment: ``testRunner``
