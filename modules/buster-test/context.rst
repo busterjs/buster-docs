@@ -50,31 +50,44 @@ practice.
 Setup and teardown methods can be asynchronous, see :ref:`the section on
 asynchronous tests <test-context-async>`.
 
-``name``:
+
+.. attribute:: testContext.name
+
     The test context name/description as a string
 
-``setUp``:
+
+.. attribute:: testContext.setUp
+
     **Optional**. A function that will run before each test. If using nested
     contexts, the setup function will also be executed before each test (and
     their local setup, if any) in nested contexts.
 
-``tearDown``:
+
+.. attribute:: testContext.tearDown
+
     **Optional**. A function that will run after each test. If using nested
     contexts, the teardown function will also be executed after each test (and
     their local teardown, if any) in nested contexts.
 
-``tests``:
+
+.. attribute:: testContext.tests
+
     An array of :ref:`test-object`.
 
-``contexts``:
+
+.. attribute:: testContext.contexts
+
     An array of :ref:`test-context-object`. In other words, the test context
     data format (and thus, the :ref:`buster-test-runner`) supports arbitrarily
     nested contexts.
 
-``parent``:
+.. attribute:: testContext.parent
+
     The parent :ref:`test-context-object`, if any.
 
-``testCase``:
+
+.. attribute:: testContext.testCase
+
     **Optional**.  Prototype object used for ``this`` when running tests. This
     object may define helper methods and properties to use in tests. The test
     runner creates a new instance from this object with :func:`buster.create`
@@ -90,17 +103,25 @@ asynchronous tests <test-context-async>`.
 
 Represents a test function.
 
-``name``:
+
+.. attribute:: test.name
+
     The test function name, as a string.
 
-``func``:
+
+.. attribute:: test.func
+
     The test function. See :ref:`the section on asynchronous tests
     <test-context-async>` for how to mark it as - well, asynchronous.
 
-``context``:
+
+.. attribute:: test.context
+
     **Optional**. The context to which the test belongs.
 
-``deferred``:
+
+.. attribute:: test.deferred
+
     **Optional**. If this property is set to ``true``, the test will not be
     run, but the test runner will emit an event for it, allowing reporters to
     communicate tests that should eventually run (and hopefully pass).
