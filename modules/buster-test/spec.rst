@@ -43,7 +43,7 @@ allows you to use :func:`describe <buster.spec.describe>`, :func:`it
 Describe
 ========
 
-.. function:: buster.spec.describe(name, callback)
+.. function:: spec.describe(name, callback)
 
     Creates a specification. The ``name`` should be a string, and the
     ``callback`` can be used to further describe your specification.
