@@ -1,4 +1,4 @@
-.. _extensions:
+.. _building-extensions:
 .. highlight:: javascript
 
 ===================
