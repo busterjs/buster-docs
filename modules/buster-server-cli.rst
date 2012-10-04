@@ -56,7 +56,7 @@ The index template
 ------------------
 
 You need to define two templates for the server to work correctly. The first
-one is index.ejs, which is an `ejs <http://embeddedjs.com/>`_
+one is ``index.ejs``, which is an `ejs <http://embeddedjs.com/>`_
 template for the index page of the server.
 
 `Buster's index template
@@ -64,18 +64,27 @@ template for the index page of the server.
 renders a list of captured browsers and a link to `/capture`, which is the URL
 that causes the browser to become a captured slave.
 
-The index.ejs template is rendered with one piece of data — ``slaves`` — which
-is an array of slave objects:
+The ``index.ejs`` template is rendered with one piece of data — ``slaves`` —
+which is an array of slave objects:
 
-``slave.browser``:
+.. attribute:: slave.browser
+
     A string, i.e. "Firefox"
-``slave.platform``:
+
+.. attribute:: slave.platform
+
     A string, i.e. "Linux"
-``slave.version``:
+
+.. attribute:: slave.version
+
     A string, i.e. "12.0"
-``slave.os``:
+
+.. attribute:: slave.os
+
     A string, contains a richer OS/platform description
-``slave.userAgent``:
+
+.. attribute:: slave.userAgent
+
     The original user agent
 
 
