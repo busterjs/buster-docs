@@ -86,8 +86,8 @@ Listen to events with ``on``::
     });
 
 
-Event: pass
------------
+``pass`` event
+--------------
 
 Signature::
 
@@ -98,8 +98,8 @@ Assertion passed. The callback is invoked with the assertion name, e.g.
 refutations pass.
 
 
-Event: failure
---------------
+``failure`` event
+-----------------
 
 Signature::
 
