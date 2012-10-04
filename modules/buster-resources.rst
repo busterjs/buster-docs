@@ -136,7 +136,7 @@ their missing contents replenished from the cache.
     resource set with a cached resource, it will stick around in that resource
     set until you remove it on your own.
 
-.. function:: cache.inflate(resourceSet)
+.. function:: resourceSetCache.inflate(resourceSet)
 
     ::
 
@@ -166,7 +166,7 @@ their missing contents replenished from the cache.
             middleware.mount(inflatedSet);
         });
 
-.. function:: cache.resourceVersions(resourceSet)
+.. function:: resourceSetCache.resourceVersions(resourceSet)
 
     ::
 
