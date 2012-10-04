@@ -25,7 +25,7 @@ test runner.
 
     var ua = "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.7 " +
             "(KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7";
-    var browser = userAgentParser.`parse <#parse>`_(ua);
+    var browser = userAgentParser.parse(ua);
 
     browser == {
         platform: "Linux",
@@ -41,7 +41,7 @@ Methods
 
     ::
 
-        var browser-info = userAgentParser.parse(userAgentStr);
+        var browserInfo = userAgentParser.parse(userAgentStr);
 
     "Parse" the user agent string. Tries to determine OS, browser vendor and
     browser version. Returns a :ref:`browser-info` object.
