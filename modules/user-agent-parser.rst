@@ -52,9 +52,16 @@ Methods
 Browser info
 ============
 
-``platform``:
+.. attribute:: browserInfo.platform
+
   The 'OS' name; Windows, Linux, OS X, iPad, iPhone, Android
-``browser``:
+
+
+.. attribute:: browserInfo.browser
+
   Browser name, like Firefox, Safari, Chrome, and so on
-``version``:
+
+
+.. attribute:: browserInfo.version
+
   Browser version string
