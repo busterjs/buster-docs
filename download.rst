@@ -3,7 +3,7 @@ Download
 ========
 
 
-Node.JS module
+Node.js module
 ==============
 
 To get the most out of Buster.JS, we recommend you install Buster using Node.js
