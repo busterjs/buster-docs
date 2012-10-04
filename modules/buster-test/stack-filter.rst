@@ -24,17 +24,17 @@ do so by:
 Methods
 =======
 
-.. function:: buster.stackFilter
+.. function:: stackFilter
 
     ::
 
         var lines = buster.stackFilter(stack[, cwd]);
 
     Trims a stack trace by removing lines that match
-    :attr:`buster.stackFilter.filters`. ``stack`` is a string containing the
-    entire stack trace. The optional ``cwd`` argument is a string containing
-    the current working directory. When provided, it is stripped from all lines
-    in the resulting stack trace.
+    :attr:`stackFilter.filters`. ``stack`` is a string containing the entire
+    stack trace. The optional ``cwd`` argument is a string containing the
+    current working directory. When provided, it is stripped from all lines in
+    the resulting stack trace.
 
     The function returns an array of stack trace lines. Given the following
     stack trace::
@@ -49,7 +49,7 @@ Methods
           'at /home/christian/buster/node_modules/buster-core/lib/buster-core.js:45:31' +
           'at EventEmitter._tickCallback (node.js:108:26)';
 
-    :func:`buster.stackFilter` would reduce it like so::
+    :func:`stackFilter` would reduce it like so::
 
         var lines = buster.stackFilter(stack, "/home/christian/buster");
 
@@ -60,23 +60,23 @@ Methods
         //  'at Array.0 (node_modules/buster-promise/lib/buster-promise.js:75:47']
 
 
-.. function:: buster.stackFilter.match
+.. function:: stackFilter.match
 
     ::
 
         var isMatch = buster.stackFilter.match(line);
 
-    Helper function used by :func:`buster.stackFilter`. Returns ``true`` if
-    ``line`` matches any of ``stackFilter.filters``.
+    Helper function used by :func:`stackFilter`. Returns ``true`` if ``line``
+    matches any of ``stackFilter.filters``.
 
 
 Properties
 ==========
 
 
-.. attribute:: buster.stackFilter.filters
+.. attribute:: stackFilter.filters
 
-    The :attr:`buster.stackFilter.filters` property is an array of strings to
+    The :attr:`stackFilter.filters` property is an array of strings to
     match against lines in a stack trace. Any stack trace line that match one
     of these filters will be stripped. The default value is an array of core
     buster modules. If you are developing add-ons to Buster, and don't want
