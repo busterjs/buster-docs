@@ -84,7 +84,7 @@ Methods
     Creates a new instance of posix-argv-parser that holds a collection of
     options and operands.
 
-.. function:: args.createOption(flags[, options])
+.. function:: posixArgvParser.createOption(flags[, options])
 
     ::
 
@@ -94,7 +94,7 @@ Methods
     ``argument``, as well as :attr:`option.hasValue` and
     :attr:`option.timesSet`. The ``options`` object is optional.
 
-.. function:: args.addShorthand(opt, [argv1, ...])
+.. function:: posixArgvParser.addShorthand(opt, [argv1, ...])
 
     A shorthand is a convenience method for adding options to your CLI that
     simply set other options.
@@ -108,7 +108,7 @@ Methods
     This makes passing ``--dev`` an equlvalent to passing
     ``--env dev``.
 
-.. function:: args.createOperand([name][, options])
+.. function:: posixArgvParser.createOperand([name][, options])
 
     ::
 
@@ -122,7 +122,7 @@ Methods
     If not provided, it defaults to "OPD" (beware when using more than one
     operand).
 
-.. function:: args.parse(args, callback)
+.. function:: posixArgvParser.parse(args, callback)
 
     Performs parsing and validation of argv. In Node.JS, make sure to discard
     the first two items of `process.argv
