@@ -1,4 +1,5 @@
 .. highlight:: javascript
+.. _node-testing:
 
 ===============
 Node.JS testing

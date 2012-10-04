@@ -422,6 +422,8 @@ they either return a thenable promise or if they explicitly accept an argument.
 See :ref:`async-specs`.
 
 
+.. _deferred-specs:
+
 Deferred specs
 ==============
 

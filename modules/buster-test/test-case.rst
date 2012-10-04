@@ -346,6 +346,8 @@ they either return a thenable promise or if they explicitly accept an
 argument. See :ref:`async-tests`.
 
 
+.. _deferred-tests:
+
 Deferred tests
 ==============
 

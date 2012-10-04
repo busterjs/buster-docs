@@ -1,5 +1,5 @@
-.. _browser-testing:
 .. highlight:: html
+.. _browser-testing:
 
 ===============
 Browser testing
