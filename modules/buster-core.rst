@@ -126,7 +126,7 @@ A standalone Node.js and browser compatible event emitter API.
     Creates a new event emitter object.
 
 
-.. function:: emitter.addListener
+.. function:: eventEmitter.addListener
 
     ::
 
@@ -142,7 +142,7 @@ A standalone Node.js and browser compatible event emitter API.
         });
 
 
-.. function:: emitter.on
+.. function:: eventEmitter.on
 
     ::
 
@@ -151,7 +151,7 @@ A standalone Node.js and browser compatible event emitter API.
     Alias to ``addListener``.
 
 
-.. function:: emitter.once
+.. function:: eventEmitter.once
 
     ::
 
@@ -168,7 +168,7 @@ A standalone Node.js and browser compatible event emitter API.
         emitter.emit("myevent"); // Nothing happens
 
 
-.. function:: emitter.emit
+.. function:: eventEmitter.emit
 
     ::
 
@@ -185,7 +185,7 @@ A standalone Node.js and browser compatible event emitter API.
         emitter.emit("myevent", {}, "foo"); // {}, "foo", undefined
 
 
-.. function:: emitter.removeListener
+.. function:: eventEmitter.removeListener
 
     ::
 
@@ -202,7 +202,7 @@ A standalone Node.js and browser compatible event emitter API.
 
 
 
-.. function:: emitter.hasListener
+.. function:: eventEmitter.hasListener
 
     ::
 
