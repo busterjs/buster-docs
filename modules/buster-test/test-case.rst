@@ -24,7 +24,7 @@ that can be run using the :ref:`buster-test-runner`.
 testCase
 ========
 
-.. function:: buster.testCase.testCase(name, tests)
+.. function:: buster.testCase(name, tests)
 
     ``name`` is an arbitrary string. The ``tests`` object can contain test
     functions, nested test cases, setup and teardown.
