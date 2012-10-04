@@ -2,7 +2,7 @@
 .. _node-testing:
 
 ===============
-Node.JS testing
+Node.js testing
 ===============
 
 .. warning::
