@@ -64,7 +64,7 @@ Comparison functions
 ``identical(x, y)``
 -------------------
 
-Strict equality check according to `EcmaScript Harmony's ``egal``.
+Strict equality check according to EcmaScript Harmony's ``egal``.
 
 **From the Harmony wiki:**
 
