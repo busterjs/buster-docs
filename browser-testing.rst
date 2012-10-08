@@ -70,13 +70,13 @@ file and run it in a browser:
         <title>strftime</title>
       </head>
       <body>
-        <script type="text/javascript" src="http://busterjs.org/releases/latest/buster-test.js"></script>
-        <script type="text/javascript" src="http://busterjs.org/examples/strftime/strftime.js"></script>
-        <script type="text/javascript" src="http://busterjs.org/examples/strftime/strftime-test.js"></script>
+        <script type="text/javascript" src="http://cdn.busterjs.org/releases/latest/buster-test.js"></script>
+        <script type="text/javascript" src="http://docs.busterjs.org/_static/examples/strftime/strftime.js"></script>
+        <script type="text/javascript" src="http://docs.busterjs.org/_static/examples/strftime/strftime-test.js"></script>
       </body>
     </html>
 
-Go ahead, `try it <http://busterjs.org/examples/strftime/>`_.
+Go ahead, `try it <http://docs.busterjs.org/_static/examples/strftime/>`_.
 
 If you use Git, you can clone `this example <https://gist.github.com/1904218>`_
 to your machine::
