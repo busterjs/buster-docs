@@ -112,6 +112,8 @@ Methods
     #. Attempt to infer the name through ``func.toString()``
 
 
+.. _event-emitter:
+
 Event emitter
 =============
 

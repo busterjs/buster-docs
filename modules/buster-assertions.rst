@@ -78,8 +78,8 @@ Here's an example of providing a new assertion failure message for
 Events
 ======
 
-``buster.assertions`` is an `buster-eventEmitter </docs/core/#event-emitter>`_.
-Listen to events with ``on``::
+``buster.assertions`` is an :ref:`event-emitter`. Listen to events with
+``on``::
 
     buster.assertions.on("failure", function (err) {
         console.log(err.message);
