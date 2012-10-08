@@ -643,8 +643,8 @@ don't hesitate `posting issues in the issue tracker
 <https://github.com/busterjs/buster/issues>`_.
 
 See also `mailing list <http://groups.google.com/group/busterjs>`_,
-`irc.freenode.net #buster.js <irc://irc.freenode.net/buster.js>`_ and `Twitter
-@buster_js <http://twitter.com/buster_js>`_.
+#buster.js at irc.freenode.net, and `@buster_js at Twitter
+<http://twitter.com/buster_js>`_.
 
 
 Known issues
