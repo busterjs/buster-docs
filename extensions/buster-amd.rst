@@ -71,4 +71,4 @@ slash and file suffix. Use this option to e.g. use AMD loader plugins.
 Source code
 ===========
 
-`buster-amd on GitHub <https://github.com/johlrogge/buster-amd>`_
+`buster-amd on GitHub <https://github.com/busterjs/buster-amd>`_
