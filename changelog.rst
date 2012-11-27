@@ -6,6 +6,27 @@ Changelog
 
 Here you find details about what have changed with each release of Buster.JS.
 
+v0.6.3
+======
+
+Update capture-server and use new implementation, "ramp". This should
+vastly improve the stability of the server as well as print proper
+error messages (and use correct exit codes) when the server is not
+running or has no connected slaves.
+
+This release also introduces a few of the 1.0-ready modules slated for
+0.7, but few user-facing updates.
+
+Breaking changes
+----------------
+
+No breaking changes in this release.
+
+Additions
+---------
+
+No additions in this release.
+
 
 v0.6.2
 ======
@@ -471,7 +492,7 @@ Bugs
 ----
 
 - Fixed some bugs in server proxying for browser tests (:issue:`57`)
- 
+
 - Browser tests now fail when a test times out when there are successful tests
   in the same test run. (:issue:`77`)
 
