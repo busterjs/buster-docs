@@ -809,6 +809,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
 .. function:: assert.calledOnceWith
 
     ::
+
         assert.calledOnceWith(spy, arg1, arg2, ...)
 
     Passes if the spy was called exactly once and with the specified arguments.
