@@ -6,21 +6,22 @@ Welcome! Buster.JS is...
 :doc:`the roadmap <roadmap>`.
 
 **A browser JavaScript testing toolkit.** It does browser
-testing with browser automation (think JsTestDriver), qunit style static html
-page testing, testing in headless browsers (phantomjs, jsdom, ...), and more.
-Take a look at :doc:`the overview <overview>`!
+testing with browser automation (think JsTestDriver), QUnit style :ref:`static HTML
+page testing <buster-static>`, testing in headless browsers (PhantomJS, jsdom),
+and more. Take a look at :doc:`the overview <overview>`!
 
 **A Node.js testing toolkit.** You get the same test case library, assertion
 library, etc. This is also great for hybrid browser and Node.js code. Write
 your test case with Buster.JS and run it both in Node.js and in a real browser.
 
 **Flexible.** There's a public API for almost everything. You
-can write reporters for customizing the output of ``buster test`` (we
-already have xUnit XML, traditional dots, specification, tap, TeamCity and
-more), write extensions that wrap other testing frameworks (we already have
-buster-jstestdriver), add your own testing syntax (we ship with xUnit and BDD),
-and much more. Again, :doc:`the overview <overview>` lists many of these
-things.
+can write :ref:`reporters <buster-test-reporters>` for customizing the output
+of :program:`buster test` (we already have xUnit XML, traditional dots,
+specification, tap, TeamCity and more), write extensions that wrap other
+testing frameworks (we already have :ref:`buster-jstestdriver`), add your own
+testing syntax (we ship with :ref:`xUnit <buster-test-case>` and :ref:`BDD
+<buster-test-spec>`), and much more. Again, :doc:`the overview <overview>`
+lists many of these things.
 
 **Written by you.** We believe in open development, and already
 have a dozen or so contributors beyond the core authors of Buster.JS, August
@@ -29,8 +30,8 @@ Lilleaas and Christian Johansen. All development happens in public in the
 `busterjs-dev mailing list <http://groups.google.com/group/busterjs-dev>`_. We
 welcome your opinion.
 
-**A set of reusable libraries.** For example, buster-capture-server is our
-generic browser automation library that lets you successively load webpages
+**A set of reusable libraries.** For example, :ref:`buster-capture-server` is
+our generic browser automation library that lets you successively load webpages
 into browsers and send data to and from them. It is completely reusable and has
 no knowledge of Buster.JS tests, or tests at all for that matter.
 
@@ -61,7 +62,7 @@ These are articles, howtos, and guides to help get started with Buster.JS.
     browser-testing
     node-testing
     hybrid-testing
-    testcase
+    starting-testrun-manually
 
 
 Reference documentation

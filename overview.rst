@@ -1,5 +1,7 @@
 .. highlight:: javascript
 
+.. _overview:
+
 ==================
 Buster.JS overview
 ==================
@@ -44,6 +46,8 @@ Run tests for your config file with::
     buster test --config anywhere/buster.js
     // Can also specify config file
 
+For more, see :ref:`buster-configuration`.
+
 
 Test cases
 ==========
@@ -67,6 +71,8 @@ config file above will load the test.
 Note that you are free to name your test cases whatever you want. They don't
 have to start with ``"test ..."`` or ``"should ..."``.
 
+For more, see :ref:`buster-test-case`.
+
 
 Examples
 ========
@@ -86,6 +92,8 @@ Here's the other bundled way of doing it::
             expect(true).toBe(true);;
         });
     });
+
+For more, see :ref:`buster-test-spec`.
 
 
 Browser testing
@@ -109,6 +117,8 @@ Buster.JS automatically runs the tests in all the captured browsers.
     :width: 633
     :height: 382
 
+For more, see :ref:`browser-testing`.
+
 
 Static HTML based browser testing
 =================================
@@ -123,6 +133,8 @@ in a browser. This is similar to QUnit, Mocha, etc.
 .. image:: _static/overview/buster-static-success.png
     :width: 514
     :height: 470
+
+For more, see :ref:`buster-static`.
 
 
 Node testing
@@ -150,6 +162,8 @@ test output for :ref:`posix-argv-parser`:
 .. image:: _static/node-testing/buster-test-node.png
     :width: 633
     :height: 382
+
+For more, see :ref:`node-testing`.
 
 
 Assertions
@@ -216,6 +230,8 @@ too::
         }
     });
 
+For more, see :ref:`buster-assertions`.
+
 
 BDD syntax
 ==========
@@ -231,7 +247,7 @@ previously, and BDD style specs/examples::
             this.game = new BowlingGame();
 
             this.rollMany = function (rolls, pins) {
-                for (var i = 0; i &lt; rolls; ++i) {
+                for (var i = 0; i < rolls; ++i) {
                     this.game.roll(pins);
                 }
             };
@@ -247,6 +263,8 @@ previously, and BDD style specs/examples::
             buster.assert.equals(20, this.game.score());
         });
     });
+
+For more, see :ref:`buster-test-spec`.
 
 
 Reporters
@@ -282,6 +300,8 @@ Other reporters:
 All human-consumable reporters (i.e. not XML and tap output) can use no
 colors, bright colors, or dim colors.
 
+For more, see :ref:`buster-test-reporters`.
+
 
 Deferred/pending tests
 ======================
@@ -310,7 +330,10 @@ To defer a test, add ``//`` to the start of the test name::
         },
 
         "// exhibits feature A": "A simple place-holder, we need to detail this test"
-    })
+    });
+
+For more, see :ref:`deferred-tests` for xUnit style and :ref:`deferred-specs`
+for BDD style.
 
 
 Mocking and stubbing
@@ -382,6 +405,9 @@ to that of tests::
         // ... tests
     });
 
+For more, see :ref:`async-tests` for xUnit style and :ref:`async-specs` for BDD
+style.
+
 
 Test case contexts
 ==================
@@ -420,6 +446,9 @@ instead of a function to create a context. Nested contexts can have their own
 is called, the root ``setUp`` is called, then the one in ``"on steroids"``,
 then lastly the one in ``"with cowbell"``. The ``this`` is the same in all
 contexts.
+
+See :ref:`nested-setup-and-teardown` or :ref:`nested-before-and-after` for
+extended examples.
 
 
 Proxying to HTTP servers
@@ -464,7 +493,8 @@ ended::
 Running a subset of tests
 =========================
 
-To run a single test, pass it's full name as an operand to ``buster test``::
+To run a single test, pass it's full name as an operand to :program:`buster
+test`::
 
     buster test "My tests should run this particular test"
 
@@ -484,12 +514,15 @@ test`` it tries to find a config file automatically, if you don't specify
 one with ``--config``. Buster needs the config file to load your proxies,
 library code, dependencies, and so on.
 
+See :ref:`buster-test-options` for a complete overview of :program:`buster
+test` command line options.
+
 
 Testing AJAX
 ============
 
-Buster.JS comes with Sinon.JS. This makes mocking out the entire XHR stack in a
-browser trivial::
+Buster.JS comes with `Sinon.JS`_. This makes mocking out the entire XHR stack
+in a browser trivial::
 
     buster.testCase("My tests", {
         setUp: function () {
@@ -644,6 +677,8 @@ generic browser automation framework. Slidebuster uses it so that if you
 "capture" a normal browser and a touch device, you can swipe left and right on
 the touch device to change the slides on the normal browser.
 
+See :ref:`architecture` for an overview of all Buster.JS modules and extensions.
+
 
 AMD - control when tests start running
 ======================================
@@ -656,7 +691,8 @@ Buster.JS when to start running tests.
 Add ``{ autoRun: false }`` to your config file and call ``buster.run()`` to
 start the test run. That gives you full control over when the test run starts.
 
-See the :ref:`full documentation here <buster-amd>`.
+For more, see :ref:`starting-testrun-manually` and the :ref:`buster-amd`
+documentation.
 
 
 Global variables
@@ -666,8 +702,8 @@ By default, Buster.JS exposes four global variables: ``buster``, ``expect``,
 ``assert``, and ``refute``. The two latter are also available as properties on
 the ``buster`` object (``buster.assert``, ``buster.refute``). If you're a
 purist like us, you'll want to disable these additional globals and only have
-it expose the ``buster`` global variable (in browsers, on Node you'll have to
-``require`` the things you want to use).
+it expose the ``buster`` global variable (in browsers, on Node.js you'll have
+to ``require`` the things you want to use).
 
 .. note::
 

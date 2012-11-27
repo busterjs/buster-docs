@@ -9,13 +9,14 @@ Core modules
     buster-capture-server
     buster-configuration
     buster-core
-    buster-evented-logger
     buster-format
     buster-resources
     buster-server-cli
     buster-sinon
     buster-static
-    buster-test
-    buster-user-agent-parser
+    buster-test/index
+    evented-logger
     posix-argv-parser
     prefsink
+    samsam
+    user-agent-parser

@@ -1,4 +1,4 @@
-.. _extensions:
+.. _building-extensions:
 .. highlight:: javascript
 
 ===================
@@ -77,11 +77,10 @@ Hook: ``beforeRun``
 
 The ``beforeRun`` hook is run, after the test run configuration is
 fully loaded, but before the test runner has been initialized. The arguments
-passed to this hook is ``config``
-(a :doc:`buster-configuration group </modules/buster-configuration>`)
-and ``analyzer``. The analyzer can be used to flag issues about the
-code base, and is what ``buster-lint`` and ``buster-syntax``
-uses to warn about lint and syntax errors, respectively.
+passed to this hook is ``config`` (a :ref:`config-group`) and ``analyzer``.
+The analyzer can be used to flag issues about the code base, and is what
+``buster-lint`` and ``buster-syntax`` uses to warn about lint and syntax
+errors, respectively.
 
 Proper documentation for the analyzer is pending. For now, refer to
 `buster-lint <https://github.com/magnars/buster-lint>`_ for a usage
@@ -96,12 +95,11 @@ receives one or two arguments, depending on the environment.
 Browser environment: ``testRunner``, ``messagingClient``
 --------------------------------------------------------
 
-Both arguments are event emitters. The ``testRunn`` is a
-"remoteRunner" (not yet documented). It behaves like a
-:doc:`test runner </modules/buster-test>`, i.e. it emits all the same
-events. However, because the run potentially includes more than one browser,
-the remote runner wraps all test cases in an additional top-level context
-which is named after the browser that ran it.
+Both arguments are event emitters. The ``testRunner`` is a "remoteRunner" (not
+yet documented). It behaves like a :ref:`buster-test-runner`, i.e. it emits all
+the same events. However, because the run potentially includes more than one
+browser, the remote runner wraps all test cases in an additional top-level
+context which is named after the browser that ran it.
 
 The ``messagingClient`` contains all raw messages emitted in the
 browsers. The messages are wrapped in an envelop that also contains
@@ -111,11 +109,11 @@ information about the browser that sent it::
         data: { name: 'My context' },
         topic: 'context:start',
         clientId: 'eaebee40-ff08-4fcd-bc97-2da569e837c3',
-        client: { emit: [Function] } 
+        client: { emit: [Function] }
     }
 
 Node environment: ``testRunner``
 --------------------------------
 
 Node tests only receives a single runner argument. It is a plain
-:doc:`test runner </modules/buster-test>`.
+:ref:`buster-test-runner`.

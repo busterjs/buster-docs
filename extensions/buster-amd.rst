@@ -1,5 +1,5 @@
-.. _buster-amd:
 .. highlight:: javascript
+.. _buster-amd:
 
 ==========
 buster-amd

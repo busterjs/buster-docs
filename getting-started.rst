@@ -1,5 +1,7 @@
 .. highlight:: javascript
 
+.. _getting-started:
+
 ===============
 Getting started
 ===============
@@ -127,9 +129,9 @@ If your test is a Node.js test, you also need to require Buster.JS::
         }
     });
 
-See the full :doc:`buster.testCase <testcase>` docs and
-:ref:`buster-assertions` docs for details. There are also mocks and stubs and
-more, via the :ref:`buster-sinon` module.
+See the full :ref:`buster-test-case` docs and :ref:`buster-assertions` docs
+for details. There are also mocks and stubs and more, via the
+:ref:`buster-sinon` module.
 
 
 Run tests

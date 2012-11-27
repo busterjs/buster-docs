@@ -1,3 +1,5 @@
+.. _architecture:
+
 =====================
 Architecture overview
 =====================
@@ -212,27 +214,6 @@ more or less like existing Buster.JS CLIs. Is used by ``buster-test-cli`` and
 ``buster-static``.
 
 
-buster-client
--------------
-
-Status:
-    Unstable, about to be merged into buster-capture-server
-
-Source code: :repo:`buster-client`
-
-Build status:
-    .. raw:: html
-
-        <a href="http://travis-ci.org/busterjs/buster-client" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-client.png">
-        </a>
-
-To be merged into ``buster-capture-server``. Implements a simple HTTP client
-for buster-capture-server's HTTP API. Is used by ``buster-test-cli`` to
-configure and create a session (remember, a generic work load, typically a test
-run).
-
-
 buster-configuration
 --------------------
 
@@ -411,7 +392,7 @@ and serves tests on a simple server.
 
 
 stream-logger
--------------------
+-------------
 
 Status:
     Stable

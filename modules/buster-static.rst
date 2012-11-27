@@ -1,7 +1,9 @@
+.. default-domain:: js
+.. highlight:: javascript
 .. _buster-static:
 
 =============
 buster-static
 =============
 
-**TODO Port from old site**
+**TODO Document**
