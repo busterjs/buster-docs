@@ -9,6 +9,8 @@ Here you find details about what have changed with each release of Buster.JS.
 v0.6.3
 ======
 
+Not released in `npm <https://npmjs.org/package/buster>`_.
+
 Update capture-server and use new implementation, "ramp". This should
 vastly improve the stability of the server as well as print proper
 error messages (and use correct exit codes) when the server is not
@@ -31,6 +33,8 @@ No additions in this release.
 v0.6.2
 ======
 
+Not released in `npm <https://npmjs.org/package/buster>`_.
+
 Minor fix.
 
 Breaking changes
@@ -51,6 +55,8 @@ Bug fixes
 
 v0.6.1
 ======
+
+Released 2012-07-09.
 
 Buster.JS 0.6.1 is a fairly small maintenance release, mostly correcting a
 bunch of bugs of minor/medium significance.
@@ -101,6 +107,8 @@ Bug fixes
 
 v0.6.0 -- Buster.JS Beta 4
 ==========================
+
+Released 2012-06-20.
 
 Beta 4 packs a lot of changes, increased stability and new features. Tests
 written for older versions do not need any syntactical updates, while
