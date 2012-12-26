@@ -128,7 +128,7 @@ These naming changes will only affect you if you are depending on either of
 these modules in your own projects.
 
 - buster-resources is now `ramp-resources
-  <https://github.com/busterjs/ramp-resources>` (the capture server will
+  <https://github.com/busterjs/ramp-resources>`_ (the capture server will
   eventually become "ramp")
 - buster-args is now `posix-argv-parser
   <https://github.com/busterjs/posix-argv-parser>`_
