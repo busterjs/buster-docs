@@ -156,7 +156,7 @@ Extension hooks
 ^^^^^^^^^^^^^^^
 
 Hooks fire in a given order. The ``beforeRun`` no longer comes with
-any arguments. To get a hold of the ``analyzer`` and ``configuration`` objects
+any arguments. To get hold of the ``analyzer`` and ``configuration`` objects
 that used to be passed to it, implement ``analyze(analyzer)`` and
 ``configure(configuration)`` (called in that order) in addition.
 
