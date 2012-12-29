@@ -18,18 +18,22 @@ the so-called "Git Bash" which is (almost) a Unix shell on your Windows system.
 It's invoked by a right-click to bring up the context menu and then selecting "Git Bash" from that.
 
 The development environment is managed with a CLI (Command Line Interface), ``buster-dev-tools``.
-To bootstrap, you create a folder of your choice, e.g. ``myBusterDevEnv``, to hold
+To bootstrap, you create a folder of your choice, e.g. ``busterDevEnv``, to hold
 all the packages. Inside of that you clone ``buster-dev-tools`` from GitHub::
 
-    mkdir myBusterDevEnv
-    cd myBusterDevEnv
+    mkdir busterDevEnv
+    cd busterDevEnv
     git clone https://github.com/busterjs/buster-dev-tools.git
+
+Note: the name ``busterDevEnv`` is the only thing that you might want to change to your liking.
+Everything else can (and should be) copied&pasted as is.
 
 Next, two environment variables need to be adjusted: ``NODE_PATH`` and ``PATH``.
 The former, ``NODE_PATH``, affects where Node.js is looking for packages, 
-and we want it to do so in the development environment (``myBusterDevEnv`` in this example).
+and we want it to do so in the development environment (``busterDevEnv`` in this example).
 However, since ``NODE_PATH`` is pretty central to Node.js, we're going to be a bit paranoid
-and first push its current value onto ``NODE_PATH_OLD``, in a stack-like manner (`LIFO <http://en.wikipedia.org/wiki/LIFO_(computing)>`_).
+and first push its current value onto ``NODE_PATH_OLD``,
+in a stack-like manner (`LIFO <http://en.wikipedia.org/wiki/LIFO_(computing)>`_).
 
 On Linux and Mac OS X (or in Git Bash on Windows)::
 
