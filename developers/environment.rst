@@ -51,6 +51,7 @@ On Windows (DOS-box)::
 
 Please note that the above commands must be *executed right within your development environment folder*,
 i.e. assuming you did not "cd" anywhere else after the ``git clone`` from the first step.
+Or, put more simply: if you, as advised, just kept copying & pasting - you need not worry :).
 
 Finally you run the tool to get all the buster packages plus external
 dependencies::
