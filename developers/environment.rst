@@ -19,7 +19,7 @@ It's invoked by a right-click to bring up the context menu and then selecting "G
 
 The development environment is managed with a CLI (Command Line Interface), ``buster-dev-tools``.
 To bootstrap, you create a folder of your choice, e.g. ``myBusterDevEnv``, to hold
-all the packages, and inside of that you make your clone of ``buster-dev-tools`` from GitHub::
+all the packages. Inside of that you clone ``buster-dev-tools`` from GitHub::
 
     mkdir myBusterDevEnv
     cd myBusterDevEnv
