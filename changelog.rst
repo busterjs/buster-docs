@@ -6,10 +6,10 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
-v0.6.3
-======
+v0.6.12 (formerly: v0.6.3)
+==========================
 
-Not released in `npm <https://npmjs.org/package/buster>`_.
+Released 2012-12-22.
 
 Update capture-server and use new implementation, "ramp". This should
 vastly improve the stability of the server as well as print proper
@@ -30,10 +30,10 @@ Additions
 No additions in this release.
 
 
-v0.6.2
-======
+v0.6.11 (formerly: v0.6.2)
+==========================
 
-Not released in `npm <https://npmjs.org/package/buster>`_.
+Released 2012-12-22.
 
 Minor fix.
 
@@ -51,6 +51,12 @@ Bug fixes
 ---------
 
 - Exit code was always 1 (:issue:`221`)
+
+
+v0.6.2 - v.0.6.10
+=================
+
+To be ignored.
 
 
 v0.6.1
