@@ -4,7 +4,7 @@
 Changelog
 =========
 
-Here you find details about what have changed with each release of Buster.JS.
+Here you find details about what has changed with each release of Buster.JS.
 
 v0.6.3
 ======
