@@ -139,7 +139,7 @@ not.
 
 To create asynchronous tests (i.e. ones that the runner will wait for), the
 test function can either explicitly accept a single argument, which is a
-function, **or** return a thenable promise.
+function, **or** return a :ref:`thenable promise <returning-a-promise>`.
 
 The argument passed to the test is a function. When the function is called, the
 asynchronous test is deemed done. The idiomatic way of creating asynchronous

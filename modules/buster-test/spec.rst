@@ -169,7 +169,7 @@ Asynchronous specs
 
 To create asynchronous specs (i.e. ones that the runner will wait for), the
 spec function can either explicitly accept a single argument, which is a
-function, **or** return a thenable promise.
+function, **or** return a :ref:`thenable promise <returning-a-promise>`.
 
 
 Explicitly accepting an argument
@@ -417,9 +417,10 @@ Will print:
 Asynchronous before and after
 -----------------------------
 
-Before and after callbacks are treated as asynchronous by the test runner if
-they either return a thenable promise or if they explicitly accept an argument.
-See :ref:`async-specs`.
+Before and after callbacks are treated as asynchronous by the test
+runner if they either return a :ref:`thenable promise
+<returning-a-promise>` or if they explicitly accept an argument. See
+:ref:`async-specs`.
 
 
 .. _deferred-specs:
