@@ -4,10 +4,12 @@
 Changelog
 =========
 
-Here you find details about what have changed with each release of Buster.JS.
+Here you find details about what has changed with each release of Buster.JS.
 
-v0.6.3
-======
+v0.6.12 (formerly: v0.6.3)
+==========================
+
+Released 2012-12-22.
 
 Update capture-server and use new implementation, "ramp". This should
 vastly improve the stability of the server as well as print proper
@@ -28,8 +30,10 @@ Additions
 No additions in this release.
 
 
-v0.6.2
-======
+v0.6.11 (formerly: v0.6.2)
+==========================
+
+Released 2012-12-22.
 
 Minor fix.
 
@@ -49,8 +53,16 @@ Bug fixes
 - Exit code was always 1 (:issue:`221`)
 
 
+v0.6.2 - v.0.6.10
+=================
+
+To be ignored.
+
+
 v0.6.1
 ======
+
+Released 2012-07-09.
 
 Buster.JS 0.6.1 is a fairly small maintenance release, mostly correcting a
 bunch of bugs of minor/medium significance.
@@ -102,6 +114,8 @@ Bug fixes
 v0.6.0 -- Buster.JS Beta 4
 ==========================
 
+Released 2012-06-20.
+
 Beta 4 packs a lot of changes, increased stability and new features. Tests
 written for older versions do not need any syntactical updates, while
 extensions and other "general API consumers" *may*.
@@ -128,7 +142,7 @@ These naming changes will only affect you if you are depending on either of
 these modules in your own projects.
 
 - buster-resources is now `ramp-resources
-  <https://github.com/busterjs/ramp-resources>` (the capture server will
+  <https://github.com/busterjs/ramp-resources>`_ (the capture server will
   eventually become "ramp")
 - buster-args is now `posix-argv-parser
   <https://github.com/busterjs/posix-argv-parser>`_
@@ -156,7 +170,7 @@ Extension hooks
 ^^^^^^^^^^^^^^^
 
 Hooks fire in a given order. The ``beforeRun`` no longer comes with
-any arguments. To get a hold of the ``analyzer`` and ``configuration`` objects
+any arguments. To get hold of the ``analyzer`` and ``configuration`` objects
 that used to be passed to it, implement ``analyze(analyzer)`` and
 ``configure(configuration)`` (called in that order) in addition.
 
