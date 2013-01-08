@@ -58,10 +58,6 @@ dependencies::
 
     buster-dev-tools pull
 
-If you get an error regarding a failed 'when.js' required then run::
-
-    npm install
-
 
 Refreshing all repositories
 ===========================
