@@ -371,10 +371,9 @@ one argument, ``done``::
         },
 
         "test asynchronous": function (done) {
-            myLibrary.doAjaxRequest("/foo", function (response) {
+            myLibrary.doAjaxRequest("/foo", done(function (response) {
                 assert.equals(response.statusCode, 200);
-                done();
-            });
+            }));
         }
     });
 
