@@ -243,9 +243,11 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
 
     **Message**
 
+    ::
+
         assert.isNull.message = "Expected ${0} to be null";
 
-    ``${0}``::
+    ``${0}``:
         The actual object
 
 
@@ -796,6 +798,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
     **Message**
 
     ::
+
         assert.calledWith.message = "Expected ${0} to be called with arguments ${1}${2}";
 
     ``${0}``:
@@ -1654,14 +1657,27 @@ Methods
         // Fails: "[assert.isFoo] Expected { id: 42 } to be foo!"
         assert.isFoo({ id: 42 });
 
-        // Fails: "[assert.isFoo] Ouch: Expected { id: 42 } to be foo!"
-        assert.isFoo({ id: 42 }, "Ouch");
-
         // Fails: "[refute.isFoo] Expected not to be foo!"
         refute.isFoo("foo");
 
         // Passes
         expect("foo").toBeFoo();
+
+        // To support custom messages, do this:
+        buster.assertions.add("isFoo", {
+            assert: function (actual) {
+                return actual == "foo";
+            },
+            assertMessage: "${1}Expected ${0} to be foo!",
+            refuteMessage: "${1}Expected not to be foo!",
+            expectation: "toBeFoo",
+            values: function (thing, message) {
+                return [thing, message ? message + " " : ""];
+            }
+        });
+
+        // Fails: "[assert.isFoo] Ouch: Expected { id: 42 } to be foo!"
+        assert.isFoo({ id: 42 }, "Ouch");
 
     **Error message value interpolation**
 

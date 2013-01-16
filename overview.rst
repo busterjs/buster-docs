@@ -371,17 +371,16 @@ one argument, ``done``::
         },
 
         "test asynchronous": function (done) {
-            myLibrary.doAjaxRequest("/foo", function (response) {
+            myLibrary.doAjaxRequest("/foo", done(function (response) {
                 assert.equals(response.statusCode, 200);
-                done();
-            });
+            }));
         }
     });
 
 The ``done`` argument is a function. Call it to tell Buster.JS that the
 asynchronous test has finished running. If you *don't* call ``done``, the test
 will eventually time out and fail. You can also have the test function return a
-*thenable* promise to make it asynchronous.
+:ref:`thenable promise <returning-a-promise>` to make it asynchronous.
 
 ``setUp`` and ``tearDown`` can also be asynchronous. The procedure is identical
 to that of tests::

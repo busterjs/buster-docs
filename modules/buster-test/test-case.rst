@@ -176,7 +176,7 @@ callback to the ``done`` function::
         }), 100);
     }
 
-
+.. _returning-a-promise:
 Returning a promise
 -------------------
 
