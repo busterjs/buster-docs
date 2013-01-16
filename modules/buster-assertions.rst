@@ -243,9 +243,11 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
 
     **Message**
 
+    ::
+
         assert.isNull.message = "Expected ${0} to be null";
 
-    ``${0}``::
+    ``${0}``:
         The actual object
 
 
@@ -796,6 +798,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
     **Message**
 
     ::
+
         assert.calledWith.message = "Expected ${0} to be called with arguments ${1}${2}";
 
     ``${0}``:
@@ -809,6 +812,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
 .. function:: assert.calledOnceWith
 
     ::
+
         assert.calledOnceWith(spy, arg1, arg2, ...)
 
     Passes if the spy was called exactly once and with the specified arguments.
