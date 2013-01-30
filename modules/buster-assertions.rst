@@ -83,8 +83,7 @@ The following assertions can be used with ``assert`` and ``refute``.
 They are described for ``assert``, but the corresponding failure message for ``refute`` is also mentioned.
 For ``refute`` the behaviour is exactly opposed.
 
-
-.. function:: assert.same
+.. function:: same
 
     ::
 
