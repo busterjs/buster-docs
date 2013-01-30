@@ -80,7 +80,7 @@ always has a corresponding ``refute.xyz`` that does the opposite check.
 
 
 The following assertions can be used with ``assert`` and ``refute``.
-They are described for ``assert``, but the corresponding failure message for ``refute`` is also mentioned.
+They are described for ``assert``, but the corresponding failure messages for ``refute`` is also mentioned.
 For ``refute`` the behaviour is exactly opposed.
 
 .. function:: same
@@ -637,8 +637,12 @@ when working with spies and stubs. However, note that these assertions are
 technically provided by the integration package :ref:`buster-sinon`, *not*
 **buster-assertions**. This only matters if you use this package stand-alone.
 
+As for the normal assertions, the assertions for stubs and spies can be used with ``assert`` and ``refute``.
+The description is for ``assert``, but the corresponding failure messages for ``refute`` are also mentioned.
+For ``refute`` the behaviour is exactly opposed.
 
-.. function:: assert.called
+
+.. function:: called
 
     ::
 
@@ -658,7 +662,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         spy();
         assert.called(spy); // Passes
 
-    **Message**
+    **Messages**
 
     ::
 
@@ -667,8 +671,19 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
     ``${0}``:
         The spy
 
+    ::
 
-.. function:: assert.callOrder
+        refute.called.message = "Expected ${0} to not be called but was called ${1}${2}";
+
+    ``${0}``:
+        The spy
+    ``${1}``:
+        The number of calls as a string. Ex: "two times".
+    ``${2}``:
+        All calls formatted as a multi-line string.
+
+
+.. function:: callOrder
 
     ::
 
@@ -689,11 +704,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         assert.callOrder(spy1, spy3, spy2); // Fails
         assert.callOrder(spy1, spy2, spy3); // Passes
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.callOrder.message = "Expected ${expected} to be called in order but were called as ${actual}";
+        refute.callOrder.message = "Expected ${expected} not to be called in order";
 
     ``${expected}``:
         A string representation of the expected call order
@@ -701,7 +717,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         A string representation of the actual call order
 
 
-.. function:: assert.calledOnce
+.. function:: calledOnce
 
     ::
 
@@ -721,11 +737,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         spy();
         assert.called(spy); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.calledOnce.message = "Expected ${0} to be called once but was called ${1}${2}";
+        refute.calledOnce.message = "Expected ${0} to not be called exactly once${2}";
 
     ``${0}``:
         The spy
@@ -736,7 +753,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         passed arguments, returned value and more.
 
 
-.. function:: assert.calledTwice
+.. function:: calledTwice
 
     ::
 
@@ -759,11 +776,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         spy();
         assert.called(spy); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.calledTwice.message = "Expected ${0} to be called twice but was called ${1}${2}";
+        refute.calledTwice.message = "Expected ${0} to not be called exactly twice${2}";
 
     ``${0}``:
         The spy
@@ -774,7 +792,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         passed arguments, returned value and more.
 
 
-.. function:: assert.calledThrice
+.. function:: calledThrice
 
     ::
 
@@ -797,11 +815,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         spy();
         assert.called(spy); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.calledThrice.message = "Expected ${0} to be called thrice but was called ${1}${2}";
+        refute.calledThrice.message = "Expected ${0} to not be called exactly thrice${2}";
 
     ``${0}``:
         The spy
@@ -812,7 +831,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         passed arguments, returned value and more.
 
 
-.. function:: assert.calledWith
+.. function:: calledWith
 
     ::
 
@@ -834,11 +853,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         assert.calledWith(spy, "Hey", 12);  // Fails
         assert.calledWith(spy, "Hey", arr); // Passes
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.calledWith.message = "Expected ${0} to be called with arguments ${1}${2}";
+        refute.calledWith.message = "Expected ${0} not to be called with arguments ${1}${2}";
 
     ``${0}``:
         The spy
@@ -848,7 +868,7 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         String representation of all calls.
 
 
-.. function:: assert.calledOnceWith
+.. function:: calledOnceWith
 
     ::
 
@@ -869,11 +889,12 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
         spy(42, 13);
         assert.calledOnceWith(spy, 42, 13); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.calledOnceWith.message = "Expected ${0} to be called once with arguments ${1}${2}";
+        refute.calledOnceWith.message = "Expected ${0} not to be called once with arguments ${1}${2}";
 
     ``${0}``:
         The spy
