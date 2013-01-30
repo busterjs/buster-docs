@@ -174,6 +174,12 @@ For ``refute`` the behaviour is exactly opposed.
         assert.defined.message = "Expected to be defined";
         refute.defined.message = "typeof ${0} (${1}) expected to be undefined";
 
+    ``${0}``:
+        The actual object
+    ``${1}``:
+        ``typeof object``
+
+
 
 .. function:: isNull
 
@@ -504,21 +510,13 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
         assert.tagName.message = "Expected tagName to be ${0} but was ${1}";
-
-    ``${0}``:
-        The expected ``tagName``
-    ``${1}``:
-        If the object does not have a ``tagName`` property, this is the object.
-        Otherwise, it is the value of ``object.tagName``.
-
-    ::
-
         refute.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
 
     ``${0}``:
         The expected ``tagName``
     ``${1}``:
         If the object does not have a ``tagName`` property, this is the object.
+        Otherwise, it is the value of ``object.tagName``.
 
 
 .. function:: className
@@ -553,14 +551,6 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.className.noClassNameMessage = "Expected object to have className property";
         assert.className.message = "Expected object's className to include ${0} but was ${1}";
-
-    ``${0}``:
-        The expected ``classNames``
-    ``${1}``:
-        The value of the object's ``className`` property, if any.
-
-    ::
-
         refute.className.noClassNameMessage = "Expected object to have className property";
         refute.className.message = "Expected object's className to not include ${0} but was ${1}";
 
