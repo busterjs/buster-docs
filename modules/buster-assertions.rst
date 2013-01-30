@@ -84,7 +84,7 @@ They are described for ``assert``, but the corresponding failure message for ``r
 For ``refute`` the behaviour is exactly opposed.
 
 
-.. function:: same
+.. function:: assert.same
 
     ::
 
