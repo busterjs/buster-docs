@@ -87,7 +87,7 @@ For ``refute`` the behaviour is exactly opposed.
 
     ::
 
-        assert.same(actual, expected[, message])``
+        assert.same(actual, expected[, message])
 
     Fails if ``actual`` **is not** the same object (``===``) as ``expected``.
     To compare similar objects, such as ``{ name: "Chris", id: 42 }`` and ``{
