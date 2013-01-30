@@ -43,80 +43,6 @@ Refutations help express "assert not ..." style verification in a much clearer
 way. It also brings with it a nice consistency in that any ``assert.xyz``
 always has a corresponding ``refute.xyz`` that does the opposite check.
 
-
-Custom assertions
-=================
-
-Custom, domain-specific assertions helps improve clarity and reveal intent in
-tests. They also facilitate much better feedback when they fail. You can add
-custom assertions that behave exactly like the built-in ones (i.e. with
-counting, message formatting, expectations and more) by using the :func:`add`
-method.
-
-
-Overriding assertion messages
-=============================
-
-The default assertion messages can be overridden. The properties to overwrite
-are listed with each assertion along with the arguments the string is fed.
-Here's an example of providing a new assertion failure message for
-:func:`assert.equals`::
-
-    var assert = buster.assertions.assert;
-    assert.equals.message = "I wanted ${0} == ${1}!"
-
-    try {
-        assert.equals(3, 4);
-    } catch (e) {
-        console.log(e.message);
-    }
-
-    // Prints:
-    // "I wanted 3 == 4!"
-
-
-Events
-======
-
-``buster.assertions`` is an :ref:`event-emitter`. Listen to events with
-``on``::
-
-    buster.assertions.on("failure", function (err) {
-        console.log(err.message);
-    });
-
-
-``pass`` event
---------------
-
-Signature::
-
-    "pass", function () {}
-
-Assertion passed. The callback is invoked with the assertion name, e.g.
-``"equals"``, as its only argument. Note that this event is also emitted when
-refutations pass.
-
-
-``failure`` event
------------------
-
-Signature::
-
-    "failure", function (error) {}
-
-Assertion failed. The callback is invoked with an :class:`AssertionError`
-object.
-
-
-Assertions
-==========
-
-Examples assume that you have aliased ``buster.assertions.assert`` as such::
-
-    var assert = buster.assertions.assert;
-
-
 .. function:: assert
 
     ::
@@ -135,8 +61,30 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert(null); // Fails
         assert(34);   // Passes
 
+.. function:: refute
 
-.. function:: assert.same
+    ::
+
+        refute(actual[, message])
+
+    Fails if ``actual`` is truthy. Fails with either the provided message or
+    "Expected null to be falsy". This behavior differs from all other
+    refutations, which do not allow for the optional message argument.
+
+    ::
+
+        refute({ not: "Falsy" }, "This will fail"); // Fails with custom message
+        refute(null, "This will pass");
+        refute(null); // Passes
+        refute(34);   // Fails
+
+
+The following assertions can be used with ``assert`` and ``refute``.
+They are described for ``assert``, but the corresponding failure message for ``refute`` is also mentioned.
+For ``refute`` the behaviour is exactly opposed.
+
+
+.. function:: same
 
     ::
 
@@ -154,11 +102,12 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.same(obj, obj);                       // Passes
         assert.same(obj, { id: 42, name: "Chris" }); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.same.message = "${0} expected to be the same object as ${1}";
+        refute.same.message = "${0} expected not to be the same object as ${1}";
 
     ``${0}``:
         The actual object
@@ -166,7 +115,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         The expected object
 
 
-.. function:: assert.equals
+.. function:: equals
 
     ::
 
@@ -191,11 +140,12 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.equals({ name: "Professor Chaos" }, { name: "Professor Chaos" }); // Passes
         assert.equals({ name: "Professor Chaos" }, { name: "Dr Evil" });         // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.equals.message = "${0} expected to be equal to ${1}";
+        refute.equals.message = "${0} expected not to be equal to ${1}";
 
     ``${0}``:
         The actual object
@@ -203,7 +153,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         The expected object
 
 
-.. function:: assert.defined
+.. function:: defined
 
     ::
 
@@ -218,14 +168,15 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.defined({});  // Passes
         assert.defined(a); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.defined.message = "Expected to be defined";
+        refute.defined.message = "typeof ${0} (${1}) expected to be undefined";
 
 
-.. function:: assert.isNull
+.. function:: isNull
 
     ::
 
@@ -241,17 +192,18 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.isNull(null); // Passes
         assert.isNull({});   // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.isNull.message = "Expected ${0} to be null";
+        refute.isNull.message = "Expected not to be null";
 
     ``${0}``:
         The actual object
 
 
-.. function:: assert.match
+.. function:: match
 
     ::
 
@@ -396,6 +348,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
     ::
 
         assert.match.exceptionMessage = "${0}";
+        refute.match.exceptionMessage = "${0}";
 
     Used when the matcher function throws an exception. This happens if the
     matcher is not any of the accepted types, for instance, a boolean.
@@ -406,6 +359,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
     ::
 
         assert.match.message = "${0} expected to match ${1}";
+        refute.match.message = "${0} expected not to match ${1}";
 
     ``${0}``:
         The actual object
@@ -413,7 +367,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
       The expected object
 
 
-.. function:: assert.isObject
+.. function:: isObject
 
     ::
 
@@ -428,11 +382,12 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.isObject([1, 2, 3]);      // Passes
         assert.isObject(function () {}); // Fails
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.isObject.message = "${0} (${1}) expected to be object and not null";
+        refute.isObject.message = "${0} (${1}) expected not to be object and not null";
 
     ``${0}``:
         The actual object
@@ -440,7 +395,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
       ``typeof object``
 
 
-.. function:: assert.isFunction
+.. function:: isFunction
 
     ::
 
@@ -454,11 +409,12 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.isFunction(42);             // Fails
         assert.isFunction(function () {}); // Passes
 
-    **Message**
+    **Messages**
 
     ::
 
         assert.isFunction.message = "${0} (${1}) expected to be function";
+        refute.isFunction.message = "${0} (${1}) expected not to be function";
 
     ``${0}``:
         The actual value
@@ -466,7 +422,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         ``typeof actual value``
 
 
-.. function:: assert.exception
+.. function:: exception
 
     ::
 
@@ -516,8 +472,17 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
     ``${2}``:
         The exception message
 
+    ::
 
-.. function:: assert.tagName
+        refute.exception.message = "Expected not to throw but threw ${0}, (${1})";
+
+    ``${0}``:
+        The type of exception thrown (if any)
+    ``${1}``:
+        The exception message
+
+
+.. function:: tagName
 
     ::
 
@@ -547,8 +512,17 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         If the object does not have a ``tagName`` property, this is the object.
         Otherwise, it is the value of ``object.tagName``.
 
+    ::
 
-.. function:: assert.className
+        refute.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
+
+    ``${0}``:
+        The expected ``tagName``
+    ``${1}``:
+        If the object does not have a ``tagName`` property, this is the object.
+
+
+.. function:: className
 
     ::
 
@@ -574,7 +548,7 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         assert.className(el, "feed items");     // Fails, "items" is not a match
         assert.className(el, ["item", "feed"]); // Passes
 
-    **Message**
+    **Messages**
 
     ::
 
@@ -585,6 +559,82 @@ Examples assume that you have aliased ``buster.assertions.assert`` as such::
         The expected ``classNames``
     ``${1}``:
         The value of the object's ``className`` property, if any.
+
+    ::
+
+        refute.className.noClassNameMessage = "Expected object to have className property";
+        refute.className.message = "Expected object's className to not include ${0} but was ${1}";
+
+    ``${0}``:
+        The expected ``classNames``
+    ``${1}``:
+      The value of the object's ``className`` property, if any. Otherwise, the
+      object itself.
+
+
+Custom assertions
+=================
+
+Custom, domain-specific assertions helps improve clarity and reveal intent in
+tests. They also facilitate much better feedback when they fail. You can add
+custom assertions that behave exactly like the built-in ones (i.e. with
+counting, message formatting, expectations and more) by using the :func:`add`
+method.
+
+
+Overriding assertion messages
+=============================
+
+The default assertion messages can be overridden. The properties to overwrite
+are listed with each assertion along with the arguments the string is fed.
+Here's an example of providing a new assertion failure message for
+:func:`assert.equals`::
+
+    var assert = buster.assertions.assert;
+    assert.equals.message = "I wanted ${0} == ${1}!"
+
+    try {
+        assert.equals(3, 4);
+    } catch (e) {
+        console.log(e.message);
+    }
+
+    // Prints:
+    // "I wanted 3 == 4!"
+
+
+Events
+======
+
+``buster.assertions`` is an :ref:`event-emitter`. Listen to events with
+``on``::
+
+    buster.assertions.on("failure", function (err) {
+        console.log(err.message);
+    });
+
+
+``pass`` event
+--------------
+
+Signature::
+
+    "pass", function () {}
+
+Assertion passed. The callback is invoked with the assertion name, e.g.
+``"equals"``, as its only argument. Note that this event is also emitted when
+refutations pass.
+
+
+``failure`` event
+-----------------
+
+Signature::
+
+    "failure", function (error) {}
+
+Assertion failed. The callback is invoked with an :class:`AssertionError`
+object.
 
 
 .. _stubs-and-spies:
@@ -843,557 +893,6 @@ technically provided by the integration package :ref:`buster-sinon`, *not*
     ``${2}``:
         String representation of all calls.
 
-
-Refutations
-===========
-
-Examples assume that you have aliased ``buster.assertions.refute`` as such::
-
-    var refute = buster.assertions.refute;
-
-
-.. function:: refute
-
-    ::
-
-        refute(actual[, message])
-
-    Fails if ``actual`` is truthy. Fails with either the provided message or
-    "Expected null to be falsy". This behavior differs from all other
-    refutations, which do not allow for the optional message argument.
-
-    ::
-
-        refute({ not: "Falsy" }, "This will fail"); // Fails with custom message
-        refute(null, "This will pass");
-        refute(null); // Passes
-        refute(34);   // Fails
-
-
-.. function:: refute.same
-
-    ::
-
-        refute.same(actual, expected[, message])
-
-    Fails if ``actual`` **is** the same object (``===``) as ``expected``. To
-    compare similar objects, such as ``{ name: "Chris", id: 42 }`` and ``{ id:
-    42, name: "Chris" }`` (not the same instance), see :func:`refute.equals`.
-    The optional message is prepended to the failure message if provided.
-
-    ::
-
-        var obj = { id: 42, name: "Chris" };
-        refute.same(obj, { id: 42, name: "Chris" }); // Passes
-        refute.same(obj, obj);                       // Fails
-
-    **Message**
-
-    ::
-
-        refute.same.message = "${0} expected not to be the same object as ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
-
-
-.. function:: refute.equals
-
-    ::
-
-        refute.equals(actual, expected[, message])
-
-    Passes in any case where :func:`assert.equals` fails.  The optional message
-    is prepended to the failure message if provided.
-
-    ::
-
-        var assert = assert;
-        refute.equals({ name: "Professor Chaos" }, { name: "Dr Evil" });         // Passes
-        refute.equals({ name: "Professor Chaos" }, { name: "Professor Chaos" }); // Fails
-
-    **Message**
-
-    ::
-
-        refute.equals.message = "${0} expected not to be equal to ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
-
-
-.. function:: refute.defined
-
-    ::
-
-        refute.defined(object[, message])
-
-    Fails if ``object`` is not ``undefined``. The optional message is prepended
-    to the failure message if provided.
-
-    ::
-
-        var a;
-
-        refute.defined(undefined); // Passes
-        refute.defined({});        // Fails
-        refute.defined(a);         // Passes
-        refute.defined({});        // Fails
-
-    **Message**
-
-    ::
-
-        refute.defined.message = "typeof ${0} (${1}) expected to be undefined";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        ``typeof object``
-
-
-.. function:: refute.isNull
-
-    ::
-
-        refute.isNull(object[, message])
-
-    Fails if ``object`` is ``null``. The optional message is prepended to the
-    failure message if provided.
-
-    ::
-
-        refute.isNull({});   // Passes
-        refute.isNull(null); // Fails
-
-    **Message**
-
-    ::
-
-        refute.isNull.message = "Expected not to be null";
-
-
-.. function:: refute.match
-
-    ::
-
-        refute.match(actual, pattern[, message])
-
-    Fails in cases where :func:`assert.match` passes.
-
-    **Messages**
-
-    ::
-
-        refute.match.exceptionMessage = "${0}";
-
-    Used when the matcher function throws an exception. This happens if the
-    matcher is not any of the accepted types, for instance, a boolean.
-
-    ``${0}``:
-        Message from exception thrown by matcher function.
-
-    ::
-
-        refute.match.message = "${0} expected not to match ${1}";
-
-    ``${0}``:
-        The actual objetc
-    ``${1}``:
-        The expected object
-
-
-.. function:: refute.isObject
-
-    ::
-
-        refute.isObject(object[, message])
-
-    Fails if ``object`` is a non-null object.
-
-    ::
-
-        refute.isObject({});             // Fails
-        refute.isObject(42);             // Passes
-        refute.isObject([1, 2, 3]);      // Fails
-        refute.isObject(function () {}); // Passes
-
-    **Message**
-
-    ::
-
-        refute.isObject.message = "${0} (${1}) expected not to be object and not null";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        ``typeof object``
-
-
-.. function:: refute.isFunction
-
-    ::
-
-        refute.isFunction(actual[, message])
-
-    Fails if ``actual`` is a function.
-
-    ::
-
-        refute.isFunction({});             // Passes
-        refute.isFunction(42);             // Passes
-        refute.isFunction(function () {}); // Fails
-
-    **Message**
-
-    ::
-
-        refute.isFunction.message = "${0} (${1}) expected not to be function";
-
-    ``${0}``:
-        The actual value
-    ``${1}``:
-        ``typeof actual value``
-
-
-.. function:: refute.exception
-
-    ::
-
-        refute.exception(callback)
-
-    Fails if ``callback`` throws an exception.
-
-    ::
-
-        refute.exception(function () {
-            // Exercise code...
-        }); // Passes
-
-        refute.exception(function () {
-            throw new TypeError("Ooops!");
-        }); // Fails
-
-    **Message**
-
-    ::
-
-        refute.exception.message = "Expected not to throw but threw ${0}, (${1})";
-
-    ``${0}``:
-        The type of exception thrown (if any)
-    ``${1}``:
-        The exception message
-
-
-.. function:: refute.tagName
-
-    ::
-
-        refute.tagName(element, tagName[, message])
-
-    Fails if the ``element`` either does not specify a ``tagName`` property, or
-    if its value **is** a case-insensitive match with the expected ``tagName``.
-    The optional message is prepended to the failure message if provided.
-
-    ::
-
-        refute.tagName(document.createElement("p"), "LI");  // Passes
-        refute.tagName(document.createElement("p"), "p");   // Fails
-        refute.tagName(document.createElement("h2"), "H3"); // Passes
-        refute.tagName(document.createElement("p"), "p");   // Fails
-
-    **Message**
-
-    ::
-
-        refute.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
-
-    ``${0}``:
-        The expected ``tagName``
-    ``${1}``:
-        If the object does not have a ``tagName`` property, this is the object.
-
-
-.. function:: refute.className
-
-    ::
-
-        refute.className(element, className[, message])
-
-    Fails if the ``element`` either does not specify a ``className`` property,
-    or if its value **is** a space-separated list of all class names in
-    ``classNames``.
-
-    ``classNames`` can be either a space-delimited string or an array of class
-    names. If any class specified by ``classNames`` is not found in the
-    object's ``className`` property the assertion passes. Order does not
-    matter.
-
-    ::
-
-        var el = document.createElement("p");
-        el.className = "feed item blog-post";
-
-        refute.className(el, "blog-post rss");  // Passes
-        refute.className(el, "feed item");      // Fails
-        refute.className(el, ["item", "feed"]); // Passes
-
-    **Message**
-
-    ::
-
-        refute.className.noClassNameMessage = "Expected object to have className property";
-        refute.className.message = "Expected object's className to not include ${0} but was ${1}";
-
-    ``${0}``:
-        The expected ``classNames``
-    ``${1}``:
-      The value of the object's ``className`` property, if any. Otherwise, the
-      object itself.
-
-
-Stubs and spies
----------------
-
-See :ref:`stubs-and-spies` for explanation. The following are spy/stub related
-refutations.
-
-
-.. function:: refute.called
-
-    ::
-
-        refute.called(spy)
-
-    Passes when spy has never been called.
-
-    ::
-
-        var spy = this.spy();
-
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Fails
-
-    **Message**
-
-    ::
-
-        refute.called.message = "Expected ${0} to not be called but was called ${1}${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The number of calls as a string. Ex: "two times".
-    ``${2}``:
-        All calls formatted as a multi-line string.
-
-
-.. function:: refute.callOrder
-
-    ::
-
-        refute.callOrder(spy, spy2, ...)
-
-    Passes where :func:`assert.callOrder` fails.
-
-    **Message**
-
-    ::
-
-        refute.callOrder.message = "Expected ${expected} not to be called in order";
-
-    ``${expected}``:
-        A string representation of the expected call order
-
-
-.. function:: refute.calledOnce
-
-    ::
-
-        refute.calledOnce(spy)
-
-    Fails if the spy was called exactly once.
-
-    ::
-
-        var spy = this.spy();
-
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Fails
-
-        spy();
-        refute.called(spy); // Passes
-
-    **Message**
-
-    ::
-
-        refute.calledOnce.message = "Expected ${0} to not be called exactly once${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The number of calls, as a string. Ex: "two times"
-    ``${2}``:
-        The call log. All calls as a string. Each line is one call and includes
-        passed arguments, returned value and more.
-
-
-.. function:: refute.calledTwice
-
-    ::
-
-        refute.calledTwice(spy)
-
-    Fails if the spy was called exactly twice.
-
-    ::
-
-        var spy = this.spy();
-
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Fails
-
-        spy();
-        refute.called(spy); // Passes
-
-    **Message**
-
-    ::
-
-        refute.calledTwice.message = "Expected ${0} to not be called exactly twice${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The number of calls, as a string. Ex: "two times"
-    ``${2}``:
-        The call log. All calls as a string. Each line is one call and includes
-        passed arguments, returned value and more.
-
-
-.. function:: refute.calledThrice
-
-    ::
-
-        refute.calledThrice(spy)
-
-    Fails if the spy was called exactly three times.
-
-    ::
-
-        var spy = this.spy();
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Passes
-
-        spy();
-        refute.called(spy); // Fails
-
-        spy();
-        refute.called(spy); // Passes
-
-    **Message**
-
-    ::
-
-        refute.calledThrice.message = "Expected ${0} to not be called exactly thrice${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The number of calls, as a string. Ex: "two times"
-    ``${2}``:
-        The call log. All calls as a string. Each line is one call and includes
-        passed arguments, returned value and more.
-
-
-.. function:: refute.calledWith
-
-    ::
-
-        refute.calledWith(spy, arg1, arg2, ...)
-
-    Fails if the spy was called at least once with the specified arguments.
-
-    ::
-
-        var spy = this.spy();
-        var arr = [1, 2, 3];
-        spy(12);
-        spy(42, 13);
-        spy("Hey", arr, 2);
-
-        refute.calledWith(spy, 12);         // Fails
-        refute.calledWith(spy, "Hey");      // Fails
-        refute.calledWith(spy, "Hey", 12);  // Passes
-        refute.calledWith(spy, "Hey", arr); // Fails
-
-    **Message**
-
-    ::
-
-        refute.calledWith.message = "Expected ${0} not to be called with arguments ${1}${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The expected arguments
-    ``${2}``:
-        String representation of all calls.
-
-
-.. function:: refute.calledOnceWith
-
-    ::
-
-        refute.calledOnceWith(spy, arg1, arg2, ...)
-
-    Fails if the spy was called exactly once and with the specified arguments.
-    Other arguments may have been passed after the specified ones.
-
-    ::
-
-        var spy = this.spy();
-        var arr = [1, 2, 3];
-        spy(12);
-
-        refute.calledOnceWith(spy, 12);     // Fails
-        refute.calledOnceWith(spy, 42);     // Passes
-
-        spy(42, 13);
-        refute.calledOnceWith(spy, 42, 13); // Passes
-
-    **Message**
-
-    ::
-
-        refute.calledOnceWith.message = "Expected ${0} not to be called once with arguments ${1}${2}";
-
-    ``${0}``:
-        The spy
-    ``${1}``:
-        The expected arguments
-    ``${2}``:
-        String representation of all calls.
 
 
 .. _expectations:
