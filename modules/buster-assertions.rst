@@ -51,8 +51,8 @@ always has a corresponding ``refute.xyz`` that does the opposite check.
 
     Fails if ``actual`` is falsy (``0``, ``""``, ``null``, ``undefined``,
     ``NaN``). Fails with either the provided message or "Expected null to be
-    truthy". This behavior differs from all other assertions, which does not
-    allow for the optional message argument.
+    truthy". This behavior differs from all other assertions, which prepend
+    the optional message argument.
 
     ::
 
@@ -69,7 +69,7 @@ always has a corresponding ``refute.xyz`` that does the opposite check.
 
     Fails if ``actual`` is truthy. Fails with either the provided message or
     "Expected null to be falsy". This behavior differs from all other
-    refutations, which do not allow for the optional message argument.
+    refutations, which prepend the optional message argument.
 
     ::
 
@@ -79,9 +79,41 @@ always has a corresponding ``refute.xyz`` that does the opposite check.
         refute(34);   // Fails
 
 
+Predefined Assertions
+=====================
+
 The following assertions can be used with ``assert`` and ``refute``.
-They are described for ``assert``, but the corresponding failure messages for ``refute`` is also mentioned.
-For ``refute`` the behaviour is exactly opposed.
+They are described for ``assert``, but the corresponding failure messages for ``refute``
+are also mentioned. For ``refute`` the behaviour is exactly opposed.
+
+All assertions support an optional ``message`` argument, which is prepended to the
+failure message.
+
+*Overview:*
+
+- :func:`same`
+- :func:`equals`
+- :func:`greater`
+- :func:`less`
+- :func:`defined`
+- :func:`isNull`
+- :func:`match`
+- :func:`isObject`
+- :func:`isFunction`
+- :func:`isTrue`
+- :func:`isFalse`
+- :func:`isString`
+- :func:`isBoolean`
+- :func:`isNumber`
+- :func:`isNaN`
+- :func:`isArray`
+- :func:`isArrayLike`
+- :func:`exception`
+- :func:`near`
+- :func:`hasPrototype`
+- :func:`contains`
+- :func:`tagName`
+- :func:`className`
 
 .. function:: same
 
@@ -92,8 +124,7 @@ For ``refute`` the behaviour is exactly opposed.
     Fails if ``actual`` **is not** the same object (``===``) as ``expected``.
     To compare similar objects, such as ``{ name: "Chris", id: 42 }`` and ``{
     id: 42, name: "Chris" }`` (not the same instance), see
-    :func:`assert.equals`. The optional message is prepended to the failure
-    message if provided.
+    :func:`equals`.
 
     ::
 
@@ -135,7 +166,6 @@ For ``refute`` the behaviour is exactly opposed.
 
     ::
 
-        var assert = assert;
         assert.equals({ name: "Professor Chaos" }, { name: "Professor Chaos" }); // Passes
         assert.equals({ name: "Professor Chaos" }, { name: "Dr Evil" });         // Fails
 
@@ -152,14 +182,67 @@ For ``refute`` the behaviour is exactly opposed.
         The expected object
 
 
+.. function:: greater
+
+    ::
+
+        assert.greater(actual, expected[, message])
+
+    Fails if ``actual`` is equal to or less than ``expected``.
+
+    ::
+
+        assert.greater(2, 1); // Passes
+    assert.greater(1, 1); // Fails
+        assert.greater(1, 2); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.greater.message = "Expected ${0} to be greater than ${1}";
+        refute.greater.message = "Expected ${0} to be less than or equal to ${1}";
+
+    ``${0}``:
+        The actual object
+    ``${1}``:
+        The expected object
+
+
+.. function:: less
+
+    ::
+
+        assert.less(actual, expected[, message])
+
+    Fails if ``actual`` is equal to or greater than ``expected``.
+
+    ::
+
+        assert.less(1, 2); // Passes
+	assert.less(1, 1); // Fails
+        assert.less(2, 1); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.less.message = "Expected ${0} to be less than ${1}";
+        refute.less.message = "Expected ${0} to be greater than or equal to ${1}";
+
+    ``${0}``:
+        The actual object
+    ``${1}``:
+        The expected object
+
+
 .. function:: defined
 
     ::
 
         assert.defined(object[, message])
 
-    Fails if ``object`` is ``undefined``. The optional message is prepended to
-    the failure message if provided.
+    Fails if ``object`` is ``undefined``.
 
     ::
 
@@ -187,8 +270,7 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.isNull(object[, message])
 
-    Fails if ``object`` is not ``null``. The optional message is prepended to
-    the failure message if provided.
+    Fails if ``object`` is not ``null``.
 
     ::
 
@@ -427,17 +509,225 @@ For ``refute`` the behaviour is exactly opposed.
         ``typeof actual value``
 
 
+.. function:: isTrue
+
+    ::
+
+        assert.isTrue(actual[, message])
+
+    Fails if ``actual`` is not ``true``.
+
+    ::
+
+        assert.isTrue("2" == 2);  // Passes
+        assert.isTrue("2" === 2); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isTrue.message = "Expected ${0} to be true";
+        refute.isTrue.message = "Expected ${0} to not be true";
+
+    ``${0}``:
+        The actual value
+
+
+.. function:: isFalse
+
+    ::
+
+        assert.isFalse(actual[, message])
+
+    Fails if ``actual`` is not ``false``.
+
+    ::
+
+        assert.isFalse("2" === 2); // Passes
+        assert.isFalse("2" == 2);  // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isFalse.message = "Expected ${0} to be false";
+        refute.isFalse.message = "Expected ${0} to not be false";
+
+    ``${0}``:
+        The actual value
+
+
+.. function:: isString
+
+    ::
+
+        assert.isString(actual[, message])
+
+    Fails if the type of ``actual`` is not ``"string"``.
+
+    ::
+
+        assert.isString("2"); // Passes
+        assert.isString(2);   // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isString.message = "Expected ${0} (${1}) to be string";
+        refute.isString.message = "Expected ${0} not to be string";
+
+    ``${0}``:
+        The actual value
+    ``${1}``:
+        The type of the actual value
+
+
+.. function:: isBoolean
+
+    ::
+
+        assert.isBoolean(actual[, message])
+
+    Fails if the type of ``actual`` is not ``"boolean"``.
+
+    ::
+
+        assert.isBoolean(true);   // Passes
+        assert.isBoolean(2 < 2);  // Passes
+        assert.isBoolean("true"); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isBoolean.message = "Expected ${0} (${1}) to be boolean";
+        refute.isBoolean.message = "Expected ${0} not to be boolean";
+
+    ``${0}``:
+        The actual value
+    ``${1}``:
+        The type of the actual value
+
+
+.. function:: isNumber
+
+    ::
+
+        assert.isNumber(actual[, message])
+
+    Fails if the type of ``actual`` is not ``"number"`` or is ``NaN``.
+
+    ::
+
+        assert.isNumber(12);   // Passes
+        assert.isNumber("12"); // Fails
+        assert.isNumber(NaN);  // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isNumber.message = "Expected ${0} (${1}) to be a non-NaN number";
+        refute.isNumber.message = "Expected ${0} to be NaN or another non-number value";
+
+    ``${0}``:
+        The actual value
+    ``${1}``:
+        The type of the actual value
+
+
+.. function:: isNaN
+
+    ::
+
+        assert.isNaN(actual[, message])
+
+    Fails if ``actual`` is not ``NaN``.
+    Does not perform coercion in contrast to the standard javascript function ``isNaN``.
+
+    ::
+
+        assert.isNaN(NaN);           // Passes
+        assert.isNaN("abc" / "def"); // Passes
+        assert.isNaN(12);            // Fails
+        assert.isNaN({});            // Fails, would pass for standard javascript function isNaN
+
+    **Messages**
+
+    ::
+
+        assert.isNaN.message = "Expected ${0} to be NaN";
+        refute.isNaN.message = "Expected not to be NaN";
+
+    ``${0}``:
+        The actual value
+
+
+.. function:: isArray
+
+    ::
+
+        assert.isArray(actual[, message])
+
+    Fails if the object type of ``actual`` is not ``Array``.
+    
+    ::
+
+        assert.isArray([1, 2, 3]); // Passes
+        assert.isArray({});        // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isArray.message = "Expected ${0} to be array";
+        refute.isArray.message = "Expected ${0} not to be array";
+
+    ``${0}``:
+        The actual value
+
+
+.. function:: isArrayLike
+
+    ::
+
+        assert.isArrayLike(actual[, message])
+
+    Fails if none of the following conditions is fulfilled:
+
+    - the object type of ``actual`` is ``Array``
+    - ``actual`` is an ``arguments`` object
+    - ``actual`` is an object providing a property ``length`` of type ``"number"`` and a property ``splice`` of type ``"function"``
+    
+    ::
+
+        assert.isArrayLike([1, 2, 3]);                            // Passes
+	assert.isArrayLike(arguments);                            // Passes
+	assert.isArrayLike({ length: 0, splice: function() {} }); // Passes
+        assert.isArrayLike({});                                   // Fails
+
+    **Messages**
+
+    ::
+
+        assert.isArrayLike.message = "Expected ${0} to be array like";
+        refute.isArrayLike.message = "Expected ${0} not to be array like";
+
+    ``${0}``:
+        The actual value
+
+
 .. function:: exception
 
     ::
 
-        assert.exception(callback[, type])
+        assert.exception(callback[, type, message])
 
     Fails if ``callback`` does not throw an exception. If the optional ``type``
     is provided, the assertion fails if the callback either does not throw an
     exception, **or** if the exception is not of the given type (determined by
-    its ``name`` property).  The optional message is prepended to the failure
-    message if provided.
+    its ``name`` property).
 
     ::
 
@@ -487,6 +777,89 @@ For ``refute`` the behaviour is exactly opposed.
         The exception message
 
 
+.. function:: near
+
+    ::
+
+        assert.near(actual, expected, delta[, message])
+
+    Fails if the difference between ``actual`` and ``expected`` is greater than ``delta``.
+
+    ::
+
+        assert.near(10.3, 10, 0.5); // Passes
+        assert.near(10.5, 10, 0.5); // Passes
+        assert.near(10.6, 10, 0.5); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.near.message = "Expected ${0} to be equal to ${1} +/- ${2}";
+        refute.near.message = "Expected ${0} not to be equal to ${1} +/- ${2}";
+
+    ``${0}``:
+        The ``actual`` value 
+    ``${1}``:
+	The ``expected`` value
+    ``${2}``:
+	The ``delta`` value
+
+
+.. function:: hasPrototype
+
+    ::
+
+        assert.hasPrototype(actual, prototype[, message])
+
+    Fails if ``prototype`` does not exist in the prototype chain of ``actual``.
+
+    ::
+
+        assert.hasPrototype(function() {}, Function.prototype); // Passes
+        assert.hasPrototype(function() {}, Object.prototype);   // Passes
+        assert.hasPrototype({}, Function.prototype);            // Fails
+
+    **Messages**
+
+    ::
+
+        assert.hasPrototype.message = "Expected ${0} to have ${1} on its prototype chain";
+        refute.hasPrototype.message = "Expected ${0} not to have ${1} on its prototype chain";
+
+    ``${0}``:
+        The ``actual`` object 
+    ``${1}``:
+	The ``prototype`` object
+
+
+.. function:: contains
+
+    ::
+
+        assert.contains(haystack, needle[, message])
+
+    Fails if the array like object ``haystack`` does not contain the ``needle`` object.
+
+    ::
+
+        assert.contains([1, 2, 3], 2);   // Passes
+        assert.contains([1, 2, 3], 4);   // Fails
+        assert.contains([1, 2, 3], "2"); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.contains.message = "Expected [${0}] to contain ${1}";
+        refute.contains.message = "Expected [${0}] not to contain ${1}";
+
+    ``${0}``:
+        The ``haystack`` object 
+    ``${1}``:
+	The ``needle`` object
+
+
 .. function:: tagName
 
     ::
@@ -495,7 +868,6 @@ For ``refute`` the behaviour is exactly opposed.
 
     Fails if the ``element`` either does not specify a ``tagName`` property, or
     if its value is not a case-insensitive match with the expected ``tagName``.
-    The optional message is prepended to the failure message if provided.
     Works with any object.
 
     ::
@@ -933,7 +1305,7 @@ on the resulting object.
 
         expect(actual).toBe(expected)
 
-    See :func:`assert.same`
+    See :func:`same`
 
 
 .. function:: expect.toEqual
@@ -942,7 +1314,25 @@ on the resulting object.
 
         expect(actual).toEqual(expected)
 
-    See :func:`assert.equals`
+    See :func:`equals`
+
+
+.. function:: expect.toBeGreaterThan
+
+    ::
+
+        expect(actual).toBeGreaterThan(expected)
+
+    See :func:`greater`
+
+
+.. function:: expect.toBeLessThan
+
+    ::
+
+        expect(actual).toBeLessThan(expected)
+
+    See :func:`less`
 
 
 .. function:: expect.toBeDefined
@@ -951,7 +1341,7 @@ on the resulting object.
 
         expect(actual).toBeDefined(expected)
 
-    See :func:`assert.defined`
+    See :func:`defined`
 
 
 .. function:: expect.toBeNull
@@ -960,7 +1350,7 @@ on the resulting object.
 
         expect(actual).toBeNull(expected)
 
-    See :func:`assert.isNull`
+    See :func:`isNull`
 
 
 .. function:: expect.toMatch
@@ -969,7 +1359,7 @@ on the resulting object.
 
         expect(actual).toMatch(expected)
 
-    See :func:`assert.match`
+    See :func:`match`
 
 
 .. function:: expect.toBeObject
@@ -978,7 +1368,7 @@ on the resulting object.
 
         expect(actual).toBeObject(expected)
 
-    See :func:`assert.isObject`
+    See :func:`isObject`
 
 
 .. function:: expect.toBeFunction
@@ -987,7 +1377,79 @@ on the resulting object.
 
         expect(actual).toBeFunction(expected)
 
-    See :func:`assert.isFunction`
+    See :func:`isFunction`
+
+
+.. function:: expect.toBeTrue
+
+    ::
+
+        expect(actual).toBeTrue()
+
+    See :func:`isTrue`
+
+
+.. function:: expect.toBeFalse
+
+    ::
+
+        expect(actual).toBeFalse()
+
+    See :func:`isFalse`
+
+
+.. function:: expect.toBeString
+
+    ::
+
+        expect(actual).toBeString()
+
+    See :func:`isString`
+
+
+.. function:: expect.toBeBoolean
+
+    ::
+
+        expect(actual).toBeBoolean()
+
+    See :func:`isBoolean`
+
+
+.. function:: expect.toBeNumber
+
+    ::
+
+        expect(actual).toBeNumber()
+
+    See :func:`isNumber`
+
+
+.. function:: expect.toBeNaN
+
+    ::
+
+        expect(actual).toBeNaN()
+
+    See :func:`isNaN`
+
+
+.. function:: expect.toBeArray
+
+    ::
+
+        expect(actual).toBeArray()
+
+    See :func:`isArray`
+
+
+.. function:: expect.toBeArrayLike
+
+    ::
+
+        expect(actual).toBeArrayLike()
+
+    See :func:`isArrayLike`
 
 
 .. function:: expect.toThrow
@@ -996,7 +1458,34 @@ on the resulting object.
 
         expect(actual).toThrow(expected)
 
-    See :func:`assert.exception`
+    See :func:`exception`
+
+
+.. function:: expect.toBeNear
+
+    ::
+
+        expect(actual).toBeNear(expected, delta)
+
+    See :func:`near`
+
+
+.. function:: expect.toHavePrototype
+
+    ::
+
+        expect(actual).toHavePrototype(prototype)
+
+    See :func:`hasPrototype`
+
+
+.. function:: expect.toContain
+
+    ::
+
+        expect(haystack).toContain(needle)
+
+    See :func:`contains`
 
 
 .. function:: expect.toHaveTagName
@@ -1005,7 +1494,7 @@ on the resulting object.
 
         expect(actual).toHaveTagName(expected)
 
-    See :func:`assert.tagName`
+    See :func:`tagName`
 
 
 .. function:: expect.toHaveClassName
@@ -1014,7 +1503,7 @@ on the resulting object.
 
         expect(actual).toHaveClassName(expected)
 
-    See :func:`assert.className`
+    See :func:`className`
 
 
 .. function:: expect.toHaveBeenCalled
@@ -1023,7 +1512,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalled()
 
-    See :func:`assert.called`
+    See :func:`called`
 
 
 .. function:: expect.toHaveBeenCalledOnce
@@ -1032,7 +1521,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalledOnce(expected)
 
-    See :func:`assert.calledOnce`
+    See :func:`calledOnce`
 
 
 .. function:: expect.toHaveBeenCalledTwice
@@ -1041,7 +1530,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalledTwice(expected)
 
-    See :func:`assert.calledTwice`
+    See :func:`calledTwice`
 
 
 .. function:: expect.toHaveBeenCalledThrice
@@ -1050,7 +1539,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalledThrice(expected)
 
-    See :func:`assert.calledThrice`
+    See :func:`calledThrice`
 
 
 .. function:: expect.toHaveBeenCalledWith
@@ -1059,7 +1548,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalledWith(arg1, arg2, ...)
 
-    See :func:`assert.calledWith`
+    See :func:`calledWith`
 
 
 .. function:: expect.toHaveBeenCalledOnceWith
@@ -1068,7 +1557,7 @@ on the resulting object.
 
         expect(spy).toHaveBeenCalledOnceWith(arg1, arg2, ...)
 
-    See :func:`assert.calledOnceWith`
+    See :func:`calledOnceWith`
 
 
 Methods
