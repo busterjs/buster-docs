@@ -96,7 +96,7 @@ to your machine::
 .. note::
 
     If you opt for :doc:`downloading <download>` the script locally, remember
-    to get the CSS filetoo. When using the pre-built library, there's no
+    to get the CSS file too. When using the pre-built library, there's no
     installation, but you also miss out on much of the automation sweetness.
 
 
