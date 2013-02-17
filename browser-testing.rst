@@ -47,9 +47,13 @@ In the cases where you need a simpler method for running tests, but don't care
 for the manual HTML scaffold (see next section), Buster.JS can serve the
 scaffold for you based on your configuration.
 
+Start the server:
+
 .. image:: /_static/overview/buster-static-start.png
     :width: 529
     :height: 348
+
+Open the page in the browser and watch the tests run immediately:
 
 .. image:: /_static/overview/buster-static-success.png
     :width: 514
