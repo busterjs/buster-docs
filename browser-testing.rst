@@ -17,13 +17,19 @@ Inspired by JsTestDriver, Buster.JS can automate browsers seamlessly and
 provide feedback anywhere you want, making running your tests in actual
 browsers easy and painless. Hell, it even makes it fun.
 
+First, start a server:
+
 .. image:: _static/overview/buster-server-start.png
     :width: 633
     :height: 382
 
+Then, capture how many browsers you want:
+
 .. image:: _static/overview/buster-server-capture-firefox.png
     :width: 827
     :height: 339
+
+And simultaneously run tests on all the captured browsers:
 
 .. image:: _static/overview/buster-test-run-browsers.png
     :width: 633
