@@ -45,7 +45,7 @@ Running with ``buster static``
 
 In the cases where you need a simpler method for running tests, but don't care
 for the manual HTML scaffold (see next section), Buster.JS can serve the
-scaffold for your based on your configuration.
+scaffold for you based on your configuration.
 
 .. image:: /_static/overview/buster-static-start.png
     :width: 529
