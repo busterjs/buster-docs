@@ -193,7 +193,7 @@ failure message.
     ::
 
         assert.greater(2, 1); // Passes
-    assert.greater(1, 1); // Fails
+	assert.greater(1, 1); // Fails
         assert.greater(1, 2); // Fails
 
     **Messages**
@@ -1001,7 +1001,7 @@ object.
 .. _stubs-and-spies:
 
 Stubs and spies
----------------
+===============
 
 The default Buster.JS bundle comes with built-in spies, stubs and mocks
 provided by `Sinon.JS <http://sinonjs.org>`_. The assertions are indisposable
@@ -1013,14 +1013,32 @@ As for the normal assertions, the assertions for stubs and spies can be used wit
 The description is for ``assert``, but the corresponding failure messages for ``refute`` are also mentioned.
 For ``refute`` the behaviour is exactly opposed.
 
+*Overview:*
+
+- :func:`same`
+- :func:`called`
+- :func:`callOrder`
+- :func:`calledOnce`
+- :func:`calledTwice`
+- :func:`calledThrice`
+- :func:`calledOn`
+- :func:`alwaysCalledOn`
+- :func:`calledWith`
+- :func:`alwaysCalledWith`
+- :func:`calledOnceWith`
+- :func:`calledWithExactly`
+- :func:`alwaysCalledWithExactly`
+- :func:`threw`
+- :func:`alwaysThrew`
+
 
 .. function:: called
 
     ::
 
-        assert.called(spy[, message])
+        assert.called(spy)
 
-    Fails if the spy has never been called.
+    Fails if the ``spy`` has never been called.
 
     ::
 
@@ -1048,7 +1066,7 @@ For ``refute`` the behaviour is exactly opposed.
         refute.called.message = "Expected ${0} to not be called but was called ${1}${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
     ``${1}``:
         The number of calls as a string. Ex: "two times".
     ``${2}``:
@@ -1095,19 +1113,19 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.calledOnce(spy)
 
-    Fails if the spy has never been called or if it was called more than once.
+    Fails if the ``spy`` has never been called or if it was called more than once.
 
     ::
 
         var spy = this.spy();
 
-        assert.called(spy); // Fails
+        assert.calledOnce(spy); // Fails
 
         spy();
-        assert.called(spy); // Passes
+        assert.calledOnce(spy); // Passes
 
         spy();
-        assert.called(spy); // Fails
+        assert.calledOnce(spy); // Fails
 
     **Messages**
 
@@ -1117,7 +1135,7 @@ For ``refute`` the behaviour is exactly opposed.
         refute.calledOnce.message = "Expected ${0} to not be called exactly once${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
     ``${1}``:
         The number of calls, as a string. Ex: "two times"
     ``${2}``:
@@ -1131,22 +1149,22 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.calledTwice(spy)
 
-    Only passes if the spy was called exactly two times.
+    Only passes if the ``spy`` was called exactly two times.
 
     ::
 
         var spy = this.spy();
 
-        assert.called(spy); // Fails
+        assert.calledTwice(spy); // Fails
 
         spy();
-        assert.called(spy); // Fails
+        assert.calledTwice(spy); // Fails
 
         spy();
-        assert.called(spy); // Passes
+        assert.calledTwice(spy); // Passes
 
         spy();
-        assert.called(spy); // Fails
+        assert.calledTwice(spy); // Fails
 
     **Messages**
 
@@ -1156,7 +1174,7 @@ For ``refute`` the behaviour is exactly opposed.
         refute.calledTwice.message = "Expected ${0} to not be called exactly twice${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
     ``${1}``:
         The number of calls, as a string. Ex: "two times"
     ``${2}``:
@@ -1170,22 +1188,22 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.calledThrice(spy)
 
-    Only passes if the spy has been called exactly three times.
+    Only passes if the ``spy`` has been called exactly three times.
 
     ::
 
         var spy = this.spy();
 
-        assert.called(spy); // Fails
+        assert.calledThrice(spy); // Fails
 
         spy();
-        assert.called(spy); // Fails
+        assert.calledThrice(spy); // Fails
 
         spy();
-        assert.called(spy); // Passes
+        assert.calledThrice(spy); // Passes
 
         spy();
-        assert.called(spy); // Fails
+        assert.calledThrice(spy); // Fails
 
     **Messages**
 
@@ -1195,12 +1213,90 @@ For ``refute`` the behaviour is exactly opposed.
         refute.calledThrice.message = "Expected ${0} to not be called exactly thrice${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
     ``${1}``:
         The number of calls, as a string. Ex: "two times"
     ``${2}``:
         The call log. All calls as a string. Each line is one call and includes
         passed arguments, returned value and more.
+
+
+.. function:: calledOn
+
+    ::
+
+        assert.calledOn(spy, obj)
+
+    Passes if the ``spy`` was called at least once with ``obj`` as its ``this`` value.
+
+    ::
+
+        var spy = this.spy();
+	var obj1 = {};
+	var obj2 = {};
+	var obj3 = {};
+
+        spy.call(obj2);
+        spy.call(obj3);
+
+        assert.calledOn(spy, obj1); // Fails
+        assert.calledOn(spy, obj2); // Passes
+        assert.calledOn(spy, obj3); // Passes
+
+    **Messages**
+
+    ::
+
+        assert.calledOn.message = "Expected ${0} to be called with ${1} as this but was called on ${2}";
+        refute.calledOn.message = "Expected ${0} not to be called with ${1} as this";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The object ``obj`` which is expected to have been ``this`` at least once
+    ``${2}``:
+        List of objects which actually have been ``this``
+
+
+.. function:: alwaysCalledOn
+
+    ::
+
+        assert.alwaysCalledOn(spy, obj)
+
+    Passes if the ``spy`` was always called with ``obj`` as its ``this`` value.
+
+    ::
+
+        var spy1 = this.spy();
+        var spy2 = this.spy();
+	var obj1 = {};
+	var obj2 = {};
+
+        spy1.call(obj1);
+        spy1.call(obj2);
+        
+        spy2.call(obj2);
+        spy2.call(obj2);
+
+        assert.alwaysCalledOn(spy1, obj1); // Fails
+        assert.alwaysCalledOn(spy1, obj2); // Fails
+        assert.alwaysCalledOn(spy2, obj1); // Fails
+        assert.alwaysCalledOn(spy2, obj2); // Passes
+
+    **Messages**
+
+    ::
+
+        assert.alwaysCalledOn.message = "Expected ${0} to always be called with ${1} as this but was called on ${2}";
+        refute.alwaysCalledOn.message = "Expected ${0} not to always be called with ${1} as this";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The object ``obj`` which is expected always to have been ``this``
+    ``${2}``:
+        List of objects which actually have been ``this``
 
 
 .. function:: calledWith
@@ -1209,7 +1305,7 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.calledWith(spy, arg1, arg2, ...)
 
-    Passes if the spy was called at least once with the specified arguments.
+    Passes if the ``spy`` was called at least once with the specified arguments.
     Other arguments may have been passed after the specified ones.
 
     ::
@@ -1233,7 +1329,42 @@ For ``refute`` the behaviour is exactly opposed.
         refute.calledWith.message = "Expected ${0} not to be called with arguments ${1}${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
+    ``${1}``:
+        The expected arguments
+    ``${2}``:
+        String representation of all calls.
+
+
+.. function:: alwaysCalledWith
+
+    ::
+
+        assert.alwaysCalledWith(spy, arg1, arg2, ...)
+
+    Passes if the ``spy`` was always called with the specified arguments.
+    Other arguments may have been passed after the specified ones.
+
+    ::
+
+        var spy = this.spy();
+        var arr = [1, 2, 3];
+        spy("Hey", arr, 12);
+        spy("Hey", arr, 13);
+
+        assert.alwaysCalledWith(spy, "Hey");          // Passes
+        assert.alwaysCalledWith(spy, "Hey", arr);     // Passes
+        assert.alwaysCalledWith(spy, "Hey", arr, 12); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.alwaysCalledWith.message = "Expected ${0} to always be called with arguments ${1}${2}";
+        refute.alwaysCalledWith.message = "Expected ${0} not to always be called with arguments${1}${2}";
+
+    ``${0}``:
+        The ``spy``
     ``${1}``:
         The expected arguments
     ``${2}``:
@@ -1246,7 +1377,7 @@ For ``refute`` the behaviour is exactly opposed.
 
         assert.calledOnceWith(spy, arg1, arg2, ...)
 
-    Passes if the spy was called exactly once and with the specified arguments.
+    Passes if the ``spy`` was called exactly once and with the specified arguments.
     Other arguments may have been passed after the specified ones.
 
     ::
@@ -1269,12 +1400,180 @@ For ``refute`` the behaviour is exactly opposed.
         refute.calledOnceWith.message = "Expected ${0} not to be called once with arguments ${1}${2}";
 
     ``${0}``:
-        The spy
+        The ``spy``
     ``${1}``:
         The expected arguments
     ``${2}``:
         String representation of all calls.
 
+
+.. function:: calledWithExactly
+
+    ::
+
+        assert.calledWithExactly(spy, arg1, arg2, ...)
+
+    Passes if the ``spy`` was called at least once with exact the arguments specified.
+
+    ::
+
+        var spy = this.spy();
+        var arr = [1, 2, 3];
+        spy("Hey", arr, 12);
+        spy("Hey", arr, 13);
+
+        assert.calledWithExactly(spy, "Hey", arr, 12); // Passes
+        assert.calledWithExactly(spy, "Hey", arr, 13); // Passes
+        assert.calledWithExactly(spy, "Hey", arr);     // Fails
+        assert.calledWithExactly(spy, "Hey");          // Fails
+
+    **Messages**
+
+    ::
+
+        assert.calledWithExactly.message = "Expected ${0} to be called with exact arguments ${1}${2}";
+        refute.calledWithExactly.message = "Expected ${0} not to be called with exact arguments${1}${2}";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The expected arguments
+    ``${2}``:
+        String representation of all calls.
+
+
+.. function:: alwaysCalledWithExactly
+
+    ::
+
+        assert.alwaysCalledWithExactly(spy, arg1, arg2, ...)
+
+    Passes if the ``spy`` was always called with exact the arguments specified.
+
+    ::
+
+        var spy = this.spy();
+        var arr = [1, 2, 3];
+        spy("Hey", arr, 12);
+
+        assert.alwaysCalledWithExactly(spy, "Hey", arr, 12); // Passes
+        assert.alwaysCalledWithExactly(spy, "Hey", arr);     // Fails
+        assert.alwaysCalledWithExactly(spy, "Hey");          // Fails
+
+        spy("Hey", arr, 13);
+        assert.alwaysCalledWithExactly(spy, "Hey", arr, 12); // Fails
+
+    **Messages**
+
+    ::
+
+        assert.alwaysCalledWithExactly.message = "Expected ${0} to always be called with exact arguments ${1}${2}";
+        refute.alwaysCalledWithExactly.message = "Expected ${0} not to always be called with exact arguments${1}${2}";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The expected arguments
+    ``${2}``:
+        String representation of all calls.
+
+
+.. function:: threw
+
+    ::
+
+        assert.threw(spy[, exception])
+
+    Passes if the ``spy`` threw at least once the specified ``exception``.
+    The ``exception`` can be a string denoting its type, or an actual object.
+    If ``exception`` is not specified, the assertion passes if the ``spy`` ever threw any exception.
+
+    ::
+
+	var exception1 = new TypeError();
+	var exception2 = new TypeError();
+	var exception3 = new TypeError();
+	var spy = this.spy(function(exception) {
+	    throw exception;
+	});
+	function callAndCatchException(spy, exception) {
+	    try {
+	        spy(exception);
+	    } catch(e) {
+	    }
+	}
+
+	callAndCatchException(spy, exception1);
+	callAndCatchException(spy, exception2);
+
+	assert.threw(spy);              // Passes
+	assert.threw(spy, "TypeError"); // Passes
+	assert.threw(spy, exception1);  // Passes
+	assert.threw(spy, exception2);  // Passes
+	assert.threw(spy, exception3);  // Fails
+
+	callAndCatchException(spy, exception3);
+	assert.threw(spy, exception3); 	// Passes
+
+    **Messages**
+
+    ::
+
+        assert.threw.message = "Expected ${0} to throw an exception${1}";
+        refute.threw.message = "Expected ${0} not to throw an exception${1}";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The expected ``exception``
+
+
+.. function:: alwaysThrew
+
+    ::
+
+        assert.alwaysThrew(spy[, exception])
+
+    Passes if the ``spy`` always threw the specified ``exception``.
+    The ``exception`` can be a string denoting its type, or an actual object.
+    If ``exception`` is not specified, the assertion passes if the ``spy`` ever threw any exception.
+
+    ::
+
+	var exception1 = new TypeError();
+	var exception2 = new TypeError();
+	var spy = this.spy(function(exception) {
+	    throw exception;
+	});
+	function callAndCatchException(spy, exception) {
+	    try {
+	        spy(exception);
+	    } catch(e) {
+	    }
+	}
+
+	callAndCatchException(spy, exception1);
+
+	assert.alwaysThrew(spy);              // Passes
+	assert.alwaysThrew(spy, "TypeError"); // Passes
+	assert.alwaysThrew(spy, exception1);  // Passes
+
+	callAndCatchException(spy, exception2);
+	assert.alwaysThrew(spy);              // Passes
+	assert.alwaysThrew(spy, "TypeError"); // Passes
+	assert.alwaysThrew(spy, exception1);  // Fails
+
+    **Messages**
+
+    ::
+
+        assert.alwaysThrew.message = "Expected ${0} to always throw an exception${1}";
+        refute.alwaysThrew.message = "Expected ${0} not to always throw an exception${1}";
+
+    ``${0}``:
+        The ``spy``
+    ``${1}``:
+        The expected ``exception``
 
 
 .. _expectations:
