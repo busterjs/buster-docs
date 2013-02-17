@@ -106,3 +106,21 @@ Running headless with PhantomJS
 .. warning::
 
     This feature has not yet landed in the beta.
+
+The easiest way to run your tests with PhantomJS at the moment is by using the ``buster server`` method and the script provided to capture the browser.
+
+Assuming you have installed PhantomJS separately and buster locally in your project:
+
+.. code-block:: text
+
+    buster-server
+    # on a separate terminal
+    phantomjs ./node_modules/buster/script/phantom.js &
+    buster-test
+
+The phantom.js script will try to capture your browser on http://localhost:1111
+If you'd like to confirm that it's been captured, open that url in your browser and you'll see the list of captured browsers.
+
+In the future there will probably be an easier and more integrated way to run tests with PhantomJS.
+
+

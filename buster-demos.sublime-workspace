@@ -1,0 +1,1217 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"AddressChan",
+				"AddressChannelCollection"
+			],
+			[
+				"btn-submenu",
+				"btn-submenu-active"
+			],
+			[
+				"highlight",
+				"highlightParentItem(root)	navMenuView.js"
+			],
+			[
+				"navMenuSubMe",
+				"navMenuSubMenuTpl"
+			],
+			[
+				"appl",
+				"application-white"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"appli",
+				"application-light-blue"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"account",
+				"account-mobile"
+			],
+			[
+				"landscap",
+				"landscape-w"
+			],
+			[
+				"handlePassword",
+				"handlePasswordChangeErrors(model, error)	changePasswordView.js"
+			],
+			[
+				"newSecondary",
+				"newSecondaryTokenValue"
+			],
+			[
+				"accountRoute",
+				"accountRouteRedirected"
+			],
+			[
+				"createFe",
+				"createFetchers()	feeds.js"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/trodrigues/Dropbox/code/demos/README.md",
+			"settings":
+			{
+				"buffer_size": 1125,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/Grunt exec.sublime-build",
+	"command_palette":
+	{
+		"height": 327.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packate",
+				"Package Control: Install Package"
+			],
+			[
+				"packa ",
+				"Package Control: Install Package"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/config.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/js/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/index.html",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/test/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-curljs/test/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-curljs/config.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/node_modules/buster-amd/lib/buster-amd.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-curljs/node_modules/buster-amd/lib/buster-amd.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/js/test/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/test/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/package.json",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/hybrid-tests/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-amd/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-tests/package.json",
+		"/Users/trodrigues/Dropbox/code/demos/buster-static-tests/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-static-tests/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-static-tests/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/html-scaffold/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/html-scaffold/strftime-test.html",
+		"/Users/trodrigues/Dropbox/code/demos/html-scaffold/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/html-scaffold/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/hybrid-tests/package.json",
+		"/Users/trodrigues/Dropbox/code/demos/hybrid-tests/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/hybrid-tests/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/hybrid-tests/strftime-test.html",
+		"/Users/trodrigues/Dropbox/code/demos/node-tests/buster.js",
+		"/Users/trodrigues/Dropbox/code/demos/node-tests/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/node-tests/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-tests/strftime-test.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-tests/strftime.js",
+		"/Users/trodrigues/Dropbox/code/demos/buster-server-tests/buster.js",
+		"/Users/trodrigues/Dropbox/code/buster-docs/browser-testing.rst",
+		"/Users/trodrigues/Dropbox/code/buster-docs/talks.rst",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/responsive-navbar.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/type.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/scaffolding.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/utilities.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/layouts.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap/grid.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/twitter-bootstrap-8c7f9c6/Makefile",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/grunt.js",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/css/main.css",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/less/bootstrap.less",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/css/bootstrap.css",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/sass/partials/_base.scss",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/sass/screen.scss",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/config.rb",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/stylesheets/screen.css",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/extensions/blueprint/stylesheets/blueprint/_scaffolding.scss",
+		"/Users/trodrigues/Dropbox/code/trodrigues.net/extensions/blueprint/stylesheets/blueprint/_typography.scss",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/tests/views/toolkitView.spec.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/toolkitView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/main.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/system/application.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/tests/views/zoneView.spec.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/routers/BaseRouter.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/tests/routers/BaseRouter.spec.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/routers/AccountRouter.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/addressView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/AddressTemplate.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/addressFieldsView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/addressFields.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/formField.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/address.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/zoneView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/grunt.js",
+		"/Users/trodrigues/Dropbox/configs/sublimetext2/Packages/User/Grunt exec.sublime-build",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/index.html",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/tests/config.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/testacular.conf.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/BasketItem.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/routers/RewardRouter.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/routers/CheckoutRouter.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/formListBaseView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/changePasswordView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/email.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/emailForm.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/navMenuSubMenu.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/navMenuView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/Login.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/controllers/BasketController.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/MemberAddress.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/MemberAddress.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/Basket.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/MemberToken.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/AddressChannel.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/ProgramCurrency.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/MemberToken.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/Member.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/statusBarView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/routers/MembershipRouter.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/headerView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/loginView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/registerView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/registerCardView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/registerEmailView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/controllers/rewardListController.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/primaryZoneView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/structure/primaryZone.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/basketItemView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/controllers/rewardItemDetailsController.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/controllers/welcomeController.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/emailFormView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/emailView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/telephoneForm.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/telephone.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/telephoneView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/telephoneFormView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/modelutils.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/css/less/modules/account.less",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/AddressChannel.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/Country.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/notificationsView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/addressForm.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/views/addressFormView.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/RegisterUser.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/RegisterCard.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/css/less/variables.less",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/ModelMixin.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/BaseModel.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/changePassword.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/addressFormView.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/templates/components/addressFieldsView.tmpl",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/MemberBalance.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/collections/MemberBalance.js",
+		"/Users/trodrigues/aimia/code/memberweb/endeavour-member-web/src/main/webapp/js/models/Notification.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"basel",
+			"quiet",
+			"caption",
+			"view:",
+			"addresses",
+			"collection",
+			"allused",
+			"programmecode",
+			"attachandre",
+			"onclear",
+			"basketupda",
+			"view.rmove",
+			"stacked",
+			"zonecleared",
+			"faceb",
+			"facebok",
+			"zones.content",
+			"programCode",
+			"views.register",
+			"createemailview",
+			"router",
+			"router.zones.primary",
+			"route.zones.primary",
+			"this.zones.primary",
+			"zones.primar",
+			"spawnprimar",
+			"spawnregis",
+			"app.views",
+			"attachandrender",
+			"zones",
+			"this.zones.pri",
+			"app.zones",
+			"app.zones.primary",
+			"regemail",
+			"regemailvw",
+			"views.reg",
+			"views",
+			"container",
+			"views",
+			"view",
+			"views",
+			"zone",
+			"view",
+			"views",
+			"zone",
+			"basketup",
+			"zone",
+			"view",
+			"zone",
+			"accountzone",
+			"currentviews",
+			"view",
+			"accountzone",
+			"view",
+			"controller",
+			"view",
+			"contentZone",
+			"zones",
+			"new ",
+			"zone",
+			"contentzone",
+			".views",
+			"history",
+			"historyevent",
+			"matchedroute",
+			".views",
+			"app",
+			"this.app",
+			"router.app",
+			"this.app",
+			"router.app",
+			"this.app",
+			"router.app",
+			"rotuer.app",
+			"this.app",
+			"router.app",
+			"zoneview",
+			"cachedtra",
+			"routehome",
+			"logout",
+			"attachmodels",
+			"membermod",
+			"gettoken",
+			"teleph",
+			"subtype",
+			"telephone",
+			"hidetelephoneform",
+			"showtelephoneform",
+			"form",
+			"telephones",
+			"collection",
+			"deb",
+			"address",
+			"Address",
+			"address",
+			"Address",
+			"address",
+			"debugger",
+			"selectelements",
+			"savebu",
+			"memberaddress",
+			"value",
+			"spawnlogi",
+			"spawnlogin",
+			"country",
+			"loginisstale",
+			"date",
+			"address",
+			"defaultadd",
+			"memberaddress",
+			"serveratt",
+			"basemodel",
+			"backbone",
+			"querystr",
+			"qs",
+			"serverattr",
+			"querystring",
+			"serverattributes",
+			"addaddress",
+			"addresses",
+			"address",
+			"getsplitba",
+			"updatebalan",
+			"spawnadvertzo",
+			"spawnprimaryzone",
+			"spawnprimar",
+			"spawnmemberstatus",
+			"spawnprimar"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"programmeCode",
+			"app.zones.primary",
+			"this.zones.primary",
+			"content",
+			"app",
+			"telephone",
+			"Telephone",
+			"telephone",
+			"input-field",
+			"newSecondaryValue",
+			"",
+			"newSecondaryValue",
+			"tokenHasType",
+			"MemberModel",
+			"endvr-sprite",
+			"router",
+			"renderInto(",
+			"",
+			".params.name"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/trodrigues/Dropbox/code/demos/README.md",
+					"settings":
+					{
+						"buffer_size": 1125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1040,
+								1040
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"is_xml": false,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": false,
+								"bitwise": true,
+								"boss": true,
+								"browser": true,
+								"couch": false,
+								"curly": false,
+								"debug": true,
+								"devel": true,
+								"dojo": false,
+								"eqeqeq": false,
+								"eqnull": false,
+								"es5": true,
+								"evil": false,
+								"expr": false,
+								"forin": false,
+								"globalstrict": false,
+								"immed": true,
+								"indent": 2.0,
+								"jquery": true,
+								"latedef": true,
+								"laxbreak": false,
+								"loopfunc": false,
+								"maxerr": 100.0,
+								"mootools": false,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonew": true,
+								"onevar": false,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"define",
+									"require",
+									"process",
+									"console",
+									"module",
+									"exports",
+									"FB",
+									"__dirname",
+									"Modernizr",
+									"assert",
+									"refute",
+									"sinon",
+									"buster",
+									"done",
+									"WebKitMutationObserver"
+								],
+								"prototypejs": false,
+								"regexdash": false,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": false,
+								"strict": false,
+								"sub": false,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"white": false,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": false,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.git":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"index",
+				"buster-server-amd/index.html"
+			],
+			[
+				"config.js",
+				"buster-server-amd/config.js"
+			],
+			[
+				"responsive-nav",
+				"less/bootstrap/responsive-navbar.less"
+			],
+			[
+				"type",
+				"less/bootstrap/type.less"
+			],
+			[
+				"scaff",
+				"less/bootstrap/scaffolding.less"
+			],
+			[
+				"utilit",
+				"less/bootstrap/utilities.less"
+			],
+			[
+				"mixin",
+				"less/bootstrap/mixins.less"
+			],
+			[
+				"layout",
+				"less/bootstrap/layouts.less"
+			],
+			[
+				"grid",
+				"less/bootstrap/grid.less"
+			],
+			[
+				"variables",
+				"less/bootstrap/variables.less"
+			],
+			[
+				"main.le",
+				"less/main.less"
+			],
+			[
+				"grunt",
+				"grunt.js"
+			],
+			[
+				"screen",
+				"sass/screen.scss"
+			],
+			[
+				"scree.sc",
+				"sass/screen.scss"
+			],
+			[
+				"basero",
+				"js/routers/BaseRouter.js"
+			],
+			[
+				"toolk",
+				"js/views/toolkitView.js"
+			],
+			[
+				"changepas",
+				"js/views/changePasswordView.js"
+			],
+			[
+				"persona",
+				"js/views/personalDetailsView.js"
+			],
+			[
+				"accountro",
+				"js/routers/AccountRouter.js"
+			],
+			[
+				"zonevi",
+				"js/tests/views/zoneView.spec.js"
+			],
+			[
+				"accou",
+				"js/routers/AccountRouter.js"
+			],
+			[
+				"for",
+				"templates/components/formField.tmpl"
+			],
+			[
+				"addressfie",
+				"templates/components/addressFields.tmpl"
+			],
+			[
+				"addresstemplate",
+				"js/models/AddressTemplate.js"
+			],
+			[
+				"address",
+				"templates/components/address.tmpl"
+			],
+			[
+				"addressvi",
+				"js/views/addressView.js"
+			],
+			[
+				"acco",
+				"js/routers/AccountRouter.js"
+			],
+			[
+				"zonevise",
+				"js/tests/views/zoneView.spec.js"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"too",
+				"js/views/toolkitView.js"
+			],
+			[
+				"toolkit",
+				"js/tests/views/toolkitView.spec.js"
+			],
+			[
+				"toolkitspec",
+				"js/tests/views/toolkitView.spec.js"
+			],
+			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"testa",
+				"testacular.conf.js"
+			],
+			[
+				"basketitem",
+				"js/models/BasketItem.js"
+			],
+			[
+				"statusbar",
+				"js/views/statusBarView.js"
+			],
+			[
+				"form",
+				"js/views/formListBaseView.js"
+			],
+			[
+				"changepass",
+				"js/views/changePasswordView.js"
+			],
+			[
+				"addressview",
+				"js/views/addressView.js"
+			],
+			[
+				"forml",
+				"js/views/formListBaseView.js"
+			],
+			[
+				"email",
+				"templates/components/email.tmpl"
+			],
+			[
+				"formlist",
+				"js/views/formListBaseView.js"
+			],
+			[
+				"checkoutro",
+				"js/routers/CheckoutRouter.js"
+			],
+			[
+				"memberadd",
+				"js/models/MemberAddress.js"
+			],
+			[
+				"memberaddre",
+				"js/collections/MemberAddress.js"
+			],
+			[
+				"basketcont",
+				"js/controllers/BasketController.js"
+			],
+			[
+				"rewardro",
+				"js/routers/RewardRouter.js"
+			],
+			[
+				"navmenusub",
+				"templates/components/navMenuSubMenu.tmpl"
+			],
+			[
+				"navvi",
+				"js/views/navMenuView.js"
+			],
+			[
+				"navmen",
+				"js/views/navMenuView.js"
+			],
+			[
+				"logi",
+				"js/models/Login.js"
+			],
+			[
+				"membertoke",
+				"js/models/MemberToken.js"
+			],
+			[
+				"statusbarvi",
+				"js/views/statusBarView.js"
+			],
+			[
+				"member",
+				"js/models/Member.js"
+			],
+			[
+				"login",
+				"js/models/Login.js"
+			],
+			[
+				"membertoken",
+				"js/collections/MemberToken.js"
+			],
+			[
+				"members",
+				"js/routers/MembershipRouter.js"
+			],
+			[
+				"progra",
+				"js/collections/ProgramCurrency.js"
+			],
+			[
+				"addresschann",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"basketcontroll",
+				"js/controllers/BasketController.js"
+			],
+			[
+				"app",
+				"js/system/application.js"
+			],
+			[
+				"main.js",
+				"js/main.js"
+			],
+			[
+				"regvi",
+				"js/views/registerEmailView.js"
+			],
+			[
+				"regivi",
+				"js/views/registerCardView.js"
+			],
+			[
+				"regisvi",
+				"js/views/registerView.js"
+			],
+			[
+				"loginvi",
+				"js/views/loginView.js"
+			],
+			[
+				"headervi",
+				"js/views/headerView.js"
+			],
+			[
+				"basket",
+				"js/models/Basket.js"
+			],
+			[
+				"primaryzone",
+				"templates/structure/primaryZone.tmpl"
+			],
+			[
+				"primaryzonevi",
+				"js/views/primaryZoneView.js"
+			],
+			[
+				"status",
+				"js/views/statusBarView.js"
+			],
+			[
+				"basketcon",
+				"js/controllers/BasketController.js"
+			],
+			[
+				"basketvie",
+				"js/views/basketItemView.js"
+			],
+			[
+				"ap",
+				"js/system/application.js"
+			],
+			[
+				"appli",
+				"js/system/application.js"
+			],
+			[
+				"emailfor",
+				"templates/components/emailForm.tmpl"
+			],
+			[
+				"emailform",
+				"js/views/emailFormView.js"
+			],
+			[
+				"email.tm",
+				"templates/components/email.tmpl"
+			],
+			[
+				"emailview",
+				"js/views/emailView.js"
+			],
+			[
+				"chann",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"channel",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"emmberadd",
+				"js/collections/MemberAddress.js"
+			],
+			[
+				"formfi",
+				"templates/components/formField.tmpl"
+			],
+			[
+				"modelut",
+				"js/models/modelutils.js"
+			],
+			[
+				"addresschan",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"memberaddr",
+				"js/collections/MemberAddress.js"
+			],
+			[
+				"tele",
+				"templates/components/telephoneForm.tmpl"
+			],
+			[
+				"teleforvi",
+				"js/views/telephoneFormView.js"
+			],
+			[
+				"telepho",
+				"js/views/telephoneFormView.js"
+			],
+			[
+				"telephovi",
+				"js/views/telephoneView.js"
+			],
+			[
+				"acc",
+				"css/less/modules/account.less"
+			],
+			[
+				"addresscha",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"addressch",
+				"js/models/AddressChannel.js"
+			],
+			[
+				"countr",
+				"js/collections/Country.js"
+			],
+			[
+				"addressfiel",
+				"js/views/addressFieldsView.js"
+			],
+			[
+				"bser",
+				"js/routers/BaseRouter.js"
+			],
+			[
+				"baserou",
+				"js/routers/BaseRouter.js"
+			],
+			[
+				"notif",
+				"js/views/notificationsView.js"
+			],
+			[
+				"addresstempl",
+				"js/models/AddressTemplate.js"
+			],
+			[
+				"addressfor",
+				"templates/components/addressForm.tmpl"
+			],
+			[
+				"addressc",
+				"js/collections/AddressChannel.js"
+			],
+			[
+				"rewardlistco",
+				"js/controllers/rewardListController.js"
+			],
+			[
+				"rewarditemde",
+				"js/controllers/rewardItemDetailsController.js"
+			],
+			[
+				"main.",
+				"js/main.js"
+			],
+			[
+				"varia",
+				"css/less/variables.less"
+			],
+			[
+				"modelu",
+				"js/models/modelutils.js"
+			],
+			[
+				"modelmix",
+				"js/models/ModelMixin.js"
+			],
+			[
+				"basemo",
+				"js/models/BaseModel.js"
+			],
+			[
+				"registema",
+				"js/views/registerEmailView.js"
+			],
+			[
+				"re",
+				"js/routers/RewardRouter.js"
+			],
+			[
+				"addressformt",
+				"templates/components/addressForm.tmpl"
+			],
+			[
+				"to",
+				"js/views/toolkitView.js"
+			],
+			[
+				"balanc",
+				"js/collections/MemberBalance.js"
+			],
+			[
+				"memberlan",
+				"js/collections/MemberBalance.js"
+			],
+			[
+				"mem",
+				"js/models/Member.js"
+			],
+			[
+				"addressformvi.",
+				"templates/components/addressFormView.tmpl"
+			],
+			[
+				"membersh",
+				"js/routers/MembershipRouter.js"
+			],
+			[
+				"formf",
+				"templates/components/formField.tmpl"
+			],
+			[
+				"tool",
+				"js/views/toolkitView.js"
+			],
+			[
+				"rewardr",
+				"js/routers/RewardRouter.js"
+			],
+			[
+				"balan",
+				"js/collections/MemberBalance.js"
+			],
+			[
+				"addresstem",
+				"js/models/AddressTemplate.js"
+			],
+			[
+				"coun",
+				"js/models/Country.js"
+			],
+			[
+				"cou",
+				"js/collections/Country.js"
+			],
+			[
+				"count",
+				"js/collections/Country.js"
+			],
+			[
+				"membertok",
+				"js/models/MemberToken.js"
+			],
+			[
+				"member.",
+				"js/models/Member.js"
+			],
+			[
+				"rewardlistc",
+				"js/controllers/rewardListController.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"end",
+				"/Users/trodrigues/Dropbox/code/endeavour-member-web.sublime-project"
+			],
+			[
+				"",
+				"/Users/trodrigues/Dropbox/code/endeavour-ui-common.sublime-project"
+			],
+			[
+				"lx",
+				"/Users/trodrigues/Dropbox/code/lxjs.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true
+}
