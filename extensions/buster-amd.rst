@@ -130,6 +130,11 @@ Another example: use the following mapper for AMD loader plugins::
         }
     };
 
+Examples
+========
+
+Check the `demos repository <https://github.com/busterjs/demos>`_ for example projects.
+
 Source code
 ===========
 

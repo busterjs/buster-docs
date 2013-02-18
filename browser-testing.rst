@@ -123,4 +123,9 @@ If you'd like to confirm that it's been captured, open that url in your browser 
 
 In the future there will probably be an easier and more integrated way to run tests with PhantomJS.
 
+Examples
+========
+
+Check the `demos repository <https://github.com/busterjs/demos>`_ for example projects.
+
 
