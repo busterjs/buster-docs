@@ -33,3 +33,6 @@ we added the file ``run.js`` to the ``tests`` group. In this file, call
 You're of course free to call ``buster.run()`` anywhere you want, the only
 important thing is that it gets called when you load your tests, and when it
 gets called your application is ready to get tested.
+
+If you use the :ref:`buster-amd` extension, it will do this automatically for you
+and you do not need to set ``{ autoRun: false }`` or call ``buster.run()``.
