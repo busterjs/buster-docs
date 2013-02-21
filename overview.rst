@@ -678,17 +678,29 @@ the touch device to change the slides on the normal browser.
 
 See :ref:`architecture` for an overview of all Buster.JS modules and extensions.
 
+AMD Support
+===========
 
-AMD - control when tests start running
+If your project uses AMD (Asynchronous Module Definition) and a loader such as
+require.js or curl.js, you can use the :ref:`buster-amd` extension to ensure
+modules load properly and that you can adapt your AMD configuration for testing.
+
+Check the :ref:`buster-amd` for more information.
+
+
+Control when tests start running
 ======================================
 
-Some applications use a module loader (AMD = Asynchronous Module Definitions).
+Some applications use a module loader, such as an AMD based loader.
 So the default strategy of Buster.JS to start running tests on
 ``window.onload`` may not work for you. You can disable auto running and tell
 Buster.JS when to start running tests.
 
 Add ``{ autoRun: false }`` to your config file and call ``buster.run()`` to
 start the test run. That gives you full control over when the test run starts.
+
+If you use the :ref:`buster-amd` extension, it will do this automatically for you
+and you do not need to set ``{ autoRun: false }`` or call ``buster.run()``.
 
 For more, see :ref:`starting-testrun-manually` and the :ref:`buster-amd`
 documentation.
