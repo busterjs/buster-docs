@@ -323,7 +323,7 @@ assigning to the property on an existing runner::
     runner.timeout = 500;
 
 
-.. attribute:: testRunnerOptions.failOnNoAssertion:
+.. attribute:: testRunnerOptions.failOnNoAssertions:
 
     Default: ``true``
 
