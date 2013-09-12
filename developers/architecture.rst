@@ -678,7 +678,7 @@ Status:
     In development
 
 Source code:
-    https://github.com/ebi/coverage-helpers
+    https://github.com/ebi/buster-coverage
 
 *Work in progress*. Extension to calculate line coverage. Uses the
 ``resourceSet`` to instrument code, and emits custom messages over the test
