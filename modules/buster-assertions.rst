@@ -1015,7 +1015,6 @@ For ``refute`` the behaviour is exactly opposed.
 
 *Overview:*
 
-- :func:`same`
 - :func:`called`
 - :func:`callOrder`
 - :func:`calledOnce`
