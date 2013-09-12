@@ -6,6 +6,38 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7
+====
+
+Released 2013-09-??.
+
+TODO: ramp refactoring, better windows support (no more path problems), cyclic compare
+
+Breaking changes
+----------------
+
+Sub-commands such as 'buster test' are no longer supported.
+
+Additions
+---------
+
+- Allow to specify files to be excluded in config file (:issue:`292`)
+
+Bug fixes
+---------
+
+- "sources" key in config file isn't parsed correctly when extending base configuration (:issue:`222`)
+- when using run the suite name is undefined (:issue:`238`)
+- beforeAll is not working properly with nested descriptions (:issue:`250`)
+- Failed creating session: EISDIR, read (:issue:`256`)
+- `toEqual` goes into infinite recursion for cyclic data (:issue:`258`)
+- buster-test returns undefined, when you use not known configuration key (:issue:`267`)
+- defer should work the same as "focus rocket" (:issue:`280`)
+- HTML runner displays undefined for test names (:issue:`300`)
+- async test returning resolved promise with truthy value is treated as an error (:issue:`308`)
+- Tests being skipped when extending Object.prototype (:issue:`342`)
+
+
 v0.6.12 (formerly: v0.6.3)
 ==========================
 
