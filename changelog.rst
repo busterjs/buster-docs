@@ -11,12 +11,14 @@ v0.7
 
 Released 2013-09-??.
 
-TODO: ramp refactoring, better windows support (no more path problems), cyclic compare
+TODO: ramp refactoring, better windows support (no more path problems), cyclic compare, random seeds ...
 
 Breaking changes
 ----------------
 
-Sub-commands such as 'buster test' are no longer supported.
+- Sub-commands such as ``buster test`` are no longer supported.
+- The property ``environment`` is no longer set to ``browser`` by default.
+- ``assert`` and ``refute`` are no longer accessible globally.
 
 Additions
 ---------
@@ -26,16 +28,16 @@ Additions
 Bug fixes
 ---------
 
-- "sources" key in config file isn't parsed correctly when extending base configuration (:issue:`222`)
+- ``sources`` key in config file isn't parsed correctly when extending base configuration (:issue:`222`)
 - when using run the suite name is undefined (:issue:`238`)
 - beforeAll is not working properly with nested descriptions (:issue:`250`)
 - Failed creating session: EISDIR, read (:issue:`256`)
-- `toEqual` goes into infinite recursion for cyclic data (:issue:`258`)
+- ``toEqual`` goes into infinite recursion for cyclic data (:issue:`258`)
 - buster-test returns undefined, when you use not known configuration key (:issue:`267`)
 - defer should work the same as "focus rocket" (:issue:`280`)
 - HTML runner displays undefined for test names (:issue:`300`)
 - async test returning resolved promise with truthy value is treated as an error (:issue:`308`)
-- Tests being skipped when extending Object.prototype (:issue:`342`)
+- Tests being skipped when extending ``Object.prototype`` (:issue:`342`)
 
 
 v0.6.12 (formerly: v0.6.3)
