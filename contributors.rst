@@ -11,6 +11,7 @@ following people have commits in one or several Buster.JS repositories:
 - Brian Cavalier
 - Calle Arnesten
 - Christian Johansen
+- Daniel Wittner
 - Dave Geddes
 - Dominykas Blyžė
 - Fabian Vogler
@@ -23,10 +24,10 @@ following people have commits in one or several Buster.JS repositories:
 - Matthias Kling
 - Morgan Roderick
 - Rod Vagg
+- Sasha Depold
 - Stein Magnus Jodal
 - Thomas Pickert
 - Tiago Rodrigues
 - Tobias Ebnöther
-- Sasha Depold
 
 Thank you!
