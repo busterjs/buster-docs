@@ -43,7 +43,9 @@ Linux
 Windows
 -------
 
-Windows support is right around the corner. Hang in there.
+1. Get the latest Node installer from `nodejs.org <http://nodejs.org/>`_. You
+   need Node 0.6.3 or newer.
+2. ``npm install -g buster``
 
 
 Create config file
@@ -139,6 +141,10 @@ Run tests
 
 Node.js tests
 -------------
+
+If you have installed Buster.JS globally (``-g`` flag in ``npm install -g buster``)
+you have to create a link to it for your project first. This can be done with the
+command ``npm link buster`` in the root of the project.
 
 Node.js tests can be run by simply typing ``node test/some-test.js``.  Doing
 this requires nothing more than a file with tests (i.e. you don't need the
