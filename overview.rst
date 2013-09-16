@@ -25,7 +25,7 @@ your project::
     var config = module.exports;
 
     config["My tests"] = {
-        env: "browser",        // or "node"
+        environment: "browser",        // or "node"
         rootPath: "../",
         sources: [
             "lib/mylib.js",    // Paths are relative to config file
