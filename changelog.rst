@@ -6,24 +6,53 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
-v0.7
-====
+v0.7.4
+======
 
-Released 2013-09-??.
+Released 2013-09-17.
 
-TODO: ramp refactoring, better windows support (no more path problems), cyclic compare, random seeds ...
+- New ``buster-server``, aka `Ramp <https://github.com/busterjs/ramp>`_. Vastly
+  improved stability, better handling of misbehaving clients, faster.
+- Windows support; installs and runs cleanly on Windows
+- assert.equals now handles cyclic objects
+- The test runner now uses and supports providing random seeds for test ordering
+- Allow to specify files to be excluded in config file (:issue:`292`)
+- Extact configuration values from query string when running static browser tests
+- Almost half of the modules that make up Buster are now stable 1.x.y versions
+- New default console reporter (dots reporter is gone)
+- Test runner has new event suite:configuration that provides info on runtime
+  (i.e. Browser, Node version), expected number of tests, random seed.
+- Tons of bug fixes
 
 Breaking changes
 ----------------
 
-- Sub-commands such as ``buster test`` are no longer supported.
-- The property ``environment`` is no longer set to ``browser`` by default.
-- ``assert`` and ``refute`` are no longer accessible globally.
+- Sub-commands such as ``buster test`` are no longer supported, use the dashed
+  versions ``buster-test``.
+- The property ``environment`` is no longer set to ``browser`` by default, it
+  must be explicitly set in all configuration groups.
+- ``assert``, ``refute`` and other globals or gone. Buster only exposes the
+  ``buster`` global now.
 
-Additions
----------
+A quick work-around for the now missing globals is to create ``test/helper.js``
+with
 
-- Allow to specify files to be excluded in config file (:issue:`292`)
+.. code-block:: js
+
+    var assert = buster.assert;
+    var refute = buster.refute;
+    var expect = buster.expect;
+
+And then add this to your configuration file:
+
+.. code-block:: js
+
+    module.exports["My config"] = {
+        environment: "browser",
+        sources: [...],
+        tests: [...],
+        testHelpers: ["test/helper.js"]
+    };
 
 Bug fixes
 ---------
@@ -39,6 +68,13 @@ Bug fixes
 - async test returning resolved promise with truthy value is treated as an error (:issue:`308`)
 - Tests being skipped when extending ``Object.prototype`` (:issue:`342`)
 
+
+v0.6.13
+=======
+
+Released 2013-09-16.
+
+A frozen version of the 0.6.x series; locks all dependencies at specific versions.
 
 v0.6.12 (formerly: v0.6.3)
 ==========================
