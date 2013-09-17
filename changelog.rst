@@ -15,6 +15,8 @@ Released 2013-09-17.
   improved stability, better handling of misbehaving clients, faster.
 - Windows support; installs and runs cleanly on Windows
 - assert.equals now handles cyclic objects
+- assert.equals no longer coerces arguments, so assert.equals("10", 10); used to
+  pass, but will now fail
 - The test runner now uses and supports providing random seeds for test ordering
 - Allow to specify files to be excluded in config file (:issue:`292`)
 - Extact configuration values from query string when running static browser tests
