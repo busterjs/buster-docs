@@ -656,13 +656,13 @@ Status:
     ``require()``
 
 Source code:
-    https://github.com/jodal/buster-coffee
+    https://github.com/busterjs/buster-coffee
 
 Build status:
     .. raw:: html
 
-        <a href="http://travis-ci.org/jodal/buster-coffee" class="travis">
-          <img src="https://secure.travis-ci.org/jodal/buster-coffee.png">
+        <a href="http://travis-ci.org/busterjs/buster-coffee" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/buster-coffee.png">
         </a>
 
 Extension that automatically compile CoffeeScript files before running tests.
