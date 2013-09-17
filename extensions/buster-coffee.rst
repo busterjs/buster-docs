@@ -36,4 +36,4 @@ Load in your configuration file::
 Source code
 ===========
 
-`buster-coffee on GitHub <https://github.com/jodal/buster-coffee>`_
+`buster-coffee on GitHub <https://github.com/busterjs/buster-coffee>`_
