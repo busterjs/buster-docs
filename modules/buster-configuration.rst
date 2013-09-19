@@ -6,21 +6,19 @@
 buster-configuration
 ====================
 
-Version:
-    0.2.0 (2011-12-05)
 Module:
     ``require("buster-configuration");``
 In the browser:
     N/A (Node only)
 
-The Buster configuration file (typically named ``buster.js``) helps Buster
+The Buster configuration file (typically named ``buster.js``) helps Buster to
 understand how to automate your test runs. You can run tests on Node without
 the configuration file (i.e. with ``node my-test.js``), but it is required when
-using ``buster test`` to run tests.
+using ``buster-test`` to run tests.
 
 A configuration file can contain one or more test run configurations, called
-"groups". A group specifies what tests to run, in what environment (Node or
-browsers for now, possibly others later) to run them, and can provide certain
+"groups". A group specifies which tests to run, in which environment (Node or
+browser) to run them, and can provide certain
 configuration options to the test runner.
 
 The configuration file is focused on how to automate test runs. It is designed
@@ -32,10 +30,10 @@ this configuration.
 A simple configuration file
 ===========================
 
-At its very simplest, a configuration file merely states what resources to
-load. For browser tests, this includes libraries and sources, while for Node
-you only need to specify tests (as typically they ``require`` their own
-sources).
+At its very simplest, a configuration file merely specifies the environment and
+which resources to load. For browser tests, this includes libraries and sources,
+while for Node you only need to specify tests (as typically they ``require``
+their own sources).
 
 ::
 
@@ -45,7 +43,7 @@ sources).
         environment: "browser",
         libs: ["lib/**/*.js"],
         sources: ["src/core.js", "src/**/*.js"],
-        tests: ["test/**/*.js"]
+        tests: ["test/**/*.js", "!test/**/*integration-test.js"]
     };
 
 The configuration file is a JavaScript file. In fact, it is a Node module, as
@@ -54,10 +52,13 @@ the way. We think "config" reads better throughout the file than "exports".
 
 This configuration specifies a browser run (as seen from the ``environment``
 property). It will cause all files in ``lib`` to be loaded first (using
-``script`` tags), then all files in ``src``, then all files in ``tests``.  Note
+``script`` tags), then all files in ``src``, then all files in ``tests``. Note
 how we specified ``src/core.js`` separately. Buster resolves these
 duplications, and you typically want to specify some files manually if ordering
 is important.
+To exclude files you just need to prepend a ``!`` as you can see
+in the second pattern of the ``tests`` property. In the example that pattern
+prevents the integration tests to be run.
 
 
 Configuration properties
