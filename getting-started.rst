@@ -142,11 +142,12 @@ Run tests
 Node.js tests
 -------------
 
-If you have installed Buster.JS globally (``-g`` flag in ``npm install -g buster``)
-you have to ensure it can be found by Node.js. One option is to set ``NODE_PATH``
-to the global installed modules, which is done during the installation on linux
-automatically, but unfortunately not on windows. Another option is to create a link
-to Buster.JS with the command ``npm link buster`` executed in the root of the project.
+For testing on Node.js we recommend to install Buster.JS locally. If you have
+installed it globally (``-g`` flag in ``npm install -g buster``) you have to ensure
+it can be found by Node.js. One option is to set ``NODE_PATH`` to the global installed
+modules, which is done during the installation of Node.js on linux automatically, but
+unfortunately not on windows. Another option is to create a link to Buster.JS with the
+command ``npm link buster`` executed in the root of the project.
 
 Node.js tests can be run by simply typing ``node test/some-test.js``.  Doing
 this requires nothing more than a file with tests (i.e. you don't need the
