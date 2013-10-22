@@ -151,9 +151,9 @@ implement the ``configure`` method, and use the ``"load:framework"`` hook.
 
 The extension is a project in its own right. Inside the project directory,
 create the ``node_modules`` directory, then put another directory inside it
-called ``buster-srsly`` ("buster-*" is a common naming convention for Buster.JS
-extensions). Copy the adapter from before to this directory, so its full path
-becomes ``./node_modules/buster-srsly/adapter.js`` (i.e. ``cp
+called ``buster-srsly`` (``buster-*`` is a common naming convention for
+Buster.JS extensions). Copy the adapter from before to this directory, so its
+full path becomes ``./node_modules/buster-srsly/adapter.js`` (i.e. ``cp
 lib/buster-srsly.js node_modules/buster-srsly/adapter.js``).
 
 Inside this directory, we will create a new file called
