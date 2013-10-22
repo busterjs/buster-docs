@@ -11,4 +11,3 @@ This page contains useful information for Buster.JS developers/contributors.
     guidelines
     architecture
     extensions
-    windows

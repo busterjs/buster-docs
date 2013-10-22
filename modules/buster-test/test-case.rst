@@ -177,6 +177,7 @@ callback to the ``done`` function::
     }
 
 .. _returning-a-promise:
+
 Returning a promise
 -------------------
 
