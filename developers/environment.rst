@@ -31,13 +31,9 @@ Everything else can (and should be) copied&pasted as is.
 Next, two environment variables need to be adjusted: ``NODE_PATH`` and ``PATH``.
 The former, ``NODE_PATH``, affects where Node.js is looking for packages, 
 and we want it to do so in the development environment (``busterDevEnv`` in this example).
-However, since ``NODE_PATH`` is pretty central to Node.js, we're going to be a bit paranoid
-and first push its current value onto ``NODE_PATH_OLD``,
-in a stack-like manner (`LIFO <http://en.wikipedia.org/wiki/LIFO_(computing)>`_).
 
 On Linux and Mac OS X (or in Git Bash on Windows)::
 
-    export NODE_PATH_OLD=$NODE_PATH:$NODE_PATH_OLD
     export NODE_PATH=`pwd`
     export PATH=$NODE_PATH/buster-dev-tools/bin:$PATH
     export PATH=$NODE_PATH/buster/bin:$PATH
@@ -49,7 +45,6 @@ On Linux and Mac OS X (or in Git Bash on Windows)::
 
         #!/bin/sh
         
-        export NODE_PATH_OLD=$NODE_PATH:$NODE_PATH_OLD
         export NODE_PATH=`pwd`
         export PATH=$NODE_PATH/buster-dev-tools/bin:$PATH
         export PATH=$NODE_PATH/buster/bin:$PATH
@@ -62,7 +57,6 @@ On Linux and Mac OS X (or in Git Bash on Windows)::
 
 On Windows (DOS-box)::
 
-    SET NODE_PATH_OLD=%NODE_PATH%;%NODE_PATH_OLD%
     SET NODE_PATH=%CD%
     SET PATH=%NODE_PATH%\buster-dev-tools\bin;%PATH%
     SET PATH=%NODE_PATH%\buster\bin;%PATH%
@@ -128,7 +122,7 @@ you want to run and how you want them to run (for example ``buster-static`` for 
 
 .. important::
 
-    You should definetly avoid to have a global installation of Buster.JS, if you
+    You should definitely avoid to have a global installation of Buster.JS, if you
     want to run Buster.JS from the development environment. Otherwise chances are
     high that it will be involved in the test run and therefore influence the run.
 
@@ -167,12 +161,12 @@ to ``#!/usr/bin/node --debug-brk``.
 Open another terminal, change to your development directory of Buster.JS, run the shell script
 (or batch file) to set the ``PATH`` and ``NODE_PATH``, change to the example project and run 
 the test by ``buster-test``. The execution will be halted at the first instruction and you will
-the info `debugger listening on port 5858`, the same as for debugging an automated test run.
+get the info `debugger listening on port 5858`, the same as for debugging an automated test run.
 From that point on there is no difference between debugging an automated and a manual test run.
 
 .. note::
 
-    If you want to run other command than `buster-test`, for example `buster-static`,
+    If you want to run other command than ``buster-test``, for example ``buster-static``,
     you have to edit the corresponding file instead.
 
 
@@ -224,10 +218,10 @@ This is one possible workflow:
    to verify your changes and to create a pull request.
 
 
-How to orientate
-================
+Finding your way around the code
+================================
 
-We know that it's hard to orientate in the source code of Buster.JS if you are new at the project,
+We know that it's hard to navigate the source code of Buster.JS if you are new at the project,
 because of the amount of projects/repositories. But hold on and don't give up and you will see soon,
 that it's not that complicated. A good point to start is to have a look at the `Architecture overview
 <http://docs.busterjs.org/en/latest/developers/architecture/>`_, especially at the `example
