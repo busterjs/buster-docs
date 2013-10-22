@@ -31,9 +31,3 @@ Understanding Buster.JS
 =======================
 
 See :doc:`architecture`.
-
-
-Want to help?
-=============
-
-We currently need help ironing out our :doc:`Windows support <windows>`.
