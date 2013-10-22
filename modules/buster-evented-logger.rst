@@ -134,8 +134,8 @@ method in the default setup.
     such as functions and problematic host objects.
 
     `buster-test <http://busterjs.org/docs/test/>`_ provides more readable
-    formatting through the `formatio <http://busterjs.org/docs/format>`_ module.
-    There is basically three ways to achieve this:
+    formatting through the `formatio <http://busterjs.org/docs/format>`__
+    module.  There is basically three ways to achieve this:
 
     **Override the original method**
 
