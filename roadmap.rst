@@ -28,8 +28,7 @@ When will you support Windows?
 ==============================
 
 Windows support is a requirement for us to tag Buster.JS with "1.0", but we
-haven't planned it in more detail than that. If you use Windows and want to
-help, refer to :doc:`Windows support status <developers/windows>`.
+haven't planned it in more detail than that.
 
 
 Buster.JS 0.6 (AKA Beta 4)
