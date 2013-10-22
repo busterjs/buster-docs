@@ -385,10 +385,10 @@ look like this::
 Partial Windows support
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Windows support <windows>` work is ongoing. In this version,
-Node tests with the ``buster-test`` command-line interface is working, while
-the server and browser automation part is still not quite there. If you need
-Windows support, please consider chipping in.
+Windows support work is ongoing. In this version, Node tests with the
+``buster-test`` command-line interface is working, while the server and browser
+automation part is still not quite there. If you need Windows support, please
+consider chipping in.
 
 Argv parsing
 ^^^^^^^^^^^^
