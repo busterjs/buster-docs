@@ -60,7 +60,7 @@ as usual::
 
 
 Configuration
-=========
+=============
 
 The AMD extension has one configuration option: a path mapper. The path mapper
 is an optional function that translates Buster.JS paths (which are absolute,
