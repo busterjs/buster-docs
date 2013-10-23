@@ -7,7 +7,8 @@ Architecture overview
 Buster.JS consists of many small Git repositories/npm modules. We try to keep
 things small and separated. The repositories and installable modules both
 promotes reusability (e.g. you can use `Buster assertions with any test
-framework <http://cjohansen.no/using-buster-assertions-with-jstestdriver>`_)
+framework
+<http://cjohansen.no/using-the-referee-assertion-library-with-jstestdriver>`_)
 and helps us avoid tight coupling between modules. However, some people feel
 that the number of repositories are a bit daunting when trying to contribute.
 This document sheds some light on existing modules, what they're for, and what
@@ -102,25 +103,6 @@ The analyzer also comes with a reporter which can be used to log events of
 interest. The analyzer and the reporter is used by buster-test-cli and
 extensions to provide various insight about your code. Examples of practical
 usage includes linting and syntax checking (for browser tests).
-
-
-buster-assertions
------------------
-
-Status:
-    Stable, awaiting a few additions before 1.0
-
-Source code:
-    :repo:`buster-assertions`
-
-Build status:
-    .. raw:: html
-
-        <a href="http://travis-ci.org/busterjs/buster-assertions" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-assertions.png">
-        </a>
-
-Assertions and expectations, for Buster.JS and everyone else.
 
 
 buster-autotest
@@ -577,6 +559,25 @@ General purpose command line argument parser. Only parses command line options,
 no printing to the console, no ``--help`` generation, no flow control. Also
 tries as best it can to adhere to UNIX conventions. Fails early (typically when
 using non-existent options ++).
+
+
+referee
+-------
+
+Status:
+    Stable, awaiting a few additions before 1.0
+
+Source code:
+    :repo:`referee`
+
+Build status:
+    .. raw:: html
+
+        <a href="http://travis-ci.org/busterjs/referee" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/referee.png">
+        </a>
+
+Assertions and expectations, for Buster.JS and everyone else.
 
 
 Auxilliary modules

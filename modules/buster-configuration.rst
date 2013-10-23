@@ -330,7 +330,7 @@ The individual object in the configuration's list of groups.
 
         configGroup.setupFrameworkResources();
 
-      Adds all the framework resources such as :ref:`buster-assertions`,
+      Adds all the framework resources such as :ref:`referee`,
       :ref:`buster-test` and Sinon to the resource set for the group. These
       resources are prepended so they appear before the files of the config
       group, so that everything is loaded beforehand.

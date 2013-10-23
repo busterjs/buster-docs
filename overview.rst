@@ -169,7 +169,7 @@ For more, see :ref:`node-testing`.
 Assertions
 ==========
 
-Buster.JS comes :ref:`packed with assertions <buster-assertions>`, and a simple
+Buster.JS comes :ref:`packed with assertions <referee>`, and a simple
 DSL to add app-specific custom assertions::
 
     assert(true);
@@ -230,7 +230,7 @@ too::
         }
     });
 
-For more, see :ref:`buster-assertions`.
+For more, see :ref:`referee`.
 
 
 BDD syntax
@@ -658,13 +658,13 @@ Modularity
 Buster.JS consists of many stand-alone modules with a documented API that can
 be re-used for various purposes.
 
-The :ref:`buster-assertions` package can easily be used in other testing
+The :ref:`referee` package can easily be used in other testing
 frameworks. If you use JsTestDriver, follow `these steps
-<http://cjohansen.no/using-buster-assertions-with-jstestdriver>`_
+<http://cjohansen.no/using-the-referee-assertion-library-with-jstestdriver>`_
 (hint: it's pretty easy).
 
 If you write your own testing framework, you may find many of our modules
-useful. :ref:`buster-assertions` is one such module, and is completely
+useful. :ref:`referee` is one such module, and is completely
 reusable. You can also use :ref:`buster-capture-server` if you want browser
 automation in your test framework, without implementing the actual browser
 automation part yourself.

@@ -11,7 +11,7 @@ buster-sinon
 .. warning:
   This documentation is incomplete.
 
-Sinon specific assertions are documented at :ref:`buster-assertions`.
+Sinon specific assertions are documented at :ref:`referee`.
 
 Refer to `the Sinon.JS documentation <http://sinonjs.org/docs/>`_ and do some
 guesswork for the other functionality.
