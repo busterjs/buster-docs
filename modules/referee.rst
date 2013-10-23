@@ -1,25 +1,23 @@
 .. default-domain:: js
 .. highlight:: javascript
-.. _buster-assertions:
+.. _referee:
 
 =================
-buster-assertions
+referee
 =================
 
-Version:
-    0.10.1 (2012-04-26)
 Module:
-    ``require("buster-assertions");``
+    ``require("referee");``
 In browsers:
     ``buster.assertions;``
 
 A collection of assertions to be used with a unit testing framework.
-**buster-assertions** works well with any CommonJS compliant testing framework
+**referee** works well with any CommonJS compliant testing framework
 out of the box, and can easily be configured to work with most any testing
 framework. See also :ref:`expectations` if you like the alternative API
 (``expect(thing).toBe*``).
 
-**buster-assertions** contains lots of assertions. We
+**referee** contains lots of assertions. We
 strongly believe that high-level assertions are essential in the
 interest of producing clear and intent-revealing tests, and they also
 give you to-the-point failure messages.
@@ -28,13 +26,13 @@ give you to-the-point failure messages.
 Assertions and refutations
 ==========================
 
-Unlike most assertion libraries, **buster-assertion** does not have
+Unlike most assertion libraries, **referee** does not have
 ``assert.notXyz`` assertions to refute some fact. Instead, it has
 *refutations*, heavily inspired by Ruby's `minitest
 <http://bfts.rubyforge.org/minitest/>`_::
 
-    var assert = buster.assertions.assert;
-    var refute = buster.assertions.refute;
+    var assert = buster.assertions.assert;    // or short: buster.assert
+    var refute = buster.assertions.refute;    // or short: buster.refute
 
     assert.equals(42, 42);
     refute.equals(42, 43);
@@ -1007,7 +1005,7 @@ The default Buster.JS bundle comes with built-in spies, stubs and mocks
 provided by `Sinon.JS <http://sinonjs.org>`_. The assertions are indisposable
 when working with spies and stubs. However, note that these assertions are
 technically provided by the integration package :ref:`buster-sinon`, *not*
-**buster-assertions**. This only matters if you use this package stand-alone.
+**referee**. This only matters if you use this package stand-alone.
 
 As for the normal assertions, the assertions for stubs and spies can be used with ``assert`` and ``refute``.
 The description is for ``assert``, but the corresponding failure messages for ``refute`` are also mentioned.
@@ -1580,7 +1578,7 @@ For ``refute`` the behaviour is exactly opposed.
 Expectations
 ============
 
-All of buster-assertion's assertions and refutations are also exposed as
+All of referee's assertions and refutations are also exposed as
 "expectations". Expectations is just a slightly different front-end to the same
 functionality, often preferred by the BDD inclined.
 
@@ -1874,7 +1872,7 @@ Methods
     behavior is not suitable for your testing framework of choice, you can
     override :func:`assertions.fail` to make it do the right thing.
 
-    Example: To use **buster-assertions** with JsTestDriver, you can simply
+    Example: To use **referee** with JsTestDriver, you can simply
     configure it as follows::
 
         buster.assertions.fail = function (message) {

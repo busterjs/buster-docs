@@ -276,7 +276,7 @@ Methods
     Because the runner itself has no knowledge of the assertion library, this
     method is intended to be overridden by the assertion library in use. For
     instance, this is the integration necessary to count assertions with
-    :ref:`buster-assertions`::
+    :ref:`referee`::
 
         var assertions = 0;
 

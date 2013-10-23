@@ -5,7 +5,6 @@ Core modules
 .. toctree::
     :maxdepth: 2
 
-    buster-assertions
     buster-capture-server
     buster-configuration
     buster-core
@@ -18,5 +17,6 @@ Core modules
     evented-logger
     posix-argv-parser
     prefsink
+    referee
     samsam
     user-agent-parser
