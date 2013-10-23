@@ -2,9 +2,9 @@
 .. highlight:: javascript
 .. _referee:
 
-=================
+=======
 referee
-=================
+=======
 
 Module:
     ``require("referee");``
