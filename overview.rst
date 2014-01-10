@@ -465,9 +465,10 @@ To remedy this, Buster.JS lets you set up a proxy server in your config file::
     config["My tests"] = {
         sources: ["../lib/**/*.js"],
         tests: ["*-test.js"],
-        resources: {
-            "/app": "http://192.168.1.200:3030"
-        }
+        resources: [{
+            path: "/app",
+            backend: "http://192.168.1.200:3030"
+        }]
     };
 
 A request to ``/app/foo`` will be proxied to ``http://192.168.1.200:3030/foo``.
