@@ -30,8 +30,17 @@ One of Buster's core principles is to not pollute the global environment. For
 this reason we only add one single global object -- ``buster``. However, in
 some cases, like this one, the namespaces seriously desugars your code. For
 this reason, the ``spec`` module has a :func:`buster.spec.expose` method that
-allows you to use :func:`describe <buster.spec.describe>`, :func:`it
-<buster.spec.it>` and the others without the ``buster.spec`` prefix::
+allows you to use 
+:func:`describe <spec.describe>`, 
+:func:`it <spec.it>`,
+:func:`itEventually  <spec.itEventually>`,
+:func:`before  <spec.before>`,
+:func:`beforeAll  <spec.beforeAll>`,
+:func:`beforeEach  <spec.beforeEach>`,
+:func:`after  <spec.after>` and
+:func:`afterAll  <spec.afterAll>`,
+:func:`afterEach  <spec.afterEac>`
+without the ``buster.spec`` prefix::
 
     buster.spec.expose();
 
