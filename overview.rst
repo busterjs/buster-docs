@@ -25,11 +25,11 @@ your project::
     var config = module.exports;
 
     config["My tests"] = {
-        environment: "browser",        // or "node"
+        environment: "browser",  // or "node"
         rootPath: "../",
         sources: [
-            "lib/mylib.js",    // Paths are relative to config file
-            "lib/**/*.js"      // Glob patterns supported
+            "lib/mylib.js",      // Paths are relative to config file
+            "lib/**/*.js"        // Glob patterns supported
         ],
         tests: [
             "test/*-test.js"
@@ -40,10 +40,10 @@ your project::
 
 Run tests for your config file with::
 
-    buster test
+    buster-test
     // Assumes test/buster.js or spec/buster.js
 
-    buster test --config anywhere/buster.js
+    buster-test --config anywhere/buster.js
     // Can also specify config file
 
 For more, see :ref:`buster-configuration`.
@@ -463,6 +463,7 @@ To remedy this, Buster.JS lets you set up a proxy server in your config file::
     var config = module.exports;
 
     config["My tests"] = {
+        environment: "browser",
         sources: ["../lib/**/*.js"],
         tests: ["*-test.js"],
         resources: [{
@@ -611,6 +612,7 @@ the tests in a HTML4 strict environment, and what not::
     var config = module.exports;
 
     config["My tests"] = {
+        environment: "browser",
         sources: ["../lib/**/*.js"],
         tests: ["*-test.js"],
         testbed: "my-file.html"
