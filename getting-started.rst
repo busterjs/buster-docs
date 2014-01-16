@@ -155,7 +155,7 @@ above configuration).
 
 While ``node test/my-test.js`` is nice and convenient, you want to use the
 ``buster-test`` binary to get at the full power of Buster.JS. Open a terminal,
-``cd`` to your project, and type in ``buster test``.  Here's the output from
+``cd`` to your project, and type in ``buster-test``.  Here's the output from
 the test run of :ref:`posix-argv-parser`:
 
 .. image:: _static/node-testing/buster-test-node.png
@@ -168,7 +168,7 @@ See the :doc:`Node.js testing <node-testing>` documentation for more.
 Browser tests
 -------------
 
-First, start a server. Open a terminal and type in ``buster server``.
+First, start a server. Open a terminal and type in ``buster-server``.
 
 .. image:: _static/overview/buster-server-start.png
     :width: 633
@@ -181,7 +181,7 @@ capture button to actually perform the capture.
     :width: 827
     :height: 339
 
-Then you're ready to run the tests with ``buster test``.
+Then you're ready to run the tests with ``buster-test``.
 
 .. image:: _static/overview/buster-test-run-browsers.png
     :width: 633
