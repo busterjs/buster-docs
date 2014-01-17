@@ -9,7 +9,7 @@ referee
 Module:
     ``require("referee");``
 In browsers:
-    ``buster.assertions;``
+    ``buster.referee;``
 
 A collection of assertions to be used with a unit testing framework.
 **referee** works well with any CommonJS compliant testing framework
@@ -31,8 +31,8 @@ Unlike most assertion libraries, **referee** does not have
 *refutations*, heavily inspired by Ruby's `minitest
 <http://bfts.rubyforge.org/minitest/>`_::
 
-    var assert = buster.assertions.assert;    // or short: buster.assert
-    var refute = buster.assertions.refute;    // or short: buster.refute
+    var assert = buster.referee.assert;    // or short: buster.assert
+    var refute = buster.referee.refute;    // or short: buster.refute
 
     assert.equals(42, 42);
     refute.equals(42, 43);
@@ -949,7 +949,7 @@ are listed with each assertion along with the arguments the string is fed.
 Here's an example of providing a new assertion failure message for
 :func:`assert.equals`::
 
-    var assert = buster.assertions.assert;
+    var assert = buster.referee.assert;
     assert.equals.message = "I wanted ${0} == ${1}!"
 
     try {
@@ -965,10 +965,10 @@ Here's an example of providing a new assertion failure message for
 Events
 ======
 
-``buster.assertions`` is an :ref:`event-emitter`. Listen to events with
+``buster.referee`` is an :ref:`event-emitter`. Listen to events with
 ``on``::
 
-    buster.assertions.on("failure", function (err) {
+    buster.referee.on("failure", function (err) {
         console.log(err.message);
     });
 
@@ -1588,7 +1588,7 @@ on the resulting object.
 
 ::
 
-    var expect = buster.assertions.expect;
+    var expect = buster.referee.expect;
 
     expect({ id: 42 }).toBeObject(); // Passes
     expect("Somewhere in here").toMatch("in"); // Passes
@@ -1863,7 +1863,7 @@ Methods
 
     ::
 
-        buster.assertions.fail(message)
+        buster.referee.fail(message)
 
     When an assertion fails, it calls :func:`assertions.fail` with the failure
     message as the only argument. The built-in ``fail`` function both throws an
@@ -1875,7 +1875,7 @@ Methods
     Example: To use **referee** with JsTestDriver, you can simply
     configure it as follows::
 
-        buster.assertions.fail = function (message) {
+        buster.referee.fail = function (message) {
             fail(message);
         };
 
@@ -1891,7 +1891,7 @@ Methods
 
     ::
 
-        buster.assertions.format(object)
+        buster.referee.format(object)
 
     Values inserted into assertion messages using the ``${n}`` switches are
     formatted using :func:`assertions.format`. By default this method simply
@@ -1901,14 +1901,14 @@ Methods
     function for formatting objects nicely as ASCII. For nice ASCII formatting
     of objects (including DOM elements) do::
 
-        buster.assertions.format = buster.format.ascii;
+        buster.referee.format = buster.format.ascii;
 
 
 .. function:: assertions.add
 
     ::
 
-        buster.assertions.add(name, options)
+        buster.referee.add(name, options)
 
     Add a custom assertion. Using this 'macro' to add project specific
     assertions has a few advantages:
@@ -1931,11 +1931,11 @@ Methods
     Here's an example of adding a "foo" assertion, that only passes when its
     only argument is the string "foo"::
 
-        var assert = buster.assertions.assert;
-        var refute = buster.assertions.refute;
-        var expect = buster.assertions.expect;
+        var assert = buster.referee.assert;
+        var refute = buster.referee.refute;
+        var expect = buster.referee.expect;
 
-        buster.assertions.add("isFoo", {
+        buster.referee.add("isFoo", {
             assert: function (actual) {
                 return actual == "foo";
             },
@@ -1958,7 +1958,7 @@ Methods
         expect("foo").toBeFoo();
 
         // To support custom messages, do this:
-        buster.assertions.add("isFoo", {
+        buster.referee.add("isFoo", {
             assert: function (actual) {
                 return actual == "foo";
             },
@@ -1979,7 +1979,7 @@ Methods
     switches, where ``n`` is a number. You can also use named variables by
     setting properties on ``this`` in the assertion/refutation function::
 
-        buster.assertions.add("isString", {
+        buster.referee.add("isString", {
             assert: function (actual) {
                 this.actualType = typeof actual;
                 return this.actualType == "string";
@@ -2073,7 +2073,7 @@ Supporting utilities
 
     ::
 
-        buster.assertions.isArguments(object)
+        buster.referee.isArguments(object)
 
     Returns true if the argument is an ``arguments`` object. Buster checks this
     by making sure the object is array-like, but not actually an array.
@@ -2091,7 +2091,7 @@ Supporting utilities
 
     ::
 
-        buster.assertions.keys(object)
+        buster.referee.keys(object)
 
     Cross-browser implementation of
     `Object.keys <https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/keys>`_.
@@ -2111,7 +2111,7 @@ Properties
 
     Number increasing from 0.
 
-    ``buster.assertions.count`` is incremented anytime an assertion is called.
+    ``buster.referee.count`` is incremented anytime an assertion is called.
     The assertion counter can be reset to any number at your convenience.
 
 
