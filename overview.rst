@@ -102,20 +102,20 @@ Browser testing
 Buster.JS can automate browsers, JsTestDriver style. First, start the server.
 
 .. image:: _static/overview/buster-server-start.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 Open the browsers you want to run tests in and click the capture button.
 
 .. image:: _static/overview/buster-server-capture-firefox.png
-    :width: 827
-    :height: 339
+    :width: 740
+    :height: 400
 
 Buster.JS automatically runs the tests in all the captured browsers.
 
 .. image:: _static/overview/buster-test-run-browsers.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 For more, see :ref:`browser-testing`.
 
@@ -127,11 +127,11 @@ Buster.JS also has a static browser runner that runs tests by opening a web page
 in a browser. This is similar to QUnit, Mocha, etc.
 
 .. image:: _static/overview/buster-static-start.png
-    :width: 529
-    :height: 348
+    :width: 700
+    :height: 355
 
 .. image:: _static/overview/buster-static-success.png
-    :width: 514
+    :width: 700
     :height: 470
 
 For more, see :ref:`buster-static`.
@@ -144,6 +144,7 @@ Works just like browser tests, but you need to require Buster.JS in your
 tests::
 
     var buster = require("buster");
+    var assert = buster.referee.assert;
     var myLib = require("../lib/my-lib");
 
     buster.testCase("A test case", {
@@ -156,12 +157,12 @@ You can now run the file simply by doing ``node my-test.js``, or you
 can create a configuration file with ``environment: "node"`` that will run all
 tests in your project.
 
-Use ``buster test`` in a terminal to initiate the test run. Here's the
+Use ``buster-test`` in a terminal to initiate the test run. Here's the
 test output for :ref:`posix-argv-parser`:
 
 .. image:: _static/node-testing/buster-test-node.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 For more, see :ref:`node-testing`.
 
@@ -273,29 +274,25 @@ Reporters
 There are a number of reporters built into Buster.JS. There is also a simple
 API for building your own reporters.
 
-The default reporter is ``dots``:
+The default reporter is ``brief``:
 
-.. image:: _static/overview/buster-test-reporter-dots.png
-    :width: 633
-    :height: 382
+.. image:: _static/overview/buster-test-run-browsers.png
+    :width: 700
+    :height: 355
 
 Other reporters:
 
 .. image:: _static/overview/buster-test-reporter-specification.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 .. image:: _static/overview/buster-test-reporter-xml.png
-    :width: 873
-    :height: 416
-
-.. image:: _static/overview/buster-test-reporter-quiet.png
-    :width: 633
-    :height: 382
+    :width: 1093
+    :height: 355
 
 .. image:: _static/overview/buster-test-reporter-tap.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 All human-consumable reporters (i.e. not XML and tap output) can use no
 colors, bright colors, or dim colors.
@@ -315,8 +312,8 @@ but you get notified that there's a deferred tests every time you run your test
 suite.
 
 .. image:: _static/overview/buster-test-deferred.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 To defer a test, add ``//`` to the start of the test name::
 
@@ -494,28 +491,28 @@ ended::
 Running a subset of tests
 =========================
 
-To run a single test, pass it's full name as an operand to :program:`buster
+To run a single test, pass it's full name as an operand to :program:`buster-
 test`::
 
-    buster test "My tests should run this particular test"
+    buster-test "My tests should run this particular test"
 
 The operand is treated as a JavaScript regular expression so you can do partial
 matching and regex stuff in it as well::
 
-    buster test "delete user"
+    buster-test "delete user"
 
 If you don't quote the operand, it will be treated as a series of OR'd filters.
 
 To run a single file, do this::
 
-    buster test --tests test/mytest.js
+    buster-test --tests test/mytest.js
 
-This assumes the presence of a config file, and just like plain ``buster
+This assumes the presence of a config file, and just like plain ``buster-
 test`` it tries to find a config file automatically, if you don't specify
 one with ``--config``. Buster needs the config file to load your proxies,
 library code, dependencies, and so on.
 
-See :ref:`buster-test-options` for a complete overview of :program:`buster
+See :ref:`buster-test-options` for a complete overview of :program:`buster-
 test` command line options.
 
 
@@ -635,7 +632,7 @@ in a `PhantomJS <http://phantomjs.org>`_ browser.
 
 This is particularly convenient for integration of Buster.JS with editors and
 IDEs. You can provide a simple "play button" to run the tests, and you don't
-need to do anything other than shelling out to <kbd>buster test</kbd> which
+need to do anything other than shelling out to ``buster-test`` which
 will take care of running the tests in PhantomJS even if there's no Buster.JS
 server running.
 
@@ -648,8 +645,8 @@ with the test that was logged from. When logging objects of various sorts, the
 logger uses a (pluggable) formatter for pretty output.
 
 .. image:: _static/overview/buster-test-logging.png
-    :width: 633
-    :height: 382
+    :width: 700
+    :height: 355
 
 In Node.js, when running tests, ``buster.log`` is available globally by
 default, for convenience. So you can ``buster.log`` in your implementations
