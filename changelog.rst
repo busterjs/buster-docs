@@ -6,6 +6,14 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.9
+======
+
+Released 2014-03-17.
+
+- Fix for issue `#400 - IE <= 8 throwing error: Object doesn't support this action <https://github.com/busterjs/buster/issues/400>`_.
+
+
 v0.7.4
 ======
 
