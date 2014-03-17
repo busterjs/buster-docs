@@ -54,10 +54,10 @@ project you want to run the tests for and typing ``npm install``.
     
     ::
     
-        PYTHONPATH=C:\Pyhon27
+        PYTHONPATH=C:\Python27
         PYTHON=%PYTHONPATH%\python.exe
         
-    `PYTHONPATH` must point to your actual installation directory of python 2.7.x,
+    ``PYTHONPATH`` must point to your actual installation directory of Python 2.7.x,
     of course.
 
 
@@ -67,7 +67,7 @@ To run the tests type ``npm test`` in the root directory of the project.
 
     You shouldn't run the tests in an environment, where you have adjusted
     ``NODE_PATH`` and ``PATH`` for development as described :ref:`here <set-env>`.
-    There are 2 main reasons for that:
+    There are two main reasons for that:
     
      1. Most of the projects use Buster.JS (or parts of it) for testing,
         which means, Buster.JS (or parts of it) will be installed
@@ -75,13 +75,13 @@ To run the tests type ``npm test`` in the root directory of the project.
         and ``PATH`` adjusted for development could lead to weird behaviour,
         because both versions of Buster.JS (or parts of it) are mixed up together.
      2. Running the test without adjusting ``NODE_PATH`` and ``PATH`` corresponds
-        to how the tests run on `travis ci <https://travis-ci.org/>`_.
+        to how the tests run on `Travis CI <https://travis-ci.org/>`_.
 
 
 Debugging
 =========
 
-A comfortable way to debug node applications is to use ``node-inspector``.
+A comfortable way to debug Node applications is to use ``node-inspector``.
 If you haven't it installed yet, install it by::
 
     npm install -g node-inspector
@@ -94,13 +94,13 @@ Open a terminal and start the inspector::
 Debugging a Buster.JS run
 -------------------------
 
-Open the file `buster/bin/buster-test` and change the first line from ``#!/usr/bin/env node``
+Open the file ``buster/bin/buster-test`` and change the first line from ``#!/usr/bin/env node``
 to ``#!/usr/bin/node --debug-brk``.
 
 Open another terminal, change to your development directory of Buster.JS, run the shell script
 (or batch file) to set the ``PATH`` and ``NODE_PATH``, change to the example project and run 
 the test by ``buster-test``. The execution will be halted at the first instruction and you will
-get the info `debugger listening on port 5858`, the same as for debugging an automated test run.
+get the info "debugger listening on port 5858", the same as for debugging an automated test run.
 From that point on there is no difference between debugging an automated and a manual test run.
 
 .. note::
@@ -117,7 +117,7 @@ root directory of the project.
 The execution will be halted at the first instruction and you will get the
 info `debugger listening on port 5858`.
 
-Open a chrome browser, go to `http://127.0.0.1:8080/debug?port5858` and you are
+Open a Chrome browser, go to `http://127.0.0.1:8080/debug?port5858` and you are
 ready to debug. More information about debugging with node-inspector can be found at
 `node-inspector <https://github.com/node-inspector/node-inspector>`_.
 
@@ -132,7 +132,7 @@ they are useful for the application.
 
 This is one possible workflow:
 
-#. Create a fork of the repository you want to edit by clicking the `Fork` button on github.
+#. Create a fork of the repository you want to edit by clicking the "Fork" button on github.
 #. Open a terminal and change to the project you want to edit
 #. Type ``git remote -v`` and you should see something like this::
 
@@ -146,7 +146,7 @@ This is one possible workflow:
 
 #. Type ``git remote add fork https://github.com/<your_github_username>/<name_of_repository>.git``
 
-   .. tip:: If you open the forked repository on your github account you will find the url next to it.
+   .. tip:: If you open the forked repository on your Github account you will find the Url next to it.
             You can copy and paste it to prevent mistyping.
 
 #. Type ``git remote -v`` again and this time you should see something like this::
@@ -160,7 +160,7 @@ This is one possible workflow:
    Type ``git push fork master`` to push the changes to the master branch of the
    forked repository.
 
-#. Go to the forked repository on your github account and press the `Compare and review` button
+#. Go to the forked repository on your Github account and press the "Compare and review" button
    to verify your changes and to create a pull request.
 
 

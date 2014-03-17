@@ -37,7 +37,7 @@ Automated tests
 
 It is important that you write good unit tests for your changes.
 Best way to do that is to develop test-driven. We are convinced test-driven
-developer and we would be very pleased, if you're one too.
+developers and we would be very pleased, if you're one too.
 
 :ref:`How to run tests <run-tests>`
 
