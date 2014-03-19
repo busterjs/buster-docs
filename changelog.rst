@@ -6,6 +6,14 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.10
+======
+
+Released 2014-03-19.
+
+- Fix for issue `#401 - env: node\r: No such file or directory <https://github.com/busterjs/buster/issues/401>`_.
+
+
 v0.7.9
 ======
 
