@@ -5,11 +5,11 @@ Core modules
 .. toctree::
     :maxdepth: 2
 
-    buster-capture-server
+    ramp
     buster-configuration
     buster-core
     buster-format
-    buster-resources
+    ramp-resources
     buster-server-cli
     buster-sinon
     buster-static

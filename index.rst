@@ -30,7 +30,7 @@ Lilleaas and Christian Johansen. All development happens in public in the
 `busterjs-dev mailing list <http://groups.google.com/group/busterjs-dev>`_. We
 welcome your opinion.
 
-**A set of reusable libraries.** For example, :ref:`buster-capture-server` is
+**A set of reusable libraries.** For example, :ref:`ramp` is
 our generic browser automation library that lets you successively load webpages
 into browsers and send data to and from them. It is completely reusable and has
 no knowledge of Buster.JS tests, or tests at all for that matter.

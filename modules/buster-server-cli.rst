@@ -13,11 +13,11 @@ Module:
 In browsers:
     N/A
 
-Command-line interface API for running :ref:`buster-capture-server` instances
+Command-line interface API for running :ref:`ramp` instances
 with a simple interface that allows capturing and viewing a list of connected
 browsers.
 
-In Buster, this module is the implementation of the ``buster server`` command.
+In Buster, this module is the implementation of the ``buster-server`` command.
 It does not define the binary however, as it is intended to be generic enough
 to be reused outside of Buster.
 

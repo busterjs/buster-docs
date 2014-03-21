@@ -127,7 +127,7 @@ Then, start the server:
 
 ::
 
-    $ buster server
+    $ buster-server
 
 Visit `http://localhost:1111 <http://localhost:1111>`_ and hit the "capture"
 button (or visit `http://localhost:1111/capture

@@ -1,20 +1,20 @@
 .. default-domain:: js
 .. highlight:: javascript
-.. _buster-resources:
+.. _ramp-resources:
 
-================
-buster-resources
-================
+==============
+ramp-resources
+==============
 
 Version:
     0.2 (2012-01-15)
 
 Module:
-    ``var resources = require("buster-resources");``
+    ``var resources = require("ramp-resources");``
 
 Manages virtual file systems that can be easily transported over network.
 Buster.JS uses resource collections to ship your source files and tests to
-:ref:`buster-capture-server`, but they can also be used for other purposes,
+:ref:`ramp`, but they can also be used for other purposes,
 like mixing files on disk and "virtual" files for build scripts and whatnot.
 
 The central data types is the resource--which can be a file on disk, an
@@ -29,7 +29,7 @@ Resource middleware
 
 ::
 
-    var resourceMiddleware = require("buster-resources").resourceMiddleware;
+    var resourceMiddleware = require("ramp-resources").resourceMiddleware;
 
 The resource middleware can serve resource sets over HTTP. In its simplest
 form, you spin up an instance, designate a context path to it, mount a resource
@@ -37,7 +37,7 @@ set (only one can be served at any given time), and allow it to handle requests
 entirely on its own::
 
     var http = require("http");
-    var rs = require("buster-resources");
+    var rs = require("ramp-resources");
 
     var middleware = rs.resourceMiddleware.create("/resources");
 
@@ -99,7 +99,7 @@ entirely on its own::
     Typical usage::
 
         var http = require("http");
-        var resourceMiddleware = require("buster-resources").resourceMiddleware;
+        var resourceMiddleware = require("ramp-resources").resourceMiddleware;
         var middleware = resourceMiddleware.create("/resources");
 
         // Mount sets
@@ -116,7 +116,7 @@ Resource cache
 
 ::
 
-    var resourceSetCache = require("buster-resources").resourceSetCache;
+    var resourceSetCache = require("ramp-resources").resourceSetCache;
 
 Cache content across resource sets. The resource set cache works as a central
 repository that you pass resource sets by to have their contents cached, and
@@ -156,7 +156,7 @@ their missing contents replenished from the cache.
     Serving resource sets with a cache::
 
         var http = require("http");
-        var rs = require("buster-resources");
+        var rs = require("ramp-resources");
 
         var middleware = rs.resourceMiddleware.create("/resources");
         var cache = rs.resourceSetCache.create(60 * 60 * 1000);
@@ -192,7 +192,7 @@ Resource sets
 
 ::
 
-    var resourceSet = require("buster-resources").resourceSet
+    var resourceSet = require("ramp-resources").resourceSet
 
 A resource set lets you represent a set of files associated with paths. It lets
 you create bundles of multiple resources, proxy certain paths to other HTTP
@@ -419,7 +419,7 @@ optionally a list of resources to automatically load in the root resource.
 
     List of paths to "load". The path must exist as a resource.
 
-    In :ref:`buster-capture-server`, the resources in ``load`` will be
+    In :ref:`ramp`, the resources in ``load`` will be
     automatically injected as script tags before the closing ``</body>`` tag. A
     resource set does not in itself know what it means to load something.
 
@@ -530,7 +530,7 @@ Etag
     {etag:"value"}
 
 The etag is used in combination with the name of the resource to determine
-wether the :ref:`buster-capture-server` already has this resource.
+wether the :ref:`ramp` already has this resource.
 
 How the etag is calculated is entirely up to you. By convention, the only
 expectation is that if the file for which the resource points to has changed,
@@ -538,7 +538,7 @@ the etag should change as well. Internally in buster, we calculate the etag by
 applying SHA1 to the mtime and the absolute path to the file.
 
 **TODO: write more about how to practically perform caching against
-buster-capture-server.**
+ramp.**
 
 
 Backend

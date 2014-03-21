@@ -303,7 +303,7 @@ The individual object in the configuration's list of groups.
 
 .. attribute:: configGroup.resourceSet
 
-    A :ref:`buster-resources` resource set, containing resources for all the
+    A :ref:`ramp-resources` resource set, containing resources for all the
     objects in the config group.
 
     This property is undefined until :func:`configGroup.resolve` is called.
@@ -363,7 +363,7 @@ Resource
 --------
 
 A "resource" is something exposed on the server when you run browser tests
-using ``buster server`` and ``buster test``. Exposing the resource
+using ``buster-server`` and ``buster test``. Exposing the resource
 ``/something.json`` allows you to request it in your tests using e.g.
 ``jQuery.ajax({ url: "something.json" });``.
 

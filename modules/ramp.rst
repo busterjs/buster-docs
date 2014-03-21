@@ -1,16 +1,16 @@
 .. default-domain:: js
 .. highlight:: javascript
-.. _buster-capture-server:
+.. _ramp:
 
-=====================
-buster-capture-server
-=====================
+====
+ramp
+====
 
 
 Version:
     0.5 (2012-xx-xx)
 Module:
-    ``var captureServerModule = require("buster-capture-server");``
+    ``var captureServerModule = require("ramp");``
 
 The capture server captures browsers as slaves, and offers a completely generic
 API for carrying out work across those slaves. A workload is known as a
@@ -26,7 +26,7 @@ level, or websockets if available).
 The server
 ==========
 
-The server is the central hub for all work in buster-capture-server. It needs
+The server is the central hub for all work in ramp. It needs
 to be manually attached to an existing node HTTP server.
 
 .. function:: captureServerModule.createServer
@@ -44,9 +44,9 @@ to be manually attached to an existing node HTTP server.
 
         server.attach(httpServer);
 
-    Attaches the buster-capture-server to a `Node.js HTTP server
+    Attaches the ramp to a `Node.js HTTP server
     <http://nodejs.org/docs/latest/api/http.html>`_. All HTTP requests that
-    buster-capture-server handles is "consumed", and won't trigger any
+    ramp handles is "consumed", and won't trigger any
     "request" event listeners on the Node.js HTTP server.
 
 

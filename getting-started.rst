@@ -196,7 +196,7 @@ Hybrid tests
 If your project has both Node.js and browser tests, and your config file specifies
 multiple groups for the different environments, running ``buster test`` will
 automatically run all the groups, both Node.js and browser. This requires that you
-already have a ``buster server`` up and running.
+already have a ``buster-server`` up and running.
 
 If you only want to run tests for one environment, use
 ``buster test --environment browser`` or ``buster test -e node``.

@@ -10,7 +10,7 @@ document describes three ways, ranging from simple setup to most useful (if
 that's a scale).
 
 
-Running with ``buster server``
+Running with ``buster-server``
 ==============================
 
 Inspired by JsTestDriver, Buster.JS can automate browsers seamlessly and
@@ -36,7 +36,7 @@ And simultaneously run tests on all the captured browsers:
     :height: 382
 
 
-Running with ``buster static``
+Running with ``buster-static``
 ==============================
 
 .. warning::
@@ -107,7 +107,7 @@ Running headless with PhantomJS
 
     This feature has not yet landed in the beta.
 
-The easiest way to run your tests with PhantomJS at the moment is by using the ``buster server`` method and the script provided to capture the browser.
+The easiest way to run your tests with PhantomJS at the moment is by using the ``buster-server`` method and the script provided to capture the browser.
 
 Assuming you have installed PhantomJS separately and buster locally in your project:
 

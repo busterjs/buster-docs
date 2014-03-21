@@ -666,13 +666,13 @@ frameworks. If you use JsTestDriver, follow `these steps
 
 If you write your own testing framework, you may find many of our modules
 useful. :ref:`referee` is one such module, and is completely
-reusable. You can also use :ref:`buster-capture-server` if you want browser
+reusable. You can also use :ref:`ramp` if you want browser
 automation in your test framework, without implementing the actual browser
 automation part yourself.
 
 Another example of usage of Buster.JS modules in other projects is `Slidebuster
 <http://github.com/augustl/slidebuster>`_ (note: proof of concept). The
-:ref:`buster-capture-server` module is not test runner specific, it is a
+:ref:`ramp` module is not test runner specific, it is a
 generic browser automation framework. Slidebuster uses it so that if you
 "capture" a normal browser and a touch device, you can swipe left and right on
 the touch device to change the slides on the normal browser.

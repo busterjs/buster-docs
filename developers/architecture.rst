@@ -145,24 +145,24 @@ that looks and behaves like an event emitter (i.e. no specific requirements on
 event names and so on).
 
 Specifically, the bayeux emitter is used to allow the test runner in the
-browser (via ``buster-capture-server``) ship its progress events directly over
+browser (via ``ramp``) ship its progress events directly over
 the wire (which is a Bayeux wire).
 
 
-buster-capture-server
----------------------
+ramp
+----
 
 Status:
     Unstable, currently undergoing API changes.
 
 Source code:
-    :repo:`buster-capture-server`
+    :repo:`ramp`
 
 Build status:
     .. raw:: html
 
-        <a href="http://travis-ci.org/busterjs/buster-capture-server" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-capture-server.png">
+        <a href="http://travis-ci.org/busterjs/ramp" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/ramp.png">
         </a>
 
 The capture server captures browsers as slaves, and offers a completely generic
@@ -257,7 +257,7 @@ Build status:
 
 A logger-like utility that simply emits events. This is useful in any number of
 cases, most importantly when running tests in browsers via
-buster-capture-server. In this case, we pass the events over the wire instead
+ramp. In this case, we pass the events over the wire instead
 of printing them to the console.
 
 
@@ -303,29 +303,29 @@ Build status:
 *TODO Write description*
 
 
-buster-resources
+ramp-resources
 ----------------
 
 Status:
     Stable, has a few known issues waiting to be fixed
 
 Source code:
-    :repo:`buster-resources`
+    :repo:`ramp-resources`
 
 Build status:
     .. raw:: html
 
-        <a href="http://travis-ci.org/busterjs/buster-resources" class="travis">
-          <img src="https://secure.travis-ci.org/busterjs/buster-resources.png">
+        <a href="http://travis-ci.org/busterjs/ramp-resources" class="travis">
+          <img src="https://secure.travis-ci.org/busterjs/ramp-resources.png">
         </a>
 
 Represents files in a project that may be included in a test run. For Node.js,
-Buster.JS only use ``buster-resources`` to look up which paths to ``require``.
-For browsers, Buster.JS uses ``buster-resources`` to build a virtual file
+Buster.JS only use ``ramp-resources`` to look up which paths to ``require``.
+For browsers, Buster.JS uses ``ramp-resources`` to build a virtual file
 system, send it over HTTP and mount it on the server. All of these components
 are available in this module.
 
-``buster-resources`` also includes intelligent caching of resources to allow
+``ramp-resources`` also includes intelligent caching of resources to allow
 test runs that only reads changed tests from file and so on. Resources
 typically map to files on disk, but really can be anything, including one-off
 strings in a configuration file.
@@ -412,7 +412,7 @@ Build status:
 
 A small extension (but installed and activated by default) that provides server
 side syntax checking of scripts sent for testing with
-``buster-capture-server``. When Buster.JS loads scripts in browsers, the
+``ramp``. When Buster.JS loads scripts in browsers, the
 browser in question will be the one responsible for the level of detail when
 errors arise, Syntax checking on the server allows us to catch these errors in
 one place, and produce a pretty nice report, regardless of browser intended to
@@ -823,7 +823,7 @@ sets`_ to represent files.  ``buster-cli`` uses several options to filter out
 the groups found in the configuration file to figure out which ones will
 eventually be run.
 
-.. _resource sets: https://github.com/busterjs/buster-resources/blob/master/lib/resource-set.js
+.. _resource sets: https://github.com/busterjs/ramp-resources/blob/master/lib/resource-set.js
 
 
 Detour: Extension hooks
@@ -915,8 +915,8 @@ session. The server uses a `resource set cache`_
 to cache and look up cached resources, and a `resource set middleware`_
 to actually serve them over HTTP.
 
-.. _resource set cache: https://github.com/busterjs/buster-resources/blob/master/lib/resource-set-cache.js
-.. _resource set middleware: https://github.com/busterjs/buster-resources/blob/master/lib/resource-middleware.js
+.. _resource set cache: https://github.com/busterjs/ramp-resources/blob/master/lib/resource-set-cache.js
+.. _resource set middleware: https://github.com/busterjs/ramp-resources/blob/master/lib/resource-middleware.js
 
 With the session readily created, ``buster-test-cli``'s browser runner is
 listening for messages. These messages are piped into its `remote runner`_.
