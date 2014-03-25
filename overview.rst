@@ -595,13 +595,6 @@ filter out a subset of the test case.
 Custom test beds
 ================
 
-.. note::
-
-    This feature has not yet landed in the beta. Currently it can sort of be
-    achieved by adding ``resources: [{path: "/", content: "html here"}]`` or
-    ``resources: [{path: "/", file: "my-file.html"}]`` to the config file.
-    The resource has to be a complete HTML document.
-
 For browser tests, you can specify the HTML document the tests will run
 in. Buster.JS defaults to a plain HTML5 document. But you might want to run
 the tests in a HTML4 strict environment, and what not::
