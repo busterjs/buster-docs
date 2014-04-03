@@ -524,7 +524,7 @@ in a browser trivial::
 
     buster.testCase("My tests", {
         setUp: function () {
-            this.server = this.fakeServer.create();
+            this.server = this.useFakeServer();
         },
 
         "should POST to /todo-items": function () {
