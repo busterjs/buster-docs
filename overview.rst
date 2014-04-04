@@ -520,51 +520,8 @@ Testing AJAX
 ============
 
 Buster.JS comes with `Sinon.JS`_. This makes mocking out the entire XHR stack
-in a browser trivial::
-
-    buster.testCase("My tests", {
-        setUp: function () {
-            this.server = this.useFakeServer();
-        },
-
-        "should POST to /todo-items": function () {
-            myThing.createTodoItem("Some item");
-
-            assert.equals(this.server.requests.length, 1);
-            assert.match(this.server.requests[0], {
-                method: "POST",
-                url: "/todo-items"
-            });
-        },
-
-        "should yield list item to callback on success": function () {
-            this.server.respondsWith(
-                "POST",
-                "/todo-items",
-                [200, {"content-type": "application/json"},
-                '{"text":"Fetch eggs","done":false,"id":1}']);
-
-            var callback = this.spy();
-            // Assuming implementation calls the callback with a JSON.parsed
-            // response body when the request ends
-            myThing.createTodoItem("Fetch eggs", callback);
-
-            // Cause the request to respond, based on respondsWith above.
-            this.server.respond();
-
-            // Sinon.JS replaces the entire XHR stack and synchronously handles
-            // the request.
-            assert.calledOnce(callback);
-            assert.equals(callback.getCall(0).args[0], {
-                test: "Fetch eggs", done: false, id: 1
-            });
-        }
-    });
-
-Sinon.JS mocks out the underlying ``XMLHttpRequest`` (or ``ActiveXObject``)
-object, so your HTTP libraries don't need any modification to be testable in
-this way - even when using jQuery or another 3rd party library for your HTTP
-connections.
+in a browser trivial. You will find an example in the
+:ref:`buster-sinon <testing-ajax>` module description.
 
 
 Feature detection
