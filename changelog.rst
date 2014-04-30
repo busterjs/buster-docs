@@ -6,8 +6,25 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.12
+=======
+
+Released 2014-04-30.
+
+- Fix for issue `#404 - Add missing Sinon.JS behavior module <https://github.com/busterjs/buster/issues/404>`_.
+- Expose buster.sinon.match for node.js
+
+
+v0.7.11
+=======
+
+Released 2014-04-04.
+
+- Sinon version ~1.9
+
+
 v0.7.10
-======
+=======
 
 Released 2014-03-19.
 
