@@ -6,6 +6,14 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.13
+=======
+
+Released 2014-05-05.
+
+- Necessary modification for refactoring of buster-test (Remove runtime throttler and pre-event runtime).
+
+
 v0.7.12
 =======
 
