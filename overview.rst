@@ -300,6 +300,26 @@ colors, bright colors, or dim colors.
 For more, see :ref:`buster-test-reporters`.
 
 
+Focus rocket
+============
+
+If you want to run exact one test, test case or subset of tests and you don't
+want to pass the corresponding name as a command line argument to ``buster-test``,
+you can use the **focus rocket**. Just prepend the string ``=>`` to the name of
+the test, test case or subset of tests, you want to execute::
+
+    "=>test assert": function () {
+        assert(true);
+    }
+
+
+From now on, only that test, test case or subset of tests is executed by Buster.JS:
+
+.. image:: _static/overview/focus-rocket.png
+    :width: 700
+    :height: 355
+
+
 Deferred/pending tests
 ======================
 
