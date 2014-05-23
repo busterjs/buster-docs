@@ -39,10 +39,6 @@ And simultaneously run tests on all the captured browsers:
 Running with ``buster-static``
 ==============================
 
-.. warning::
-
-    This is still an experimental feature, but should work fine.
-
 In the cases where you need a simpler method for running tests, but don't care
 for the manual HTML scaffold (see next section), Buster.JS can serve the
 scaffold for you based on your configuration.
@@ -50,14 +46,25 @@ scaffold for you based on your configuration.
 Start the server:
 
 .. image:: /_static/overview/buster-static-start.png
-    :width: 529
-    :height: 348
+    :width: 697
+    :height: 355
 
 Open the page in the browser and watch the tests run immediately:
 
 .. image:: /_static/overview/buster-static-success.png
-    :width: 514
+    :width: 697
     :height: 470
+
+Write to disk with ``buster-static``
+====================================
+
+If you specifiy a directory when executing ``buster-static``, no sever will be started.
+Instead the files needed for the test run are written into this directory.
+All you have to do to run the tests is to open the ``index.html`` file in a browser.
+
+.. image:: /_static/overview/writeToDisk.png
+    :width: 697
+    :height: 355
 
 
 Using an HTML scaffold
@@ -103,25 +110,14 @@ to your machine::
 Running headless with PhantomJS
 ===============================
 
-.. warning::
+You can run browser tests headless with PhantomJS very easy by starting the server with option ``-c``.
 
-    This feature has not yet landed in the beta.
+.. image:: /_static/overview/headless-browser.png
+    :width: 697
+    :height: 355
 
-The easiest way to run your tests with PhantomJS at the moment is by using the ``buster-server`` method and the script provided to capture the browser.
+You must have installed `PhantomJS <http://phantomjs.org//>`_ on your system of course.
 
-Assuming you have installed PhantomJS separately and buster locally in your project:
-
-.. code-block:: text
-
-    buster-server
-    # on a separate terminal
-    phantomjs ./node_modules/buster/script/phantom.js &
-    buster-test
-
-The phantom.js script will try to capture your browser on http://localhost:1111
-If you'd like to confirm that it's been captured, open that url in your browser and you'll see the list of captured browsers.
-
-In the future there will probably be an easier and more integrated way to run tests with PhantomJS.
 
 Examples
 ========

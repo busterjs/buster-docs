@@ -589,24 +589,6 @@ Script tags for your tests will be added automatically at the ending body tag,
 or at the end of the document if no ending body tag is present.
 
 
-Headless browser testing
-========================
-
-.. note::
-
-    This feature has not yet landed in the beta.
-
-You don't need a browser to do browser testing with Buster.JS. By running tests
-and not starting a server, Buster.JS will automatically run the tests headless
-in a `PhantomJS <http://phantomjs.org>`_ browser.
-
-This is particularly convenient for integration of Buster.JS with editors and
-IDEs. You can provide a simple "play button" to run the tests, and you don't
-need to do anything other than shelling out to ``buster-test`` which
-will take care of running the tests in PhantomJS even if there's no Buster.JS
-server running.
-
-
 Logging
 =======
 
