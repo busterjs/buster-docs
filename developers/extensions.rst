@@ -41,6 +41,17 @@ to name the extension after its package name.
 The ``create`` method is not required. If it's not provided, the
 extension will not receive its custom configuration.
 
+Hook: ``preConfigure``
+======================
+
+The ``preConfigure`` hook allows extensions to manipulate the
+:ref:`buster-configuration`, for example to add configuration groups
+dynamically at runtime.
+
+For a usage example see
+`buster-testbed-extension
+<https://www.npmjs.org/package/buster-testbed-extension>`_.
+
 Hook: ``configure``
 ===================
 
