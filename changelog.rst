@@ -6,6 +6,14 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.14
+=======
+
+Released 2014-09-17.
+
+- Fix for issue `#416 - buster-server crash with IE 11 on W7 only if there is two browsers captured <https://github.com/busterjs/buster/issues/416>`_.
+
+
 v0.7.13
 =======
 
