@@ -6,6 +6,16 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.15
+=======
+
+Released 2014-10-20.
+
+- Fix for issue `#396 - Async test case continues to execute after assertion failure <https://github.com/busterjs/buster/issues/396>`_.
+- `handleUncaughtError now allows more than 3 arguments <https://github.com/busterjs/buster/pull/423>`_.
+- :ref:`buster-ci`
+
+
 v0.7.14
 =======
 
