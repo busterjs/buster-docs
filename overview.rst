@@ -303,9 +303,9 @@ For more, see :ref:`buster-test-reporters`.
 Focus rocket
 ============
 
-If you want to run exact one test, test case or subset of tests and you don't
+If you want to run exactly one test, test case or subset of tests and you don't
 want to pass the corresponding name as a command line argument to ``buster-test``,
-you can use the **focus rocket**. Just prepend the string ``=>`` to the name of
+you can use the **focus rocket**. Prepend the string ``=>`` to the name of
 the test, test case or subset of tests, you want to execute::
 
     "=>test assert": function () {
@@ -319,6 +319,9 @@ From now on, only that test, test case or subset of tests is executed by Buster.
     :width: 700
     :height: 355
 
+Focus rockets are undesirable in source control and continuous integration. Disable
+the behavior by running ``buster-test`` with ``--fail-on-focus`` to make the whole
+suite will fail with an error.
 
 Deferred/pending tests
 ======================
