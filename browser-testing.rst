@@ -119,6 +119,13 @@ You can run browser tests headless with PhantomJS very easy by starting the serv
 You must have installed `PhantomJS <http://phantomjs.org//>`_ on your system of course.
 
 
+Continues Integration
+=====================
+
+You can run the buster server, capture browsers, on the local or remote machine, run tests,
+close the browsers and shutdown the server with only one command: :ref:`buster-ci`. 
+
+
 Examples
 ========
 
