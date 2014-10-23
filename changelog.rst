@@ -6,6 +6,16 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.16
+=======
+
+Released 2014-10-23.
+
+- `buster-autotest<https://github.com/busterjs/buster-autotest>`_
+  uses now `chokidar<https://www.npmjs.org/package/chokidar>`_ instead of
+  `fs-watch-tree<https://www.npmjs.org/package/fs-watch-tree>`_
+
+
 v0.7.15
 =======
 
