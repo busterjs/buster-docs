@@ -720,12 +720,21 @@ failure message.
 
     ::
 
-        assert.exception(callback[, type, message])
+        assert.exception(callback[, matcher, message])
 
-    Fails if ``callback`` does not throw an exception. If the optional ``type``
+    Fails if ``callback`` does not throw an exception. If the optional ``matcher``
     is provided, the assertion fails if the callback either does not throw an
-    exception, **or** if the exception is not of the given type (determined by
-    its ``name`` property).
+    exception, **or** if the exception does not meet the criterias of the given
+    ``matcher``.
+    
+    The ``matcher`` can be of type ``object`` or ``function``.
+    If the ``matcher`` is of type ``object``, the captured error
+    object and the ``matcher`` are passed to :func:`match`.    
+
+    If the ``matcher`` is of type ``function``, the captured error
+    object is passed as argument to the ``matcher`` function, which has to return
+    ``true`` for a matching error object, otherwise ``false``.     
+
 
     ::
 
@@ -740,15 +749,27 @@ failure message.
         // Passes
         assert.exception(function () {
             throw new TypeError("Ooops!");
-        }, "TypeError");
+        },  { name: "TypeError" });
 
         // Fails, wrong exception type
         assert.exception(function () {
             throw new Error("Aww");
-        }, "TypeError");
+        }, { name: "TypeError" });
 
-        // Fails
-        assert.exception(function () {}, "TypeError");
+        // Fails, wrong exception message
+        assert.exception(function () {
+            throw new Error("Aww");
+        }, { message: "Ooops!" });
+
+        // Fails, wrong exception type
+        assert.exception(function () {
+            throw new Error("Aww");
+        }, function (err) {
+            if (err.name !== "TypeError") {
+                return false;
+            }
+            return true;
+        }, "Type of exception is wrong!");  // with message to print, if test fails
 
     **Messages**
 
@@ -937,7 +958,7 @@ Custom assertions
 Custom, domain-specific assertions helps improve clarity and reveal intent in
 tests. They also facilitate much better feedback when they fail. You can add
 custom assertions that behave exactly like the built-in ones (i.e. with
-counting, message formatting, expectations and more) by using the :func:`add`
+counting, message formatting, expectations and more) by using the :func:`referee.add`
 method.
 
 
@@ -947,7 +968,7 @@ Overriding assertion messages
 The default assertion messages can be overridden. The properties to overwrite
 are listed with each assertion along with the arguments the string is fed.
 Here's an example of providing a new assertion failure message for
-:func:`assert.equals`::
+:func:`equals`::
 
     var assert = buster.referee.assert;
     assert.equals.message = "I wanted ${0} == ${1}!"
@@ -1859,18 +1880,18 @@ on the resulting object.
 Methods
 =======
 
-.. function:: assertions.fail
+.. function:: referee.fail
 
     ::
 
         buster.referee.fail(message)
 
-    When an assertion fails, it calls :func:`assertions.fail` with the failure
+    When an assertion fails, it calls :func:`referee.fail` with the failure
     message as the only argument. The built-in ``fail`` function both throws an
     :class:`AssertionError` and emits it to the `failure <#event-failure>`_
     event. The error can be caught and handled by the test runner. If this
     behavior is not suitable for your testing framework of choice, you can
-    override :func:`assertions.fail` to make it do the right thing.
+    override :func:`referee.fail` to make it do the right thing.
 
     Example: To use **referee** with JsTestDriver, you can simply
     configure it as follows::
@@ -1887,14 +1908,14 @@ Methods
     exceptions, see the :attr:`throwOnFailure` property.
 
 
-.. function:: assertions.format
+.. function:: referee.format
 
     ::
 
         buster.referee.format(object)
 
     Values inserted into assertion messages using the ``${n}`` switches are
-    formatted using :func:`assertions.format`. By default this method simply
+    formatted using :func:`referee.format`. By default this method simply
     coerces the object to a string.
 
     A more expressive option is to use :ref:`buster-format`, which is a generic
@@ -1904,7 +1925,7 @@ Methods
         buster.referee.format = buster.format.ascii;
 
 
-.. function:: assertions.add
+.. function:: referee.add
 
     ::
 
@@ -1916,7 +1937,7 @@ Methods
     - Assertions will be counted.
 
     - Failure messages will have interpolated arguments formatted by
-      :func:`assertions.format`.
+      :func:`referee.format`.
 
     - A single function generates both an assertion and a refutation.
 
@@ -2069,7 +2090,7 @@ Supporting utilities
     by calling :func:`buster.isNode` and asserting that the element's
     ``nodeType`` is 1 (i.e. element).
 
-.. function:: assertions.isArguments
+.. function:: referee.isArguments
 
     ::
 
@@ -2087,7 +2108,7 @@ Supporting utilities
         buster.isArguments([]); // false
 
 
-.. function:: assertions.keys
+.. function:: referee.keys
 
     ::
 
@@ -2107,7 +2128,7 @@ Properties
 ==========
 
 
-.. attribute:: assertions.count
+.. attribute:: referee.count
 
     Number increasing from 0.
 
@@ -2119,7 +2140,7 @@ Properties
 
     Boolean.
 
-    When using the default :func:`assertions.fail` implementation, this
+    When using the default :func:`referee.fail` implementation, this
     property can be set to ``false`` to make assertion failures **not** throw
     exceptions (i.e. only emit events). This may be suitable in asynchronous
     test runners, where you might not be able to catch exceptions.

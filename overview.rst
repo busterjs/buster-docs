@@ -225,7 +225,7 @@ Adding your own custom assertions is easy. The DSL produces both an assert and
 refute. If you provide an ``expectation`` name, an expectation is created,
 too::
 
-    buster.assertions.add("inRange", {
+    buster.referee.add("inRange", {
         assert: function (num, lower, upper) {
             return num >= lower && num <= upper;
         }
