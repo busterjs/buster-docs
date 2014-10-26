@@ -78,4 +78,4 @@ started. All options are documented `in the GitHub repository <https://github.co
 Source code
 ===========
 
-`buster-lint on GitHub <https://github.com/magnars/buster-lint>`_
+`buster-lint on GitHub <https://github.com/busterjs/buster-lint>`_

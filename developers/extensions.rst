@@ -41,16 +41,43 @@ to name the extension after its package name.
 The ``create`` method is not required. If it's not provided, the
 extension will not receive its custom configuration.
 
+Following is a description of the currently available hooks, in the order they
+are run.
+
 Hook: ``preConfigure``
 ======================
 
-The ``preConfigure`` hook allows extensions to manipulate the
-:ref:`buster-configuration`, for example to add configuration groups
-dynamically at runtime.
+The ``preConfigure`` hook is run, before the configuration groups are resolved.
+This allows extensions to manipulate, add and remove configuration groups.
+
+The arguments passed to this hook are group and config.
 
 For a usage example see
 `buster-testbed-extension
 <https://www.npmjs.org/package/buster-testbed-extension>`_.
+
+Hook: ``analyze``
+=================
+
+The ``analyze`` hook is run after the analyzer is created
+and can be used to flag issues about the code base.
+
+The argument passed to this hook is ``analyzer``.
+
+``buster-lint`` and ``buster-syntax`` uses the hook to warn about
+lint and syntax errors.
+
+Proper documentation for the analyzer is pending. For now, refer to
+`buster-lint <https://github.com/busterjs/buster-lint>`_ for a usage
+example.
+
+Hook: ``beforeRun``
+===================
+
+The ``beforeRun`` hook is run, after the test run configuration is
+fully loaded, but before the test runner has been initialized.
+
+Currently the hook doesn't receive arguments.
 
 Hook: ``configure``
 ===================
@@ -82,20 +109,6 @@ group::
             });
         }
     };
-
-Hook: ``beforeRun``
-===================
-
-The ``beforeRun`` hook is run, after the test run configuration is
-fully loaded, but before the test runner has been initialized. The arguments
-passed to this hook is ``config`` (a :ref:`config-group`) and ``analyzer``.
-The analyzer can be used to flag issues about the code base, and is what
-``buster-lint`` and ``buster-syntax`` uses to warn about lint and syntax
-errors, respectively.
-
-Proper documentation for the analyzer is pending. For now, refer to
-`buster-lint <https://github.com/magnars/buster-lint>`_ for a usage
-example.
 
 Hook: ``testRun``
 =================
