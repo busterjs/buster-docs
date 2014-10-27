@@ -25,6 +25,7 @@ Load in your configuration file::
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         sources: ["src/**/*.js"],
         tests: ["test/**/*.js"],
@@ -44,6 +45,7 @@ still using pre-1.0 json config files)::
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         sources: ["src/**/*.js"],
         tests: ["test/**/*.js"],
@@ -57,6 +59,7 @@ started. All options are documented `in the GitHub repository <https://github.co
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         sources: ["src/**/*.js"],
         tests: ["test/**/*.js"],

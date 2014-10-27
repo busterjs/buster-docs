@@ -26,6 +26,7 @@ Load in your configuration file::
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         sources: ["src/**/*.coffee"],
         tests: ["test/**/*.coffee"],

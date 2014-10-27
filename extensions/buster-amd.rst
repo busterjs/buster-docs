@@ -27,6 +27,7 @@ You also need to add the ``buster-amd`` extension to your configuration::
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         libs: [
             "libs/require.js",
@@ -87,6 +88,7 @@ You don't need to restructure your project to solve this issue.
 If your tests live outside of that directory, you can fix that with a different mapping function::
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         libs: [
             "libs/require.js",
@@ -119,6 +121,7 @@ Another example: use the following mapper for AMD loader plugins::
     var config = module.exports;
 
     config["Browser tests"] = {
+        environment: "browser",
         rootPath: "../",
         sources: ["src/**/*.js"],
         tests: ["test/**/*.js"],
