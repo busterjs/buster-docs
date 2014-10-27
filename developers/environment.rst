@@ -24,6 +24,7 @@ all the packages. Inside of that you clone ``buster-dev-tools`` from GitHub::
     mkdir busterDevEnv
     cd busterDevEnv
     git clone https://github.com/busterjs/buster-dev-tools.git
+    npm install
 
 Note: the name ``busterDevEnv`` is the only thing that you might want to change to your liking.
 Everything else can (and should be) copied&pasted as is.
@@ -55,6 +56,8 @@ On Linux and Mac OS X (or in Git Bash on Windows)::
     Then make the shell script executable by ``chmod u+x busterEnv.sh``.
     From now on you only have to open a terminal and execute the shell script in the
     ``busterDevEnv`` directory to make that terminal ready for work.
+    You can omit the line ``exec bash``, if you execute the script either with
+    ``. busterEnv.sh`` or ``source busterEnv.sh``.
 
 
 On Windows (DOS-box)::
