@@ -112,7 +112,7 @@ Lets have a look at the following example config file, to see, what can be confi
     Before you can start and capture any browser, you first have to configure some. `buster-ci`
     needs some informations, for example how a browser can be started, which command line arguments
     should be used and so forth. The informations here are only for the local host. The remote browsers
-    has to be configured on the remote hosts, see :ref:`capture-remote-browsers`.
+    have to be configured on the remote hosts, see :ref:`capture-remote-browsers`.
 
     With **start** you specify the command to start the browser. The command is passed to the
     `child_process.spawn <http://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options>`_
@@ -156,8 +156,8 @@ Lets have a look at the following example config file, to see, what can be confi
     `buster-ci` uses the :ref:`buster-ci-agent` to start, capture and stop browsers.
     It's not only used for remote browsers, but also for the browsers to be started on the local host.
     If you want to start browsers on the local host, you must specify an agent named "localhost".
-    If you want to start browsers on remote hosts, you must specify an agent named with the remote hostname,
-    for every remote host.
+    If you want to start browsers on remote hosts, you must specify agents named with the remote hostnames
+    or ip addresses.
 
     **port** is where the `buster-ci-agent` is listening for incoming requests. **browsers** is the list
     of browsers which shall to be started by the agent. The names must match the names of browsers from the
@@ -259,7 +259,7 @@ or
 Closing browsers
 ----------------
 
-is not as easy as it seems to be at a first glance. But unfortunately some browsers do things which
+is not as easy as it seems to be at a first glance. Unfortunately some browsers do things, which
 make it hard to just close the browser by `child.kill`.
 
 The "iexplore.exe" of IE 11 for example creates
@@ -271,8 +271,8 @@ same user data directory. In that case `child.kill(SIGKILL)` has to be called, w
 browsers using the same user data directory. That's why it is a good idea to specifiy a separate
 user data directory for the test browsers.
 
-If you try to kill a firefox browser while a second instance is open and uses the same profile
-directory, the browser will be closed, but you will also get an error and you will get problems
+If you try to kill a firefox browser while a second instance is open and using the same profile
+directory, the browser will be closed, but you will also get an error message and you will get problems
 to start the browser again at some point. So, as well as for chrome, it's a good idea to use a
 separate profile directory for the test browsers.
 
@@ -441,3 +441,27 @@ Example Run
     []
     All browsers are closed.
     All done.
+
+
+Content of "d:/temp/test/out.xml":
+
+::
+
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <testsuites>
+        <testsuite errors="0" tests="1" time="0.001" failures="0" name="IE 11.0, Windows Server 2008 R2 / 7 7">
+            <testcase time="0.024" classname="IE 11.0, Windows Server 2008 R2 / 7 7.Buster" name="this.element is defined"/>
+        </testsuite>
+        <testsuite errors="0" tests="1" time="0" failures="0" name="Firefox 29.0, Ubuntu">
+            <testcase time="0.094" classname="Firefox 29.0, Ubuntu.Buster" name="this.element is defined"/>
+        </testsuite>
+        <testsuite errors="0" tests="1" time="0" failures="0" name="Firefox 33.0, Windows Server 2008 R2 / 7 7">
+            <testcase time="0.014" classname="Firefox 33.0, Windows Server 2008 R2 / 7 7.Buster" name="this.element is defined"/>
+        </testsuite>
+        <testsuite errors="0" tests="1" time="0" failures="0" name="Chrome 38.0.2125.104, Windows Server 2008 R2 / 7 7">
+            <testcase time="0.121" classname="Chrome 38.0.2125.104, Windows Server 2008 R2 / 7 7.Buster" name="this.element is defined"/>
+        </testsuite>
+        <testsuite errors="0" tests="1" time="0" failures="0" name="IE 10.0, Windows Server 2008 R2 / 7 7">
+            <testcase time="0.155" classname="IE 10.0, Windows Server 2008 R2 / 7 7.Buster" name="this.element is defined"/>
+        </testsuite>
+    </testsuites>    
