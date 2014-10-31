@@ -6,6 +6,15 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.17
+=======
+
+Released 2014-10-31.
+
+- Version for ``referee`` increased, which has changed the direction of dependency
+  between ``referee.js`` and ``expect.js``. 
+
+
 v0.7.16
 =======
 
