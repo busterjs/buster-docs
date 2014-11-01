@@ -22,6 +22,7 @@ strongly believe that high-level assertions are essential in the
 interest of producing clear and intent-revealing tests, and they also
 give you to-the-point failure messages.
 
+.. _assertions_and_refutations:
 
 Assertions and refutations
 ==========================

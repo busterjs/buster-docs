@@ -231,7 +231,7 @@ too::
         }
     });
 
-For more, see :ref:`referee`.
+For more, see :ref:`assertions_and_refutations` and :ref:`expectations`.
 
 
 BDD syntax
