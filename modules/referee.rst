@@ -1975,63 +1975,6 @@ Methods
             Optional.
 
 
-Supporting utilities
-====================
-
-
-.. function:: buster.isNode
-
-    ::
-
-        buster.isNode(object)
-
-    Returns ``true`` if the object is a DOM node. The check is made by
-    attempting to call ``appendChild`` on it, passing in an element.
-
-.. function:: buster.isElement
-
-    ::
-
-        buster.isElement(object)
-
-    Returns ``true`` if the object is a DOM element. The check is made
-    by calling :func:`buster.isNode` and asserting that the element's
-    ``nodeType`` is 1 (i.e. element).
-
-.. function:: referee.isArguments
-
-    ::
-
-        buster.referee.isArguments(object)
-
-    Returns true if the argument is an ``arguments`` object. Buster checks this
-    by making sure the object is array-like, but not actually an array.
-
-    ::
-
-        function check() {
-            buster.isArguments(arguments); // true
-        }
-
-        buster.isArguments([]); // false
-
-
-.. function:: referee.keys
-
-    ::
-
-        buster.referee.keys(object)
-
-    Cross-browser implementation of
-    `Object.keys <https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/keys>`_.
-    From MDN:
-
-    | returns an array whose elements are strings corresponding to the
-    | enumerable properties found directly upon object. The ordering of the
-    | properties is the same as that given by looping over the properties of
-    | the object manually.
-
-
 Properties
 ==========
 
