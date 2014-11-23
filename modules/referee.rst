@@ -135,13 +135,8 @@ failure message.
 
     ::
 
-        assert.same.message = "${0} expected to be the same object as ${1}";
-        refute.same.message = "${0} expected not to be the same object as ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
+        assert.same.message = "${actual} expected to be the same object as ${expected}";
+        refute.same.message = "${actual} expected not to be the same object as ${expected}";
 
 
 .. function:: equals
@@ -172,13 +167,8 @@ failure message.
 
     ::
 
-        assert.equals.message = "${0} expected to be equal to ${1}";
-        refute.equals.message = "${0} expected not to be equal to ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
+        assert.equals.message = "${actual} expected to be equal to ${expected}";
+        refute.equals.message = "${actual} expected not to be equal to ${expected}";
 
 
 .. function:: greater
@@ -199,13 +189,8 @@ failure message.
 
     ::
 
-        assert.greater.message = "Expected ${0} to be greater than ${1}";
-        refute.greater.message = "Expected ${0} to be less than or equal to ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
+        assert.greater.message = "Expected ${actual} to be greater than ${expected}";
+        refute.greater.message = "Expected ${actual} to be less than or equal to ${expected}";
 
 
 .. function:: less
@@ -226,13 +211,8 @@ failure message.
 
     ::
 
-        assert.less.message = "Expected ${0} to be less than ${1}";
-        refute.less.message = "Expected ${0} to be greater than or equal to ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-        The expected object
+        assert.less.message = "Expected ${actual} to be less than ${expected}";
+        refute.less.message = "Expected ${actual} to be greater than or equal to ${expected}";
 
 
 .. function:: defined
@@ -254,13 +234,10 @@ failure message.
     ::
 
         assert.defined.message = "Expected to be defined";
-        refute.defined.message = "typeof ${0} (${1}) expected to be undefined";
+        refute.defined.message = "Expected ${actual} (${actualType}) not to be defined";
 
-    ``${0}``:
-        The actual object
-    ``${1}``:
+    ``${actualType}``:
         ``typeof object``
-
 
 
 .. function:: isNull
@@ -282,11 +259,8 @@ failure message.
 
     ::
 
-        assert.isNull.message = "Expected ${0} to be null";
+        assert.isNull.message = "Expected ${actual} to be null";
         refute.isNull.message = "Expected not to be null";
-
-    ``${0}``:
-        The actual object
 
 
 .. function:: match
@@ -433,24 +407,16 @@ failure message.
 
     ::
 
-        assert.match.exceptionMessage = "${0}";
-        refute.match.exceptionMessage = "${0}";
+        assert.match.exceptionMessage = "${exceptionMessage}";
+        refute.match.exceptionMessage = "${exceptionMessage}";
 
     Used when the matcher function throws an exception. This happens if the
     matcher is not any of the accepted types, for instance, a boolean.
 
-    ``${0}``
-        Message from exception thrown by matcher function.
-
     ::
 
-        assert.match.message = "${0} expected to match ${1}";
-        refute.match.message = "${0} expected not to match ${1}";
-
-    ``${0}``:
-        The actual object
-    ``${1}``:
-      The expected object
+        assert.match.message = "${actual} expected to match ${expected}";
+        refute.match.message = "${actual} expected not to match ${expected}";
 
 
 .. function:: isObject
@@ -472,12 +438,10 @@ failure message.
 
     ::
 
-        assert.isObject.message = "${0} (${1}) expected to be object and not null";
-        refute.isObject.message = "${0} (${1}) expected not to be object and not null";
+        assert.isObject.message = "${actual} (${actualType}) expected to be object and not null";
+        refute.isObject.message = "${actual} expected to be null or not an object";
 
-    ``${0}``:
-        The actual object
-    ``${1}``:
+    ``${actualType}``:
       ``typeof object``
 
 
@@ -499,12 +463,10 @@ failure message.
 
     ::
 
-        assert.isFunction.message = "${0} (${1}) expected to be function";
-        refute.isFunction.message = "${0} (${1}) expected not to be function";
+        assert.isFunction.message = "${actual} (${actualType}) expected to be function";
+        refute.isFunction.message = "${actual} expected not to be function";
 
-    ``${0}``:
-        The actual value
-    ``${1}``
+    ``${actualType}``
         ``typeof actual value``
 
 
@@ -525,11 +487,8 @@ failure message.
 
     ::
 
-        assert.isTrue.message = "Expected ${0} to be true";
-        refute.isTrue.message = "Expected ${0} to not be true";
-
-    ``${0}``:
-        The actual value
+        assert.isTrue.message = "Expected ${actual} to be true";
+        refute.isTrue.message = "Expected ${actual} to not be true";
 
 
 .. function:: isFalse
@@ -549,11 +508,8 @@ failure message.
 
     ::
 
-        assert.isFalse.message = "Expected ${0} to be false";
-        refute.isFalse.message = "Expected ${0} to not be false";
-
-    ``${0}``:
-        The actual value
+        assert.isFalse.message = "Expected ${actual} to be false";
+        refute.isFalse.message = "Expected ${actual} to not be false";
 
 
 .. function:: isString
@@ -573,12 +529,10 @@ failure message.
 
     ::
 
-        assert.isString.message = "Expected ${0} (${1}) to be string";
-        refute.isString.message = "Expected ${0} not to be string";
+        assert.isString.message = "Expected ${actual} (${actualType}) to be string";
+        refute.isString.message = "Expected ${actual} not to be string";
 
-    ``${0}``:
-        The actual value
-    ``${1}``:
+    ``${actualType}``:
         The type of the actual value
 
 
@@ -600,12 +554,10 @@ failure message.
 
     ::
 
-        assert.isBoolean.message = "Expected ${0} (${1}) to be boolean";
-        refute.isBoolean.message = "Expected ${0} not to be boolean";
+        assert.isBoolean.message = "Expected ${actual} (${actualType}) to be boolean";
+        refute.isBoolean.message = "Expected ${actual} not to be boolean";
 
-    ``${0}``:
-        The actual value
-    ``${1}``:
+    ``${actualType}``:
         The type of the actual value
 
 
@@ -627,12 +579,10 @@ failure message.
 
     ::
 
-        assert.isNumber.message = "Expected ${0} (${1}) to be a non-NaN number";
-        refute.isNumber.message = "Expected ${0} to be NaN or another non-number value";
+        assert.isNumber.message = "Expected ${actual} (${actualType}) to be a non-NaN number";
+        refute.isNumber.message = "Expected ${actual} to be NaN or a non-number value";
 
-    ``${0}``:
-        The actual value
-    ``${1}``:
+    ``${actualType}``:
         The type of the actual value
 
 
@@ -656,11 +606,8 @@ failure message.
 
     ::
 
-        assert.isNaN.message = "Expected ${0} to be NaN";
+        assert.isNaN.message = "Expected ${actual} to be NaN";
         refute.isNaN.message = "Expected not to be NaN";
-
-    ``${0}``:
-        The actual value
 
 
 .. function:: isArray
@@ -670,7 +617,7 @@ failure message.
         assert.isArray(actual[, message])
 
     Fails if the object type of ``actual`` is not ``Array``.
-    
+
     ::
 
         assert.isArray([1, 2, 3]); // Passes
@@ -680,11 +627,8 @@ failure message.
 
     ::
 
-        assert.isArray.message = "Expected ${0} to be array";
-        refute.isArray.message = "Expected ${0} not to be array";
-
-    ``${0}``:
-        The actual value
+        assert.isArray.message = "Expected ${actual} to be array";
+        refute.isArray.message = "Expected ${actual} not to be array";
 
 
 .. function:: isArrayLike
@@ -698,7 +642,7 @@ failure message.
     - the object type of ``actual`` is ``Array``
     - ``actual`` is an ``arguments`` object
     - ``actual`` is an object providing a property ``length`` of type ``"number"`` and a property ``splice`` of type ``"function"``
-    
+
     ::
 
         assert.isArrayLike([1, 2, 3]);                            // Passes
@@ -710,11 +654,8 @@ failure message.
 
     ::
 
-        assert.isArrayLike.message = "Expected ${0} to be array like";
-        refute.isArrayLike.message = "Expected ${0} not to be array like";
-
-    ``${0}``:
-        The actual value
+        assert.isArrayLike.message = "Expected ${actual} to be array like";
+        refute.isArrayLike.message = "Expected ${actual} not to be array like";
 
 
 .. function:: exception
@@ -727,14 +668,14 @@ failure message.
     is provided, the assertion fails if the callback either does not throw an
     exception, **or** if the exception does not meet the criterias of the given
     ``matcher``.
-    
+
     The ``matcher`` can be of type ``object`` or ``function``.
     If the ``matcher`` is of type ``object``, the captured error
-    object and the ``matcher`` are passed to :func:`match`.    
+    object and the ``matcher`` are passed to :func:`match`.
 
     If the ``matcher`` is of type ``function``, the captured error
     object is passed as argument to the ``matcher`` function, which has to return
-    ``true`` for a matching error object, otherwise ``false``.     
+    ``true`` for a matching error object, otherwise ``false``.
 
 
     ::
@@ -776,25 +717,11 @@ failure message.
 
     ::
 
-        assert.exception.typeNoExceptionMessage = "Expected ${0} but no exception was thrown";
+        assert.exception.typeNoExceptionMessage = "Expected ${expected} but no exception was thrown";
         assert.exception.message = "Expected exception";
-        assert.exception.typeFailMessage = "Expected ${0} but threw ${1}, (${2})";
-
-    ``${0}``:
-        The expected exception type (if provided)
-    ``${1}``:
-        The type of exception thrown (if any)
-    ``${2}``:
-        The exception message
-
-    ::
-
-        refute.exception.message = "Expected not to throw but threw ${0}, (${1})";
-
-    ``${0}``:
-        The type of exception thrown (if any)
-    ``${1}``:
-        The exception message
+        assert.exception.typeFailMessage = "Expected ${expected} but threw ${actualExceptionType} (${actualExceptionMessage})\n${actualExceptionStack}";
+        assert.exception.matchFailMessage = "Expected thrown ${actualExceptionType} (${actualExceptionMessage}) to pass matcher function";
+        refute.exception.message = "Expected not to throw but threw ${actualExceptionType} (${actualExceptionMessage})";
 
 
 .. function:: near
@@ -815,15 +742,8 @@ failure message.
 
     ::
 
-        assert.near.message = "Expected ${0} to be equal to ${1} +/- ${2}";
-        refute.near.message = "Expected ${0} not to be equal to ${1} +/- ${2}";
-
-    ``${0}``:
-        The ``actual`` value 
-    ``${1}``:
-	The ``expected`` value
-    ``${2}``:
-	The ``delta`` value
+        assert.near.message = "Expected ${actual} to be equal to ${expected} +/- ${delta}";
+        refute.near.message = "Expected ${actual} not to be equal to ${expected} +/- ${delta}";
 
 
 .. function:: hasPrototype
@@ -844,13 +764,11 @@ failure message.
 
     ::
 
-        assert.hasPrototype.message = "Expected ${0} to have ${1} on its prototype chain";
-        refute.hasPrototype.message = "Expected ${0} not to have ${1} on its prototype chain";
+        assert.hasPrototype.message = "Expected ${actual} to have ${expected} on its prototype chain";
+        refute.hasPrototype.message = "Expected ${actual} not to have ${expected} on its prototype chain";
 
-    ``${0}``:
-        The ``actual`` object 
-    ``${1}``:
-	The ``prototype`` object
+    ``${expected}``:
+        The ``prototype`` object
 
 
 .. function:: contains
@@ -871,13 +789,13 @@ failure message.
 
     ::
 
-        assert.contains.message = "Expected [${0}] to contain ${1}";
-        refute.contains.message = "Expected [${0}] not to contain ${1}";
+        assert.contains.message = "Expected [${actual}] to contain ${expected}";
+        refute.contains.message = "Expected [${actual}] not to contain ${expected}";
 
-    ``${0}``:
-        The ``haystack`` object 
-    ``${1}``:
-	The ``needle`` object
+    ``${actual}``:
+        The ``haystack`` object
+    ``${expected}``:
+        The ``needle`` object
 
 
 .. function:: tagName
@@ -900,15 +818,10 @@ failure message.
 
     ::
 
-        assert.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
-        assert.tagName.message = "Expected tagName to be ${0} but was ${1}";
-        refute.tagName.noTagNameMessage = "Expected ${1} to have tagName property";
-
-    ``${0}``:
-        The expected ``tagName``
-    ``${1}``:
-        If the object does not have a ``tagName`` property, this is the object.
-        Otherwise, it is the value of ``object.tagName``.
+        assert.tagName.noTagNameMessage = "Expected ${actualElement} to have tagName property";
+        assert.tagName.message = "Expected tagName to be ${expected} but was ${actual}";
+        refute.tagName.noTagNameMessage = "Expected ${actualElement} to have tagName property";
+        refute.tagName.refuteMessage = "Expected tagName not to be ${actual}";
 
 
 .. function:: className
@@ -942,15 +855,9 @@ failure message.
     ::
 
         assert.className.noClassNameMessage = "Expected object to have className property";
-        assert.className.message = "Expected object's className to include ${0} but was ${1}";
+        assert.className.message = "Expected object's className to include ${expected} but was ${actual}";
         refute.className.noClassNameMessage = "Expected object to have className property";
-        refute.className.message = "Expected object's className to not include ${0} but was ${1}";
-
-    ``${0}``:
-        The expected ``classNames``
-    ``${1}``:
-      The value of the object's ``className`` property, if any. Otherwise, the
-      object itself.
+        refute.className.message = "Expected object's className not to include ${expected}";
 
 
 Custom assertions
@@ -1294,7 +1201,7 @@ For ``refute`` the behaviour is exactly opposed.
 
         spy1.call(obj1);
         spy1.call(obj2);
-        
+
         spy2.call(obj2);
         spy2.call(obj2);
 
