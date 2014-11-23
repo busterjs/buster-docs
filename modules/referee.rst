@@ -182,7 +182,7 @@ failure message.
     ::
 
         assert.greater(2, 1); // Passes
-	assert.greater(1, 1); // Fails
+        assert.greater(1, 1); // Fails
         assert.greater(1, 2); // Fails
 
     **Messages**
@@ -204,7 +204,7 @@ failure message.
     ::
 
         assert.less(1, 2); // Passes
-	assert.less(1, 1); // Fails
+        assert.less(1, 1); // Fails
         assert.less(2, 1); // Fails
 
     **Messages**
@@ -646,8 +646,8 @@ failure message.
     ::
 
         assert.isArrayLike([1, 2, 3]);                            // Passes
-	assert.isArrayLike(arguments);                            // Passes
-	assert.isArrayLike({ length: 0, splice: function() {} }); // Passes
+        assert.isArrayLike(arguments);                            // Passes
+        assert.isArrayLike({ length: 0, splice: function() {} }); // Passes
         assert.isArrayLike({});                                   // Fails
 
     **Messages**
@@ -656,6 +656,28 @@ failure message.
 
         assert.isArrayLike.message = "Expected ${actual} to be array like";
         refute.isArrayLike.message = "Expected ${actual} not to be array like";
+
+
+.. function:: keys
+
+    ::
+
+        assert.keys(object, keyArray[, message])
+
+    Fails if object's own properties are not exactly the same as a given list.
+
+    ::
+
+        assert.keys({ test1: 't1', test2: 't2' }, ['test1']);                 // Fails - 'test2' is unexpected
+        assert.keys({ test1: 't1', test2: 't2' }, ['test1','test2','test3']); // Fails - 'test3' is not present
+        assert.keys({ test1: 't1', test2: 't2' }, ['test1','test2']);         // Passes
+
+    **Messages**
+
+    ::
+
+        assert.keys.message = "Expected ${actualObject} to have exact keys ${keys}";
+        refute.keys.message = "Expected not to have exact keys ${keys}";
 
 
 .. function:: exception
@@ -1158,9 +1180,9 @@ For ``refute`` the behaviour is exactly opposed.
     ::
 
         var spy = this.spy();
-	var obj1 = {};
-	var obj2 = {};
-	var obj3 = {};
+        var obj1 = {};
+        var obj2 = {};
+        var obj3 = {};
 
         spy.call(obj2);
         spy.call(obj3);
@@ -1196,8 +1218,8 @@ For ``refute`` the behaviour is exactly opposed.
 
         var spy1 = this.spy();
         var spy2 = this.spy();
-	var obj1 = {};
-	var obj2 = {};
+        var obj1 = {};
+        var obj2 = {};
 
         spy1.call(obj1);
         spy1.call(obj2);
@@ -1416,30 +1438,30 @@ For ``refute`` the behaviour is exactly opposed.
 
     ::
 
-	var exception1 = new TypeError();
-	var exception2 = new TypeError();
-	var exception3 = new TypeError();
-	var spy = this.spy(function(exception) {
-	    throw exception;
-	});
-	function callAndCatchException(spy, exception) {
-	    try {
-	        spy(exception);
-	    } catch(e) {
-	    }
-	}
+    var exception1 = new TypeError();
+    var exception2 = new TypeError();
+    var exception3 = new TypeError();
+    var spy = this.spy(function(exception) {
+        throw exception;
+    });
+    function callAndCatchException(spy, exception) {
+        try {
+            spy(exception);
+        } catch(e) {
+        }
+    }
 
-	callAndCatchException(spy, exception1);
-	callAndCatchException(spy, exception2);
+    callAndCatchException(spy, exception1);
+    callAndCatchException(spy, exception2);
 
-	assert.threw(spy);              // Passes
-	assert.threw(spy, "TypeError"); // Passes
-	assert.threw(spy, exception1);  // Passes
-	assert.threw(spy, exception2);  // Passes
-	assert.threw(spy, exception3);  // Fails
+    assert.threw(spy);              // Passes
+    assert.threw(spy, "TypeError"); // Passes
+    assert.threw(spy, exception1);  // Passes
+    assert.threw(spy, exception2);  // Passes
+    assert.threw(spy, exception3);  // Fails
 
-	callAndCatchException(spy, exception3);
-	assert.threw(spy, exception3); 	// Passes
+    callAndCatchException(spy, exception3);
+    assert.threw(spy, exception3);  // Passes
 
     **Messages**
 
@@ -1466,28 +1488,28 @@ For ``refute`` the behaviour is exactly opposed.
 
     ::
 
-	var exception1 = new TypeError();
-	var exception2 = new TypeError();
-	var spy = this.spy(function(exception) {
-	    throw exception;
-	});
-	function callAndCatchException(spy, exception) {
-	    try {
-	        spy(exception);
-	    } catch(e) {
-	    }
-	}
+    var exception1 = new TypeError();
+    var exception2 = new TypeError();
+    var spy = this.spy(function(exception) {
+        throw exception;
+    });
+    function callAndCatchException(spy, exception) {
+        try {
+            spy(exception);
+        } catch(e) {
+        }
+    }
 
-	callAndCatchException(spy, exception1);
+    callAndCatchException(spy, exception1);
 
-	assert.alwaysThrew(spy);              // Passes
-	assert.alwaysThrew(spy, "TypeError"); // Passes
-	assert.alwaysThrew(spy, exception1);  // Passes
+    assert.alwaysThrew(spy);              // Passes
+    assert.alwaysThrew(spy, "TypeError"); // Passes
+    assert.alwaysThrew(spy, exception1);  // Passes
 
-	callAndCatchException(spy, exception2);
-	assert.alwaysThrew(spy);              // Passes
-	assert.alwaysThrew(spy, "TypeError"); // Passes
-	assert.alwaysThrew(spy, exception1);  // Fails
+    callAndCatchException(spy, exception2);
+    assert.alwaysThrew(spy);              // Passes
+    assert.alwaysThrew(spy, "TypeError"); // Passes
+    assert.alwaysThrew(spy, exception1);  // Fails
 
     **Messages**
 
