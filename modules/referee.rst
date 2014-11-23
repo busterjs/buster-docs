@@ -895,13 +895,13 @@ method.
 Overriding assertion messages
 =============================
 
-The default assertion messages can be overridden. The properties to overwrite
-are listed with each assertion along with the arguments the string is fed.
-Here's an example of providing a new assertion failure message for
+The default assertion messages can be overridden. The messages to overwrite
+are listed with each assertion. You can use the same keys for string
+interpolation (e.g. ``${actual}``, ``${expected}``).
 :func:`equals`::
 
     var assert = buster.referee.assert;
-    assert.equals.message = "I wanted ${0} == ${1}!"
+    assert.equals.message = "I wanted ${actual} == ${expected}!"
 
     try {
         assert.equals(3, 4);
@@ -1697,6 +1697,15 @@ on the resulting object.
         expect(actual).toBeArrayLike()
 
     See :func:`isArrayLike`
+
+
+.. function:: expect.toHaveKeys
+
+    ::
+
+        expect(object).toHaveKeys(keyArray)
+
+    See :func:`keys`
 
 
 .. function:: expect.toThrow
