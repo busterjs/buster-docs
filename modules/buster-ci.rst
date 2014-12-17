@@ -56,6 +56,9 @@ Lets have a look at the following example config file, to see, what can be confi
             }
         },
 
+        captureTimeout: 40,
+        closeTimeout: 40,
+
         logLevel: "debug"
     };
 
@@ -168,6 +171,24 @@ Lets have a look at the following example config file, to see, what can be confi
     can be found in section :ref:`capture-remote-browsers`.
 
 
+`captureTimeout`
+
+    ::
+
+        captureTimeout: 40,
+
+Overwrites the timeout for waiting for all browsers are captured, in seconds. Default value is 30s. 
+
+
+`closeTimeout`
+
+    ::
+
+        closeTimeout: 40,
+
+Overwrites the timeout for waiting for all browsers are closed, in seconds. Default value is 30s. 
+
+
 `logLevel`
 
     ::
@@ -236,8 +257,8 @@ configuration file.
 sent back to `buster-ci`.
 
 
-Start agent
-^^^^^^^^^^^
+Starting agent
+^^^^^^^^^^^^^^
 
 The agent can be started by:
 
@@ -303,8 +324,15 @@ during installation process. Thus you don't have to establish a toolchain for ev
 host, unless you want to use that feature.
 
 
+Starting test run
+-----------------
+
+The `buster-ci` run can be started by entering `buster-ci` or `buster-ci.cmd` in the directory where the config
+file `buster-ci.js` is located. Arguments passed to `buster-ci` are passed along to `buster-test`.
+
+
 Example Run
------------
+^^^^^^^^^^^
 
 `buster-ci`
 
