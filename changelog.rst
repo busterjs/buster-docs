@@ -6,6 +6,14 @@ Changelog
 
 Here you find details about what has changed with each release of Buster.JS.
 
+v0.7.18
+=======
+
+Released 2014-12-17.
+
+- breaking change for ``buster-ci``, arguments can now be passed to test run 
+
+
 v0.7.17
 =======
 
