@@ -314,7 +314,7 @@ specified in the **start** property, use the placeholder `${PID}`.
 stop.windowTitle
 ^^^^^^^^^^^^^^^^
 
-`buster-ci` can close windows with a given window title by using `node-ffi <https://www.npmjs.org/package/node-ffi>_`.
+`buster-ci` can close windows with a given window title by using `node-ffi <https://www.npmjs.org/package/node-ffi>`_.
 In our example all windows with title "Buster - Internet Explorer" are closed on remotehost2.
 
 This feature is currently only implemented for Windows.
