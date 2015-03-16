@@ -177,7 +177,7 @@ Lets have a look at the following example config file, to see, what can be confi
 
         captureTimeout: 40,
 
-Overwrites the timeout for waiting for all browsers are captured, in seconds. Default value is 30s. 
+Overwrites the timeout for waiting for all browsers are captured, in seconds. Default value is 30s.
 
 
 `closeTimeout`
@@ -186,7 +186,7 @@ Overwrites the timeout for waiting for all browsers are captured, in seconds. De
 
         closeTimeout: 40,
 
-Overwrites the timeout for waiting for all browsers are closed, in seconds. Default value is 30s. 
+Overwrites the timeout for waiting for all browsers are closed, in seconds. Default value is 30s.
 
 
 `logLevel`
@@ -273,6 +273,25 @@ or
     node_modules/.bin/buster-ci-agent.cmd
 
 
+.. _capture-headless-browser:
+
+Capturing headless browser
+--------------------------
+
+If you want `buster-ci` to run browser tests headless with **PhantomJS**, corresponding to the option `-c`
+for `buster-server` if started manually, you only have to add the option `server.runPhantom = true` in the
+`buster-ci` configuration.
+
+::
+
+module.exports = {
+
+    server: {
+        host: "ci-host",
+        port: 1111,
+        runPhantom: true
+    }
+};
 
 
 .. _closing-browsers:
@@ -307,7 +326,7 @@ stop.command
 You can specify a command that will be executed to close the browser. The IE of the local host
 from the example is closed by the command `"taskkill /F /IM iexplore.exe /T"`, which kills
 all instances of the IE in fact. If you need the PID of the process started by the command
-specified in the **start** property, use the placeholder `${PID}`. 
+specified in the **start** property, use the placeholder `${PID}`.
 
 
 
@@ -492,4 +511,4 @@ Content of "d:/temp/test/out.xml":
         <testsuite errors="0" tests="1" time="0" failures="0" name="IE 10.0, Windows Server 2008 R2 / 7 7">
             <testcase time="0.155" classname="IE 10.0, Windows Server 2008 R2 / 7 7.Buster" name="this.element is defined"/>
         </testsuite>
-    </testsuites>    
+    </testsuites>
