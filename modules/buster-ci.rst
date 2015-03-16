@@ -280,18 +280,18 @@ Capturing headless browser
 
 If you want `buster-ci` to run browser tests headless with **PhantomJS**, corresponding to the option `-c`
 for `buster-server` if started manually, you only have to add the option `server.runPhantom = true` in the
-`buster-ci` configuration.
+`buster-ci` configuration:
 
 ::
 
-module.exports = {
+	module.exports = {
 
-    server: {
-        host: "ci-host",
-        port: 1111,
-        runPhantom: true
-    }
-};
+	    server: {
+	        host: "ci-host",
+	        port: 1111,
+	        runPhantom: true
+	    }
+	};
 
 
 .. _closing-browsers:
