@@ -59,7 +59,9 @@ Lets have a look at the following example config file, to see, what can be confi
         captureTimeout: 40,
         closeTimeout: 40,
 
-        logLevel: "debug"
+        logLevel: "debug",
+
+        errorOnDownAgent: false
     };
 
 `outputFile`
@@ -198,6 +200,18 @@ Overwrites the timeout for waiting for all browsers are closed, in seconds. Defa
 Sets one of the log level "error", "warn", "log", "info", "debug", default is "info".
 The log level is also used for the local agent. If a lower log level is configured for a remote agent,
 less of information is provided for that agent by `buster-ci`.
+
+
+.. _errorOnDownAgent:
+
+`errorOnDownAgent`
+
+    ::
+
+        errorOnDownAgent: false
+
+If you omit this option or set it to `true`, `buster-ci` will error the test run, if one of the agents
+is not accessible. If you set it to `false`, `buster-ci` only prints a warning and continues the test run.
 
 
 .. _capture-remote-browsers:
