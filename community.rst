@@ -18,10 +18,7 @@ the `development mailing list <http://groups.google.com/group/busterjs-dev>`_.
 Twitter
 =======
 
-We tweet on `twitter.com/buster_js <https://twitter.com/buster_js>`_. It is
-actually a mirror of our StatusNet, `statusnet.busterjs.org
-<http://statusnet.busterjs.org/>`_ -- we prefer to own our content. Since most
-people prefer Twitter, we're listening in on your tweets too though.
+We tweet on `twitter.com/buster_js <https://twitter.com/buster_js>`_.
 
 
 IRC
