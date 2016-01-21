@@ -57,6 +57,7 @@ Typically, you have one test case per file. Here's an example, in
 config file above will load the test.
 
 ::
+
     var assert = buster.assert;
 
     buster.testCase("My thing", {
