@@ -5,15 +5,6 @@ Community
 =========
 
 
-Contact
-=======
-
-If you have any questions, you can e-mail August Lilleaas
-(`august@augustl.com <mailto:august@augustl.com>`_) and Christian Johansen
-(`christian@cjohansen.no <mailto:christian@cjohansen.no>`_). We're the hard
-working programmers running the Buster.JS project.
-
-
 Development
 ===========
 
