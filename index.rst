@@ -35,15 +35,6 @@ our generic browser automation library that lets you successively load webpages
 into browsers and send data to and from them. It is completely reusable and has
 no knowledge of Buster.JS tests, or tests at all for that matter.
 
-**The future.** We have big plans for buster in the months and years to come. For
-example, we'll add the ability to run your browser tests directly on
-`BrowserStack <http://www.browserstack.com/>`_. In development you can still
-capture a local browser, JsTestDriver style. But instead of setting up your own
-CI server with a bazillion browsers, pay BrowserStack to do the job for you.
-Other plans we have is to have a stateful test runner that only runs the
-previously failed tests, test breakpoints that drops you into a live REPL in
-all the captured browsers when a test fails, and much much more.
-
 :doc:`Take Buster.JS for a spin <getting-started>` and **judge for yourself!**
 Be warned, it's still in beta, so it has some rough edges.
 
